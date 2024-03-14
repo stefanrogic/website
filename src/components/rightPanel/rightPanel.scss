@@ -20,14 +20,22 @@
 
     text-align: right;
 
-    a {
-      font-size: 24px;
-      color: white;
-      text-decoration: none;
-      text-align: right;
+    .social-link-div {
+      display: flex;
+      flex-direction: row;
+      justify-content: end;
+      align-items: end;
+      gap: 10px;
 
-      &:hover {
-        text-decoration: underline;
+      a {
+        font-size: 20px;
+        color: white;
+        text-decoration: none;
+        text-align: right;
+
+        &:hover {
+          text-decoration: underline;
+        }
       }
     }
   }

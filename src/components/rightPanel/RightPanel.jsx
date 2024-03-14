@@ -1,11 +1,21 @@
 import "./rightPanel.scss";
 
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+
 const RightPanel = () => {
   return (
     <div className="app-right">
       <div className="social-links">
-        <a href="#">Github</a>
-        <a href="#">Linkedin</a>
+        {[
+          { icon: <GitHubIcon />, text: "GitHub" },
+          { icon: <LinkedInIcon />, text: "LinkedIn" },
+        ].map((link, i) => (
+          <div key={link.text + i} className="social-link-div">
+            {link.icon}
+            <a href="#">{link.text}</a>
+          </div>
+        ))}
       </div>
     </div>
   );

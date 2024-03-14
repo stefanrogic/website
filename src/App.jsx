@@ -7,15 +7,15 @@ import HomePage from "./pages/homePage/HomePage";
 import ProjectsPage from "./pages/projectsPage/ProjectsPage";
 
 function App() {
-  // const getUrl = (fileName) => new URL(`/public/images/${fileName}`, import.meta.url).href;
+  const getUrl = (fileName) => new URL(`/public/${fileName}`, import.meta.url).href;
 
   return (
     <div className="App">
       <LeftPanel />
       <div className="content">
         <HomePage />
-        <AboutPage />
         <ProjectsPage />
+        <AboutPage getUrl={getUrl} />
         <ContactPage />
       </div>
       <RightPanel />
