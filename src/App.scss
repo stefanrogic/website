@@ -1,6 +1,4 @@
 #root {
-  max-width: 1200px;
-  height: 100vh;
   margin: 0 auto;
 }
 
@@ -15,29 +13,8 @@ p {
   margin: 0;
 }
 
-.home {
-  height: 100vh;
-
+.App {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  h1 {
-    font-size: 150px;
-    text-align: center;
-  }
-
-  h3 {
-    font-size: 50px;
-    text-align: center;
-  }
-
-  .hero-buttons {
-    margin-top: 50px;
-
-    button {
-      padding: 20px 80px;
-    }
-  }
+  flex-direction: row;
+  justify-content: space-between;
 }

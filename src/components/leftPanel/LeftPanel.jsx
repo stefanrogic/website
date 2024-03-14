@@ -1,15 +1,16 @@
-import { useState } from "react";
-import "./navbar.scss";
+import "./leftPanel.scss";
 
-const Navbar = () => {
+import { useState } from "react";
+
+const LeftPanel = () => {
   const [selected, setSelected] = useState(0);
 
   return (
-    <>
+    <div className="left-panel">
       <a className="logo" href="#">
-        /Stefan
+        /Sr
       </a>
-      <nav>
+      <div className="nav-links">
         {["Home", "About", "Projects", "Contact"].map((content, i) => (
           <div className="link" key={content + i}>
             {selected === i && <div className="link-selector"></div>}
@@ -18,14 +19,9 @@ const Navbar = () => {
             </a>
           </div>
         ))}
-      </nav>
-
-      <div className="social-links">
-        <a href="#">Github</a>
-        <a href="#">Linkedin</a>
       </div>
-    </>
+    </div>
   );
 };
 
-export default Navbar;
+export default LeftPanel;
