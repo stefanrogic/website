@@ -2,7 +2,7 @@ import "./homePage.scss";
 
 const HomePage = () => {
   return (
-    <div className="home">
+    <div className="home" id="home">
       <h1>Stefan Rogić</h1>
       <h3>Frontend Developer</h3>
       <div className="hero-buttons">

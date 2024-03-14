@@ -14,7 +14,7 @@ const LeftPanel = () => {
         {["Home", "About", "Projects", "Contact"].map((content, i) => (
           <div className="link" key={content + i}>
             {selected === i && <div className="link-selector"></div>}
-            <a href="#" onClick={() => setSelected(i)}>
+            <a href={`#${content.toLowerCase()}`} onClick={() => setSelected(i)}>
               {content}
             </a>
           </div>
