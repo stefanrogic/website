@@ -11,10 +11,10 @@ const RightPanel = () => {
           { icon: <GitHubIcon />, text: "GitHub" },
           { icon: <LinkedInIcon />, text: "LinkedIn" },
         ].map((link, i) => (
-          <div key={link.text + i} className="social-link-div">
+          <a key={link.text + i} className="social-link-div">
             {link.icon}
-            <a href="#">{link.text}</a>
-          </div>
+            {link.text}
+          </a>
         ))}
       </div>
     </div>

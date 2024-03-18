@@ -1,7 +1,6 @@
 .about {
-  margin: 50px 0;
-  width: 600px;
   min-height: 100vh;
+  max-width: 600px;
 
   display: flex;
   flex-direction: column;
@@ -10,9 +9,6 @@
   gap: 20px;
 
   font-size: 20px;
-
-  //   TEMP
-  //   border: 1px solid white;
 
   .image-container {
     height: 300px;
@@ -34,13 +30,19 @@
 
   h3 {
     font-size: 2.5em;
-    line-height: 50px;
+    // line-height: 50px;
   }
 
   p {
     font-size: 1em;
     font-weight: 100;
 
-    color: #b8b8b8;
+    color: #d8d8d8;
+
+    span {
+      text-decoration: underline;
+
+      color: rgb(120, 255, 120);
+    }
   }
 }

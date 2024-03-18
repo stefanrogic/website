@@ -11,6 +11,7 @@ function App() {
 
   return (
     <div className="App">
+      <button className="menu-btn">Menu</button>
       <LeftPanel />
       <div className="content">
         <HomePage />

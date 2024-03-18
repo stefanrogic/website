@@ -1,5 +1,25 @@
+@import "./index.scss";
+
 #root {
   margin: 0 auto;
+}
+
+a {
+  font-family: "Antonio", sans-serif;
+}
+
+button {
+  padding: 20px 80px;
+
+  font-size: 14px;
+  font-weight: 900;
+  text-align: center;
+
+  cursor: pointer;
+
+  @include tablet {
+    font-size: 0.7em;
+  }
 }
 
 h1,
@@ -16,16 +36,31 @@ p {
 .App {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
+
+  .menu-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+
+    padding: 20px;
+
+    display: block;
+
+    @include rwd("1050px") {
+      display: none;
+    }
+  }
 
   .content {
-    max-width: 800px;
+    margin: 0 20px;
 
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    // TEMPORARY
-    // background: rgb(27, 27, 27);
+    @include tablet {
+      margin: 0 50px;
+    }
   }
 }
