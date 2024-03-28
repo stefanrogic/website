@@ -1,15 +1,60 @@
-header {
-  position: relative;
+@import "../../index.scss";
 
-  h2 {
-    font-weight: 900;
-    font-size: 70px;
+header {
+  width: inherit;
+
+  margin-top: 50px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 13px;
+
+  .header-top {
+    position: relative;
+    height: 35vw;
+    width: inherit;
+
+    @include rwd("600px") {
+      height: 200px;
+    }
+
+    img {
+      position: absolute;
+    }
+
+    .signature {
+      top: 0;
+      width: 100%;
+    }
+
+    .theme-icon {
+      top: 0;
+      right: 0;
+
+      cursor: pointer;
+
+      &:hover {
+        scale: 1.5;
+      }
+    }
+
+    a {
+      text-decoration: none;
+
+      img {
+        bottom: 0;
+        width: 100%;
+      }
+    }
   }
 
   nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+
+    z-index: 50;
 
     div {
       display: flex;
@@ -19,9 +64,11 @@ header {
       a {
         font-size: 18px;
         font-weight: 900;
-        text-decoration: none;
+      }
 
-        color: white;
+      img {
+        height: 20px;
+        width: 20px;
       }
     }
   }

@@ -1,14 +1,23 @@
 @import "./index.scss";
 
 #root {
-  margin: 0 auto;
+  margin: auto 20px;
   max-width: 600px;
 
-  border: 1px solid white;
+  @include rwd("600px") {
+    margin: 0 auto;
+  }
 }
 
 a {
-  font-family: "Antonio", sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
+
+  text-decoration: none;
+  color: white;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 button {
@@ -33,6 +42,8 @@ p {
 }
 
 .App {
+  width: 100%;
+
   display: flex;
   flex-direction: row;
   justify-content: center;
