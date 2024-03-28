@@ -21,7 +21,7 @@ const Navbar = () => {
           <a href="#">CONTACT</a>
         </div>
 
-        <div>
+        <div className="socials-container">
           <a href="https://www.linkedin.com/in/stefanrogic/" target="_blank">
             <img src={getUrl("linkedin-icon.svg")} alt="frontend-developer" />
           </a>
