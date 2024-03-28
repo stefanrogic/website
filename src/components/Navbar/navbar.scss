@@ -1,0 +1,28 @@
+header {
+  position: relative;
+
+  h2 {
+    font-weight: 900;
+    font-size: 70px;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    div {
+      display: flex;
+      flex-direction: row;
+      gap: 15px;
+
+      a {
+        font-size: 18px;
+        font-weight: 900;
+        text-decoration: none;
+
+        color: white;
+      }
+    }
+  }
+}
