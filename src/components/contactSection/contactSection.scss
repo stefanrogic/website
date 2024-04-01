@@ -2,15 +2,46 @@ section {
   form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
 
     .form-row {
       display: flex;
       flex-direction: row;
-      gap: 10px;
+      align-items: center;
+      gap: 15px;
 
       input {
         width: 100%;
+      }
+
+      button {
+        padding: 10px 15px;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        border: none;
+        color: white;
+        background-color: #0079bd;
+      }
+
+      a {
+        padding: 15px 25px;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+
+        border: none;
+        background: none;
+        color: white;
+
+        img {
+          height: 15px;
+          aspect-ratio: 1 / 1;
+        }
       }
     }
 

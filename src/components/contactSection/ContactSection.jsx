@@ -17,6 +17,13 @@ const ContactSection = ({ getUrl }) => {
         </div>
         <input type="text" placeholder="Subject" />
         <textarea name="" id="" cols="30" rows="10" placeholder="Message"></textarea>
+        <div className="form-row">
+          <button>SEND MESSAGE</button>
+          <a href="mailto: stefanrogic@protonmail.com">
+            <img src={getUrl("icons/arrow-up.svg")} alt="arrow-up" />
+            OR SEND ME AN EMAIL
+          </a>
+        </div>
       </form>
     </section>
   );
