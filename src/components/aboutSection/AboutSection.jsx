@@ -1,8 +1,6 @@
 import "./aboutSection.scss";
 
-const AboutSection = () => {
-  const getUrl = (fileName) => new URL(`/public/images/${fileName}`, import.meta.url).href;
-
+const AboutSection = ({ getUrl }) => {
   return (
     <section id="about_section">
       <p>
@@ -16,7 +14,7 @@ const AboutSection = () => {
       </p>
 
       <button>
-        <img src={getUrl("arrow-up.svg")} alt="arrow-up" />
+        <img src={getUrl("icons/arrow-up.svg")} alt="arrow-up" />
         MORE DETAILS
       </button>
     </section>

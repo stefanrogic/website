@@ -3,11 +3,21 @@ section {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 15px;
+    column-gap: 30px;
+    row-gap: 10px;
 
-    p {
-      font-size: 18px;
-      font-weight: 500;
+    .skill {
+      height: 35px;
+
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 15px;
+
+      p {
+        font-size: 18px;
+        font-weight: 500;
+      }
     }
   }
 }

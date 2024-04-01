@@ -1,8 +1,6 @@
 import "./navbar.scss";
 
-const Navbar = () => {
-  const getUrl = (fileName) => new URL(`/public/${fileName}`, import.meta.url).href;
-
+const Navbar = ({ getUrl }) => {
   return (
     <header id="navbar">
       <div className="header-top">
