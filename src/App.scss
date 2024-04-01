@@ -10,8 +10,6 @@
 }
 
 a {
-  font-family: "Roboto Condensed", sans-serif;
-
   text-decoration: none;
   color: white;
 
@@ -21,10 +19,8 @@ a {
 }
 
 button {
-  padding: 20px 80px;
-
   font-size: 14px;
-  font-weight: 900;
+  font-weight: 700;
   text-align: center;
 
   cursor: pointer;
@@ -39,6 +35,33 @@ h6,
 p {
   padding: 0;
   margin: 0;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+
+  .heading-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+
+    h1 {
+      font-size: 40px;
+    }
+
+    .heading-line {
+      height: 3px;
+      flex: 1;
+
+      background: white;
+    }
+  }
+
+  .row-reverse {
+    flex-direction: row-reverse;
+  }
 }
 
 .App {

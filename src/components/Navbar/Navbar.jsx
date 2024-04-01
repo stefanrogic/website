@@ -1,16 +1,18 @@
 import "./navbar.scss";
 
 const Navbar = () => {
-  const getUrl = (fileName) => new URL(`/public/images/${fileName}`, import.meta.url).href;
+  const getUrl = (fileName) => new URL(`/public/${fileName}`, import.meta.url).href;
 
   return (
-    <header>
+    <header id="navbar">
       <div className="header-top">
-        <img className="signature" src={getUrl("signature.svg")} alt="signature" />
-
-        <img className="theme-icon" src={getUrl("moon-icon.svg")} alt="theme-icon" onClick={() => console.log("theme-change")} />
         <a href="#">
-          <img src={getUrl("frontend-developer.png")} alt="frontend-developer" />
+          <img className="signature" src={getUrl("icons/signature.svg")} alt="signature" />
+        </a>
+
+        <img className="theme-icon" src={getUrl("icons/moon-icon.svg")} alt="theme-icon" onClick={() => console.log("theme-change")} />
+        <a href="#">
+          <img src={getUrl("icons/frontend-developer.svg")} alt="frontend-developer" />
         </a>
       </div>
 
@@ -23,10 +25,10 @@ const Navbar = () => {
 
         <div className="socials-container">
           <a href="https://www.linkedin.com/in/stefanrogic/" target="_blank">
-            <img src={getUrl("linkedin-icon.svg")} alt="frontend-developer" />
+            <img src={getUrl("icons/linkedin-icon.svg")} alt="frontend-developer" />
           </a>
           <a href="https://github.com/stefanrogic" target="_blank">
-            <img src={getUrl("github-icon.svg")} alt="frontend-developer" />
+            <img src={getUrl("icons/github-icon.svg")} alt="frontend-developer" />
           </a>
         </div>
       </nav>
