@@ -24,8 +24,6 @@ const FeaturedProjectCard = ({ getUrl, projectData }) => {
           </a>
         </div>
       </div>
-
-      <div className="line-seperator"></div>
     </div>
   );
 };

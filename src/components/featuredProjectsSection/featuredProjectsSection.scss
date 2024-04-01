@@ -3,5 +3,12 @@ section {
     display: flex;
     flex-direction: column;
     gap: 20px;
+
+    .line-seperator {
+      width: 50px;
+      height: 1px;
+
+      background-color: white;
+    }
   }
 }

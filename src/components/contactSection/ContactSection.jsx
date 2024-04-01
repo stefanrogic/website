@@ -28,8 +28,8 @@ const ContactSection = ({ getUrl }) => {
 
       <div className="form">
         <div className="form-row">
-          <input type="text" placeholder="Name" name="name" onChange={(e) => handleInputChange(e, "name")} required />
-          <input type="email" placeholder="Email" name="email" onChange={(e) => handleInputChange(e, "email")} required />
+          <input type="text" placeholder="Your name" name="name" onChange={(e) => handleInputChange(e, "name")} required />
+          <input type="email" placeholder="Your email" name="email" onChange={(e) => handleInputChange(e, "email")} required />
         </div>
         <input type="text" placeholder="Subject" name="subject" onChange={(e) => handleInputChange(e, "subject")} required />
         <textarea cols="30" rows="10" placeholder="Message" name="message" onChange={(e) => handleInputChange(e, "message")} required></textarea>

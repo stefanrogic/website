@@ -26,7 +26,7 @@ const SkillsSection = ({ getUrl }) => {
         {skills.map((skill, i) => (
           <div className="skill" key={skill + i}>
             <img src={getUrl(`icons/${skill.icon}`)} alt="" />
-            <p>{skill.name}</p>
+            <span className="span-nounderline">{skill.name}</span>
           </div>
         ))}
       </div>

@@ -1,6 +1,7 @@
 import "./featuredProjectsSection.scss";
 
 import FeaturedProjectCard from "../featuredProjectCard/FeaturedProjectCard";
+import { Fragment } from "react";
 
 const FeaturedProjectsSection = ({ getUrl }) => {
   const featuredProjects = [
@@ -20,7 +21,10 @@ const FeaturedProjectsSection = ({ getUrl }) => {
 
       <div className="projects-container">
         {featuredProjects.map((project, i) => (
-          <FeaturedProjectCard key={project + i} getUrl={getUrl} projectData={project} />
+          <Fragment key={project + i}>
+            <FeaturedProjectCard getUrl={getUrl} projectData={project} />
+            {i + 1 !== featuredProjects.length && <div className="line-seperator"></div>}
+          </Fragment>
         ))}
       </div>
     </section>
