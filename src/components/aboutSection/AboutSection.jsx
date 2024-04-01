@@ -13,10 +13,10 @@ const AboutSection = ({ getUrl }) => {
         combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
       </p>
 
-      <button>
+      <a href="#">
         <img src={getUrl("icons/arrow-up.svg")} alt="arrow-up" />
         MORE DETAILS
-      </button>
+      </a>
     </section>
   );
 };

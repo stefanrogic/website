@@ -9,15 +9,17 @@
 
   color: white;
   background-color: rgb(27, 27, 27);
-}
 
-body {
-  margin: 0;
-}
+  a,
+  input,
+  textarea,
+  button {
+    font-family: "Roboto Condensed", sans-serif;
+  }
 
-a,
-button {
-  font-family: "Roboto Condensed", sans-serif;
+  body {
+    margin: 0;
+  }
 }
 
 @mixin mobile {
@@ -34,6 +36,12 @@ button {
 
 @mixin desktop {
   @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin desktopLarge {
+  @media (min-width: 1920px) {
     @content;
   }
 }

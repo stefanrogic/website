@@ -7,7 +7,7 @@ const SkillsSection = ({ getUrl }) => {
     { name: "React", icon: "react-icon.svg" },
     { name: "Redux", icon: "redux-icon.svg" },
     { name: "Sass", icon: "sass-icon.svg" },
-    { name: "PostgreSQL", icon: "postre-icon.svg" },
+    { name: "PostgreSQL", icon: "postgre-icon.svg" },
     { name: "Firebase", icon: "firebase-icon.svg" },
     { name: "Figma", icon: "figma-icon.svg" },
     { name: "Framer Motion", icon: "framer-motion-icon.svg" },
