@@ -1,24 +1,30 @@
+import { NavLink } from "react-router-dom";
 import "./navbar.scss";
 
 const Navbar = ({ getUrl }) => {
   return (
     <header id="navbar">
       <div className="header-top">
-        <a href="#">
-          <img className="signature" src={getUrl("icons/signature.svg")} alt="signature" />
-        </a>
-
         <img className="theme-icon" src={getUrl("icons/moon-icon.svg")} alt="theme-icon" onClick={() => console.log("theme-change")} />
-        <a href="#">
+
+        <NavLink to="/">
+          <img className="signature" src={getUrl("icons/signature.svg")} alt="signature" />
+        </NavLink>
+
+        <NavLink to="/">
           <img src={getUrl("icons/frontend-developer.svg")} alt="frontend-developer" />
-        </a>
+        </NavLink>
       </div>
 
       <nav>
         <div>
-          <a href="#">ABOUT ME</a>
-          <a href="#">PROJECTS</a>
-          <a href="#">CONTACT</a>
+          <NavLink className={({ isActive }) => (isActive ? "underline" : "")} to="/about-me">
+            ABOUT ME
+          </NavLink>
+          <NavLink className={({ isActive }) => (isActive ? "underline" : "")} to="/projects">
+            PROJECTS
+          </NavLink>
+          <a href="/#contact_section">CONTACT</a>
         </div>
 
         <div className="socials-container">

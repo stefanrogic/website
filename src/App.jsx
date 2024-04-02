@@ -36,8 +36,8 @@ function App() {
 
   const router = createBrowserRouter([
     { path: "/", element: Root(<HomePage getUrl={getUrl} />), errorElement: Root(<NotFoundPage />) },
-    { path: "/about", element: Root(<AboutPage />) },
-    { path: "/projects", element: Root(<ProjectsPage />), children: [{ path: "/projects/:id", element: Root(<div></div>) }] },
+    { path: "/about-me", element: Root(<AboutPage getUrl={getUrl} />) },
+    { path: "/projects", element: Root(<ProjectsPage getUrl={getUrl} />), children: [{ path: "/projects/:id", element: Root(<div></div>) }] },
   ]);
 
   return (
