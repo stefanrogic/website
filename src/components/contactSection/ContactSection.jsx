@@ -33,7 +33,7 @@ const ContactSection = ({ getUrl }) => {
         </div>
         <input type="text" placeholder="Subject" name="subject" onChange={(e) => handleInputChange(e, "subject")} required />
         <textarea cols="30" rows="10" placeholder="Message" name="message" onChange={(e) => handleInputChange(e, "message")} required></textarea>
-        <div className="form-row">
+        <div className="form-row bottom-row">
           <button
             onClick={() => {
               console.log(formFields);

@@ -5,11 +5,11 @@ import { Fragment } from "react";
 
 const FeaturedProjectsSection = ({ getUrl }) => {
   const featuredProjects = [
-    { heading: "Bioskop Art", paragraph: "Cinema Website", demoLink: "#", codeLink: "#" },
-    { heading: "Tera Supplements", paragraph: "Supplement Web Store", demoLink: "#", codeLink: "#" },
-    { heading: "Hello World Rework", paragraph: "Online Job Board", demoLink: "#", codeLink: "#" },
-    { heading: "My Portfolio", paragraph: "Portfolio Website", demoLink: "#", codeLink: "#" },
-    { heading: "Virtual Fitness Studio", paragraph: "Landing Page", demoLink: "#", codeLink: "#" },
+    { heading: "Bioskop Art", paragraph: "Cinema Website", demoLink: "#", codeLink: "https://github.com/stefanrogic/bioskop-art" },
+    { heading: "Tera Supplements", paragraph: "Supplement Web Store", demoLink: "https://tera-supplements.netlify.app/", codeLink: "https://github.com/stefanrogic/tera-supplements" },
+    { heading: "Hello World Rework", paragraph: "Online Job Board", demoLink: "https://dev-jobs-listings.netlify.app", codeLink: "https://github.com/stefanrogic/dev-jobs" },
+    { heading: "My Portfolio", paragraph: "Portfolio Website", demoLink: "#", codeLink: "https://github.com/stefanrogic/webdev-portfolio" },
+    { heading: "Virtual Fitness Studio", paragraph: "Landing Page", demoLink: "#", codeLink: "https://github.com/stefanrogic/virtual-fitness-studio" },
   ];
 
   return (
