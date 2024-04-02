@@ -29,7 +29,7 @@ section {
       }
 
       a {
-        padding: 15px 25px;
+        padding: 0 25px;
         margin: 0;
 
         display: flex;
@@ -40,6 +40,10 @@ section {
         border: none;
         background: none;
         color: white;
+
+        @include rwd("600px") {
+          padding: 15px 25px;
+        }
 
         img {
           height: 15px;
@@ -57,7 +61,7 @@ section {
         justify-content: center;
       }
 
-      @include tablet {
+      @include rwd("600px") {
         flex-direction: row;
         align-items: center;
 
@@ -90,13 +94,14 @@ section {
     align-items: center;
     gap: 20px;
 
-    @include tablet {
+    @include rwd("600px") {
       flex-direction: row;
     }
 
     a {
       margin: 0;
       text-decoration: underline;
+      font-weight: 400;
 
       display: flex;
       gap: 10px;

@@ -10,7 +10,7 @@ footer {
   p {
     text-align: center;
 
-    @include tablet {
+    @include rwd("600px") {
       text-align: start;
     }
   }

@@ -33,25 +33,18 @@
     .project-right {
       display: flex;
       flex-direction: column;
-      gap: 15px;
+      gap: 10px;
 
-      @include tablet {
+      @include rwd("600px") {
         flex-direction: row;
-        align-items: center;
       }
 
-      button {
-        padding: 10px 15px;
+      a {
+        margin-left: auto;
 
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 10px;
-
-        border: none;
-        color: white;
-        background-color: #0079bd;
-
+        @include rwd("600px") {
+          margin-left: 0;
+        }
         img {
           height: 15px;
           aspect-ratio: 1 / 1;

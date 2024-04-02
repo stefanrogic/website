@@ -21,9 +21,7 @@ const Navbar = ({ getUrl }) => {
           <NavLink className={({ isActive }) => (isActive ? "underline" : "")} to="/about-me">
             ABOUT ME
           </NavLink>
-          <NavLink className={({ isActive }) => (isActive ? "underline" : "")} to="/projects">
-            PROJECTS
-          </NavLink>
+          <a href="#featured_projects_section">PROJECTS</a>
           <a href="/#contact_section">CONTACT</a>
         </div>
 
