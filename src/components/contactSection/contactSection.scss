@@ -60,4 +60,27 @@ section {
       height: 25px;
     }
   }
+
+  .socials-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+
+    a {
+      margin: 0;
+      text-decoration: underline;
+
+      img {
+        height: 25px;
+      }
+    }
+
+    .line-seperator {
+      height: 2px;
+      width: 25px;
+
+      background-color: white;
+    }
+  }
 }

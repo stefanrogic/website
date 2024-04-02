@@ -27,6 +27,11 @@ const FeaturedProjectsSection = ({ getUrl }) => {
           </Fragment>
         ))}
       </div>
+
+      <a href="#">
+        <img src={getUrl("icons/arrow-up.svg")} alt="arrow-up" />
+        ALL PROJECTS
+      </a>
     </section>
   );
 };

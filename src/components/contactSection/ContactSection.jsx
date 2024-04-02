@@ -50,6 +50,18 @@ const ContactSection = ({ getUrl }) => {
           </a>
         </div>
       </div>
+
+      <div className="socials-container">
+        <a href="https://www.linkedin.com/in/stefanrogic/" target="_blank">
+          <img src={getUrl("icons/linkedin-icon.svg")} alt="frontend-developer" />
+          linkedin.com/in/stefanrogic
+        </a>
+        <div className="line-seperator"></div>
+        <a href="https://github.com/stefanrogic" target="_blank">
+          <img src={getUrl("icons/github-icon.svg")} alt="frontend-developer" />
+          github.com/stefanrogic
+        </a>
+      </div>
     </section>
   );
 };
