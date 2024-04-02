@@ -5,8 +5,6 @@ const Navbar = ({ getUrl }) => {
   return (
     <header id="navbar">
       <div className="header-top">
-        <img className="theme-icon" src={getUrl("icons/moon-icon.svg")} alt="theme-icon" onClick={() => console.log("theme-change")} />
-
         <NavLink to="/">
           <img className="signature" src={getUrl("icons/signature.svg")} alt="signature" />
         </NavLink>
@@ -14,6 +12,8 @@ const Navbar = ({ getUrl }) => {
         <NavLink to="/">
           <img src={getUrl("icons/frontend-developer.svg")} alt="frontend-developer" />
         </NavLink>
+
+        <img className="theme-icon" src={getUrl("icons/moon-icon.svg")} alt="theme-icon" onClick={() => console.log("change-theme")} />
       </div>
 
       <nav>

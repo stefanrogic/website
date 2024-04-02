@@ -2,6 +2,7 @@ import "./featuredProjectsSection.scss";
 
 import FeaturedProjectCard from "../featuredProjectCard/FeaturedProjectCard";
 import { Fragment } from "react";
+import { Link } from "react-router-dom";
 
 const FeaturedProjectsSection = ({ getUrl }) => {
   const featuredProjects = [
@@ -28,10 +29,10 @@ const FeaturedProjectsSection = ({ getUrl }) => {
         ))}
       </div>
 
-      <a href="#">
+      <Link to="/projects">
         <img src={getUrl("icons/arrow-up.svg")} alt="arrow-up" />
         ALL PROJECTS
-      </a>
+      </Link>
     </section>
   );
 };

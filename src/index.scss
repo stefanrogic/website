@@ -1,6 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap");
 
+// WIDTHS - HEIGHTS
+$site-width: 600px;
+
 // PADDINGS - MARGINGS - GAPS
+$mobile-padding: auto 10px;
 $button-padding: 10px 15px;
 $section-gap: 50px;
 $scroll-margin: 50px;
@@ -9,6 +13,8 @@ $component-gap: 70px;
 // BACKGROUND
 $bg-img: url("/images/bg-dark.png");
 $bg-color: rgb(27, 27, 27);
+$bg-size: cover;
+$bg-repeat: repeat;
 
 // TEXT
 $font-family: "Roboto Condensed", sans-serif;
@@ -18,21 +24,24 @@ $font-weight-light: 300;
 $font-weight-regular: 500;
 $font-weight-bold: 700;
 
-$font-size-paragraph: 16px;
-
+$font-size-paragraph: 18px;
 $font-size-heading-medium: 20px;
 $font-size-heading-large: 40px;
+$font-size-button: 14px;
+$font-size-link: 16px;
+$font-size-span: 16px;
 
 :root {
   font-family: $font-family;
 
   background-image: $bg-img;
   background-color: $bg-color;
-  background-repeat: repeat;
-  background-size: cover;
+  background-repeat: $bg-repeat;
+  background-size: $bg-size;
 
   color: $text-color;
 
+  // PREVENT-DEFAULT //////////////////////
   a,
   input,
   textarea,
@@ -44,11 +53,20 @@ $font-size-heading-large: 40px;
     resize: none;
   }
 
-  body {
-    // margin: 0;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    padding: 0;
+    margin: 0;
   }
+  ///////////////////////////////////////////
 }
 
+// MIXINS FOR RESPONSIVE DESIGN
 @mixin mobile {
   @media (min-width: 250px) {
     @content;
@@ -73,7 +91,7 @@ $font-size-heading-large: 40px;
   }
 }
 
-// CUSTOM
+// CUSTOM SCREEN SIZE
 @mixin rwd($screen) {
   @media (min-width: $screen) {
     @content;
