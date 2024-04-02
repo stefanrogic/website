@@ -1,7 +1,7 @@
 import "./projectsPage.scss";
 
 const ProjectsPage = () => {
-  return <div className="projects" id="projects"></div>;
+  return <section>Projects Page</section>;
 };
 
 export default ProjectsPage;

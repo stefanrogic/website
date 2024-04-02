@@ -1,9 +1,19 @@
+@import "../../index.scss";
+
 footer {
-  padding-bottom: 70px;
+  padding-bottom: 30px;
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  p {
+    text-align: center;
+
+    @include tablet {
+      text-align: start;
+    }
+  }
 
   a {
     font-weight: 700;
