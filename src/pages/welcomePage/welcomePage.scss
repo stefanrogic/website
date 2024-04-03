@@ -1,0 +1,39 @@
+.welcome-page {
+  position: relative;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  .signature,
+  div {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+
+    span {
+      font-size: 40px !important;
+      text-decoration: none !important;
+    }
+  }
+
+  div {
+    z-index: 50 !important;
+  }
+
+  .signature {
+    z-index: 40;
+    width: 300px;
+  }
+
+  p {
+    position: fixed;
+
+    bottom: 20px;
+  }
+}

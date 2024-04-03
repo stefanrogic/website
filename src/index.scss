@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap");
 
+// COLORS
+$dark-grey: #414141;
+$white: #fff;
+$blue: #0079bd;
+
 // WIDTHS - HEIGHTS
 $site-width: 600px;
 
@@ -13,7 +18,7 @@ $component-gap: 70px;
 // BACKGROUND
 $bg-img: url("/images/bg-dark.png");
 $bg-color: rgb(27, 27, 27);
-$bg-size: cover;
+$bg-size: contain;
 $bg-repeat: repeat;
 
 // TEXT
@@ -25,7 +30,7 @@ $font-weight-regular: 500;
 $font-weight-bold: 700;
 
 $font-size-paragraph: 18px;
-$font-size-heading-medium: 20px;
+$font-size-heading-medium: 24px;
 $font-size-heading-large: 40px;
 $font-size-button: 14px;
 $font-size-link: 16px;
@@ -42,6 +47,10 @@ $font-size-span: 16px;
   color: $text-color;
 
   // PREVENT-DEFAULT //////////////////////
+  body {
+    margin: 0 8px;
+  }
+
   a,
   input,
   textarea,

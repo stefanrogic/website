@@ -46,7 +46,7 @@
           height: 3px;
           flex: 1;
 
-          background: white;
+          background: $white;
 
           @include rwd("600px") {
             display: block;
@@ -61,7 +61,7 @@
 
     a {
       text-decoration: none;
-      color: white;
+      color: $white;
 
       &:hover {
         text-decoration: underline;
@@ -81,8 +81,8 @@
       text-align: center;
 
       border: none;
-      color: white;
-      background-color: #0079bd;
+      color: $white;
+      background-color: $blue;
 
       cursor: pointer;
     }

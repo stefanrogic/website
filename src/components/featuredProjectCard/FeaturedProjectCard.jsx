@@ -1,13 +1,14 @@
+import { Link } from "react-router-dom";
 import "./featuredProjectCard.scss";
 
 const FeaturedProjectCard = ({ getUrl, projectData }) => {
   return (
     <div className="featured-project-card">
       <div className="project-content">
-        <a href="#" className="project-left">
+        <Link to="/projects/1" className="project-left">
           <h2>{projectData.heading}</h2>
           <p>{projectData.paragraph}</p>
-        </a>
+        </Link>
 
         <div className="project-right">
           <a href={projectData.demoLink} target="_blank">

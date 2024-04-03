@@ -3,12 +3,16 @@
 header {
   width: inherit;
 
-  margin-top: 50px;
+  margin-top: 25px;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 13px;
+
+  @include rwd("600px") {
+    margin-top: 50px;
+  }
 
   .header-top {
     position: relative;
@@ -19,16 +23,30 @@ header {
       height: 200px;
     }
 
-    img {
+    .img-container {
+      width: 100%;
+
       position: absolute;
+      bottom: 0;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .home-page {
+        max-height: 47px;
+      }
     }
 
     .signature {
-      top: 0;
       width: 100%;
+
+      position: absolute;
+      top: 0;
     }
 
     .theme-icon {
+      position: absolute;
       top: 0;
       right: 0;
 

@@ -2,20 +2,24 @@ import "./App.scss";
 
 import Footer from "./components/footer/Footer";
 import Navbar from "./components/navbar/Navbar";
+
+import WelcomePage from "./pages/welcomePage/WelcomePage";
 import HomePage from "./pages/homePage/HomePage";
 import AboutPage from "./pages/aboutPage/AboutPage";
+import ProjectPage from "./pages/projectPage/ProjectPage";
 import ProjectsPage from "./pages/projectsPage/ProjectsPage";
 import NotFoundPage from "./pages/notFoundPage/NotFoundPage";
 
 import { Toaster } from "react-hot-toast";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 
 function App() {
   const getUrl = (fileName) => new URL(`/public/${fileName}`, import.meta.url).href;
 
-  const Root = (el) => (
+  const Root = (el, navFoot = true) => (
     <>
-      <Navbar getUrl={getUrl} />
+      {navFoot && <Navbar getUrl={getUrl} />}
       <Toaster
         position="bottom-center"
         reverseOrder={false}
@@ -30,19 +34,23 @@ function App() {
         }}
       />
       {el}
-      <Footer />
+      {navFoot && <Footer />}
     </>
   );
 
   const router = createBrowserRouter([
-    { path: "/", element: Root(<HomePage getUrl={getUrl} />), errorElement: Root(<NotFoundPage />) },
+    { path: "/", element: Root(<WelcomePage getUrl={getUrl} />, false), errorElement: Root(<NotFoundPage />) },
+    { path: "/home", element: Root(<HomePage getUrl={getUrl} />), errorElement: Root(<NotFoundPage />) },
     { path: "/about-me", element: Root(<AboutPage getUrl={getUrl} />) },
-    { path: "/projects", element: Root(<ProjectsPage getUrl={getUrl} />), children: [{ path: "/projects/:id", element: Root(<div></div>) }] },
+    { path: "/projects", element: Root(<ProjectsPage getUrl={getUrl} />) },
+    { path: "/projects/:id", element: Root(<ProjectPage getUrl={getUrl} />) },
   ]);
 
   return (
     <div className="App">
-      <RouterProvider router={router} />
+      <AnimatePresence>
+        <RouterProvider router={router} />
+      </AnimatePresence>
     </div>
   );
 }

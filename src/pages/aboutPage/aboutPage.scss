@@ -1,2 +1,60 @@
+@import "../../index.scss";
+
 section {
+  .img-container {
+    position: relative;
+
+    height: 55vw;
+
+    background-color: $dark-grey;
+
+    @include rwd("600px") {
+      height: 350px;
+    }
+
+    .curtain {
+      height: inherit;
+      width: 100%;
+
+      position: absolute;
+      top: 0;
+
+      background-color: $dark-grey;
+    }
+
+    img {
+      height: inherit;
+      width: 100%;
+
+      object-fit: cover;
+    }
+  }
+
+  .resume-container {
+    position: relative;
+    height: auto;
+
+    // background-color: $dark-grey;
+
+    @include rwd("600px") {
+      height: auto;
+    }
+
+    .curtain {
+      height: inherit;
+      width: 100%;
+
+      position: absolute;
+      top: 0;
+
+      background-color: $dark-grey;
+    }
+
+    img {
+      height: inherit;
+      width: 100%;
+
+      object-fit: cover;
+    }
+  }
 }

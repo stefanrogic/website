@@ -16,18 +16,6 @@ section {
         width: 100%;
       }
 
-      button {
-        padding: 10px 15px;
-
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-
-        border: none;
-        color: white;
-        background-color: #0079bd;
-      }
-
       a {
         padding: 0 25px;
         margin: 0;
@@ -39,7 +27,7 @@ section {
 
         border: none;
         background: none;
-        color: white;
+        color: $white;
 
         @include rwd("600px") {
           padding: 15px 25px;
@@ -79,8 +67,8 @@ section {
       font-size: 16px;
 
       border: none;
-      color: white;
-      background-color: #414141;
+      color: $white;
+      background-color: $dark-grey;
     }
 
     input {
@@ -115,7 +103,7 @@ section {
       height: 1px;
       width: 25px;
 
-      background-color: white;
+      background-color: $white;
     }
   }
 }
