@@ -6,6 +6,14 @@ import { motion } from "framer-motion";
 const Navbar = ({ getUrl, scrollTo }) => {
   const location = useLocation();
 
+  const handleScrollTo = (el) => {
+    if (location.pathname === "/home") scrollTo(el);
+    else
+      setTimeout(() => {
+        scrollTo(el);
+      }, 500);
+  };
+
   return (
     <header id="navbar">
       <div className="header-top">
@@ -27,28 +35,10 @@ const Navbar = ({ getUrl, scrollTo }) => {
           <NavLink to="/about-me" className={({ isActive }) => (isActive ? "underline" : "")}>
             ABOUT ME
           </NavLink>
-          <NavLink
-            to="/home"
-            onClick={() => {
-              if (location.pathname === "/home") scrollTo("featured_projects_section");
-              else
-                setTimeout(() => {
-                  scrollTo("featured_projects_section");
-                }, 500);
-            }}
-          >
+          <NavLink to="/home" onClick={() => handleScrollTo("featured_projects_section")}>
             PROJECTS
           </NavLink>
-          <NavLink
-            to="/home"
-            onClick={() => {
-              if (location.pathname === "/home") scrollTo("contact_section");
-              else
-                setTimeout(() => {
-                  scrollTo("contact_section");
-                }, 500);
-            }}
-          >
+          <NavLink to="/home" onClick={() => handleScrollTo("contact_section")}>
             CONTACT
           </NavLink>
         </div>

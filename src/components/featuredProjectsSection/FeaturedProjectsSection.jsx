@@ -6,11 +6,11 @@ import { Link } from "react-router-dom";
 
 const FeaturedProjectsSection = ({ getUrl }) => {
   const featuredProjects = [
-    { heading: "Bioskop Art", paragraph: "Cinema Website", demoLink: "#", codeLink: "https://github.com/stefanrogic/bioskop-art" },
-    { heading: "Tera Supplements", paragraph: "Supplement Web Store", demoLink: "https://tera-supplements.netlify.app/", codeLink: "https://github.com/stefanrogic/tera-supplements" },
-    { heading: "Hello World Rework", paragraph: "Online Job Board", demoLink: "https://dev-jobs-listings.netlify.app", codeLink: "https://github.com/stefanrogic/dev-jobs" },
-    { heading: "My Portfolio", paragraph: "Portfolio Website", demoLink: "#", codeLink: "https://github.com/stefanrogic/webdev-portfolio" },
-    { heading: "Virtual Fitness Studio", paragraph: "Landing Page", demoLink: "#", codeLink: "https://github.com/stefanrogic/virtual-fitness-studio" },
+    { heading: "Bioskop Art", tag: "bioskop-art", paragraph: "Cinema Website", demoLink: "#", codeLink: "https://github.com/stefanrogic/bioskop-art" },
+    { heading: "Tera Supplements", tag: "tera-supplements", paragraph: "Supplement Web Store", demoLink: "https://tera-supplements.netlify.app/", codeLink: "https://github.com/stefanrogic/tera-supplements" },
+    { heading: "Hello World Rework", tag: "hello-world-rework", paragraph: "Online Job Board", demoLink: "https://dev-jobs-listings.netlify.app", codeLink: "https://github.com/stefanrogic/dev-jobs" },
+    { heading: "My Portfolio", tag: "my-portfolio", paragraph: "Portfolio Website", demoLink: "#", codeLink: "https://github.com/stefanrogic/webdev-portfolio" },
+    { heading: "Virtual Fitness Studio", tag: "virtual-fitness-studio", paragraph: "Landing Page", demoLink: "#", codeLink: "https://github.com/stefanrogic/virtual-fitness-studio" },
   ];
 
   return (

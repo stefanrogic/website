@@ -11,7 +11,7 @@ const ProjectPage = ({ getUrl }) => {
   return (
     <section>
       <PageNavigation position={`/projects/${id}`} backLink="/home" getUrl={getUrl} />
-      <motion.p initial={{ rotate: 15 }} animate={{ rotate: 0 }}>
+      <motion.p initial={{ opacity: 0, rotate: 2, y: 50 }} animate={{ opacity: 1, rotate: 0, y: 0 }} transition={{ duration: 0.5 }}>
         This is project {id}
       </motion.p>
     </section>

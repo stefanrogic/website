@@ -36,10 +36,11 @@ const ContactSection = ({ getUrl }) => {
         <div className="form-row bottom-row">
           <button
             onClick={() => {
-              console.log(formFields);
-              emailjs.init("LbOf6uX1O4rSRpoN_");
-              emailjs.send("service_jet6xln", "template_vrs5by3", formFields);
-              toast.success("Message sent!");
+              if (formFields.name.length !== 0 || formFields.email.length !== 0 || formFields.subject.length !== 0 || formFields.message.length !== 0) {
+                emailjs.init("LbOf6uX1O4rSRpoN_");
+                emailjs.send("service_jet6xln", "template_vrs5by3", formFields);
+                toast.success("Message sent!");
+              } else toast.error("Fill all fiels!");
             }}
           >
             SEND MESSAGE
