@@ -29,8 +29,8 @@ const FeaturedProjectsSection = ({ getUrl }) => {
         ))}
       </div>
 
-      <Link to="/projects">
-        <img src={getUrl("icons/arrow-up.svg")} alt="arrow-up" />
+      <Link className="text-link inactive" to="#">
+        <img src={getUrl("icons/arrow-up-inactive.svg")} alt="arrow-up" />
         ALL PROJECTS
       </Link>
     </section>

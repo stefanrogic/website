@@ -9,6 +9,7 @@ section {
     .education-card {
       display: flex;
       flex-direction: row;
+      justify-content: space-between;
 
       .card-left {
         display: flex;
@@ -23,6 +24,14 @@ section {
 
         p {
           line-height: 16px !important;
+        }
+      }
+
+      .card-right {
+        justify-content: flex-end;
+
+        p {
+          text-align: end;
         }
       }
     }

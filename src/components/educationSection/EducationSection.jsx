@@ -32,7 +32,7 @@ const EducationSection = () => {
 
           <div className="card-right">
             <p>
-              <i>2019-2020</i>
+              <i>2020</i>
             </p>
           </div>
         </div>
@@ -47,7 +47,22 @@ const EducationSection = () => {
 
           <div className="card-right">
             <p>
-              <i>2020-2021</i>
+              <i>2021</i>
+            </p>
+          </div>
+        </div>
+
+        <div className="line-seperator"></div>
+
+        <div className="education-card">
+          <a href="#" className="card-left">
+            <h2>Design Systems for Websites using Figma</h2>
+            <p>Domestika - Online Course</p>
+          </a>
+
+          <div className="card-right">
+            <p>
+              <i>2021</i>
             </p>
           </div>
         </div>

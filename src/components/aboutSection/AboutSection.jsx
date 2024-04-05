@@ -7,21 +7,29 @@ const AboutSection = ({ getUrl, home = true }) => {
   return (
     <section id="about_section">
       <motion.p initial={{ opacity: 0, rotate: 2, y: 50 }} animate={{ opacity: 1, rotate: 0, y: 0 }} transition={{ duration: 0.5 }}>
-        Hello, my name is <span>Stefan</span>. There are many variations of passages of <span>Lorem Ipsum</span> available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly
-        believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything.
+        Hello, my name is <span>Stefan</span>. <span>Fronteld Developer</span> specializing in <span>React</span>, with <span>2 years+</span> of hands on experience in crafting dynamic and visually stunning websites.
       </motion.p>
 
-      {/* <motion.p initial={{ opacity: 0, rotate: 2, y: 50 }} animate={{ opacity: 1, rotate: 0, y: 0 }} transition={{ duration: 0.5 }}>
-        Embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words,
-        combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
-      </motion.p> */}
-
-      {home && (
-        <Link to="/about-me">
-          <img src={getUrl("icons/arrow-up.svg")} alt="arrow-up" />
-          MORE DETAILS
-        </Link>
+      {location.pathname === "/about-me" && (
+        <motion.p initial={{ opacity: 0, rotate: 2, y: 50 }} animate={{ opacity: 1, rotate: 0, y: 0 }} transition={{ duration: 0.5 }}>
+          Embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words,
+          combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+        </motion.p>
       )}
+
+      <div className="button-container">
+        {home && (
+          <Link className="text-link" to="/about-me">
+            <img src={getUrl("icons/arrow-up.svg")} alt="arrow-up" />
+            MORE DETAILS
+          </Link>
+        )}
+
+        <Link className="text-link inactive" to="#">
+          <img src={getUrl("icons/arrow-up-inactive.svg")} alt="arrow-up" />
+          SERVICES
+        </Link>
+      </div>
     </section>
   );
 };

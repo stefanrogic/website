@@ -24,7 +24,7 @@ const ContactSection = ({ getUrl }) => {
         <div className="heading-line"></div>
       </div>
 
-      <p>Embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words.</p>
+      <p>Feel free to contact me, using the form below or by sending me an email, if you have any questions or if you wish to work with me.</p>
 
       <div className="form">
         <div className="form-row">

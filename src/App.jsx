@@ -15,6 +15,14 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 
 function App() {
+  const featuredProjects = [
+    { heading: "Bioskop Art", tag: "bioskop-art", paragraph: "Cinema Website", demoLink: "#", codeLink: "https://github.com/stefanrogic/bioskop-art" },
+    { heading: "Tera Supplements", tag: "tera-supplements", paragraph: "Supplement Web Store", demoLink: "https://tera-supplements.netlify.app/", codeLink: "https://github.com/stefanrogic/tera-supplements" },
+    { heading: "Hello World Rework", tag: "hello-world-rework", paragraph: "Online Job Board", demoLink: "https://dev-jobs-listings.netlify.app", codeLink: "https://github.com/stefanrogic/dev-jobs" },
+    { heading: "My Portfolio", tag: "my-portfolio", paragraph: "Portfolio Website", demoLink: "#", codeLink: "https://github.com/stefanrogic/webdev-portfolio" },
+    { heading: "Virtual Fitness Studio", tag: "virtual-fitness-studio", paragraph: "Landing Page", demoLink: "#", codeLink: "https://github.com/stefanrogic/virtual-fitness-studio" },
+  ];
+
   const getUrl = (fileName) => new URL(`/public/${fileName}`, import.meta.url).href;
 
   const scrollTo = (el) => {
@@ -48,7 +56,7 @@ function App() {
     { path: "/home", element: Root(<HomePage getUrl={getUrl} />), errorElement: Root(<NotFoundPage />) },
     { path: "/about-me", element: Root(<AboutPage getUrl={getUrl} />) },
     { path: "/projects", element: Root(<ProjectsPage getUrl={getUrl} />) },
-    { path: "/projects/:id", element: Root(<ProjectPage getUrl={getUrl} />) },
+    { path: "/projects/:id", element: Root(<ProjectPage getUrl={getUrl} projects={featuredProjects} />) },
   ]);
 
   return (

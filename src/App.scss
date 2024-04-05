@@ -57,6 +57,38 @@
       .row-reverse {
         flex-direction: row-reverse;
       }
+
+      .text-link {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        background: none;
+        border: none;
+
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 35px;
+
+        color: $white;
+
+        &:hover {
+          text-decoration: underline;
+        }
+
+        img {
+          height: 15px;
+          aspect-ratio: 1 / 1;
+        }
+      }
+
+      .inactive {
+        color: $dark-grey;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
     }
 
     a {
@@ -100,6 +132,10 @@
       font-size: $font-size-paragraph;
       font-weight: $font-weight-light;
       line-height: 25px;
+
+      s {
+        color: $dark-grey;
+      }
     }
   }
 }

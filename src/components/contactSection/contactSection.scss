@@ -17,8 +17,8 @@ section {
       }
 
       a {
-        padding: 0 25px;
-        margin: 0;
+        padding: 0 !important;
+        margin-left: 25px;
 
         display: flex;
         flex-direction: row;
@@ -90,6 +90,8 @@ section {
       margin: 0;
       text-decoration: underline;
       font-weight: 400;
+
+      align-items: center;
 
       display: flex;
       gap: 10px;
