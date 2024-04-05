@@ -1,9 +1,11 @@
 import "./navbar.scss";
 
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 
-const Navbar = ({ getUrl }) => {
+const Navbar = ({ getUrl, scrollTo }) => {
+  const location = useLocation();
+
   return (
     <header id="navbar">
       <div className="header-top">
@@ -12,9 +14,6 @@ const Navbar = ({ getUrl }) => {
         </NavLink>
 
         <NavLink to="/home">
-          {/* <div className="img-container" onMouseEnter={() => setHoverHome(true)} onMouseLeave={() => setHoverHome(false)}>
-            {hoverHome ? <img className="home-page" src={getUrl("icons/home-page.svg")} alt="home-page" /> : <img src={getUrl("icons/frontend-developer.svg")} alt="frontend-developer" />}
-           </div>*/}
           <div className="img-container">
             <motion.img src={getUrl("icons/frontend-developer.svg")} alt="frontend-developer" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.7 }} />
           </div>
@@ -25,11 +24,33 @@ const Navbar = ({ getUrl }) => {
 
       <motion.nav initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.7 }}>
         <div>
-          <NavLink className={({ isActive }) => (isActive ? "underline" : "")} to="/about-me">
+          <NavLink to="/about-me" className={({ isActive }) => (isActive ? "underline" : "")}>
             ABOUT ME
           </NavLink>
-          <a href="/home#featured_projects_section">PROJECTS</a>
-          <a href="/home#contact_section">CONTACT</a>
+          <NavLink
+            to="/home"
+            onClick={() => {
+              if (location.pathname === "/home") scrollTo("featured_projects_section");
+              else
+                setTimeout(() => {
+                  scrollTo("featured_projects_section");
+                }, 500);
+            }}
+          >
+            PROJECTS
+          </NavLink>
+          <NavLink
+            to="/home"
+            onClick={() => {
+              if (location.pathname === "/home") scrollTo("contact_section");
+              else
+                setTimeout(() => {
+                  scrollTo("contact_section");
+                }, 500);
+            }}
+          >
+            CONTACT
+          </NavLink>
         </div>
 
         <div className="socials-container">

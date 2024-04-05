@@ -17,9 +17,14 @@ import { AnimatePresence } from "framer-motion";
 function App() {
   const getUrl = (fileName) => new URL(`/public/${fileName}`, import.meta.url).href;
 
+  const scrollTo = (el) => {
+    const element = document.getElementById(el);
+    element.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+  };
+
   const Root = (el, navFoot = true) => (
     <>
-      {navFoot && <Navbar getUrl={getUrl} />}
+      {navFoot && <Navbar getUrl={getUrl} scrollTo={scrollTo} />}
       <Toaster
         position="bottom-center"
         reverseOrder={false}
