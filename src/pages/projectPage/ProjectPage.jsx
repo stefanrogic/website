@@ -1,10 +1,16 @@
 import "./projectPage.scss";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import "swiper/css/effect-fade";
 
 import PageNavigation from "../../components/pageNavigation/PageNavigation";
 
 import { useParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, EffectFade } from "swiper/modules";
 
 const ProjectPage = ({ getUrl, projects }) => {
   const [selected, setSelected] = useState(0);
@@ -76,8 +82,17 @@ const ProjectPage = ({ getUrl, projects }) => {
           <div className="heading-line"></div>
         </div>
 
-        <div className="skills-container">
-          <div className="swiper"></div>
+        <div className="gallery-container">
+          <Swiper slidesPerView={1} centeredSlides={true} effect={"fade"} loop={true} navigation={{ nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" }} modules={[Navigation, EffectFade]}>
+            <div className="swiper-buttons">
+              <button className="swiper-button-prev" onClick={() => setTimeout(() => setSelected(selected > 0 ? selected - 1 : 3), 300)}></button>
+              <button className="swiper-button-next" onClick={() => setTimeout(() => setSelected(selected < 3 ? selected + 1 : 0), 300)}></button>
+            </div>
+            {[0, 1, 2, 3].map((slide, i) => (
+              <SwiperSlide key={slide + i}>{slide}</SwiperSlide>
+            ))}
+          </Swiper>
+
           <div className="all-images">
             {[1, 2, 3, 4].map((img, i) => (
               <div className="img-preview" key={img + i} style={{ border: selected === i && "1px solid white" }} onClick={() => setSelected(i)}></div>

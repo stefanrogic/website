@@ -24,7 +24,7 @@ const ContactSection = ({ getUrl }) => {
         <div className="heading-line"></div>
       </div>
 
-      <p>Feel free to contact me, using the form below or by sending me an email, if you have any questions or if you wish to work with me.</p>
+      <p>Feel free to contact me using the form below or by sending me an email if you have any questions or if you wish to work with me.</p>
 
       <div className="form">
         <div className="form-row">

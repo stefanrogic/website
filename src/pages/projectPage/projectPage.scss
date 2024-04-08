@@ -16,15 +16,29 @@ section {
       gap: 10px;
     }
   }
-}
 
-.swiper {
-  height: 400px;
-  width: 100%;
+  .gallery-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 
-  background-color: $dark-grey;
+    .swiper {
+      height: 400px;
+      width: 100%;
 
-  cursor: pointer;
+      background-color: $dark-grey;
+
+      cursor: pointer;
+
+      button {
+        background-color: transparent !important;
+      }
+    }
+
+    .swiper-slide {
+      background: grey;
+    }
+  }
 }
 
 .all-images {

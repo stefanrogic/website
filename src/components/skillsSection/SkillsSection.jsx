@@ -9,7 +9,7 @@ const SkillsSection = ({ getUrl }) => {
     { name: "Sass", icon: "sass-icon.svg" },
     location.pathname === "/about-me" && { name: "PostgreSQL", icon: "postgre-icon.svg" },
     location.pathname === "/about-me" && { name: "Firebase", icon: "firebase-icon.svg" },
-    location.pathname === "/about-me" && { name: "Figma", icon: "figma-icon.svg" },
+    { name: "Figma", icon: "figma-icon.svg" },
     { name: "Framer Motion", icon: "framer-motion-icon.svg" },
     { name: "TailwindCSS", icon: "tailwind-icon.svg" },
     location.pathname === "/about-me" && { name: "Bootstrap", icon: "bootstrap-icon.svg" },
