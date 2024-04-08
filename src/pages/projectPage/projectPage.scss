@@ -18,9 +18,36 @@ section {
   }
 
   .gallery-container {
+    position: relative;
+
     display: flex;
     flex-direction: column;
     gap: 15px;
+
+    .pagination {
+      width: 100%;
+      z-index: 60;
+
+      display: flex;
+      flex-direction: row;
+      gap: 15px;
+      justify-content: center;
+
+      .pagination-bullet {
+        height: 70px;
+        width: 100px;
+
+        background-color: $dark-grey;
+
+        cursor: pointer;
+
+        img {
+          width: 100%;
+          height: inherit;
+          object-fit: cover;
+        }
+      }
+    }
 
     .swiper {
       height: 400px;
@@ -30,31 +57,30 @@ section {
 
       cursor: pointer;
 
-      button {
-        background-color: transparent !important;
+      .swiper-buttons {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 50;
+
+        width: 100%;
+
+        display: flex;
+        justify-content: space-between;
+
+        button {
+          margin: 0 15px;
+          padding: 10px !important;
+          border-radius: 50% !important;
+          background-color: $blue !important;
+        }
+      }
+
+      .swiper-slide {
+        background: grey;
+        overflow-y: hidden;
+        overflow-x: hidden;
       }
     }
-
-    .swiper-slide {
-      background: grey;
-    }
-  }
-}
-
-.all-images {
-  width: 100%;
-
-  display: flex;
-  flex-direction: row;
-  gap: 15px;
-  justify-content: center;
-
-  .img-preview {
-    height: 70px;
-    width: 100px;
-
-    background-color: $dark-grey;
-
-    cursor: pointer;
   }
 }

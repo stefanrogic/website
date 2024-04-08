@@ -7,7 +7,8 @@ const AboutSection = ({ getUrl, home = true }) => {
   return (
     <section id="about_section">
       <motion.p initial={{ opacity: 0, rotate: 2, y: 50 }} animate={{ opacity: 1, rotate: 0, y: 0 }} transition={{ duration: 0.5 }}>
-        Hello, my name is <span>Stefan</span>. <span>Fronteld Developer</span> specializing in <span>React</span>, with <span>2 years+</span> of hands on experience in crafting dynamic and visually stunning websites.
+        Hello, my name is <span>Stefan</span>. <span>Frontend Developer</span> with <span>2+ years</span> of hands on experience. I specialize in designing easy-to-use interfaces for websites and web apps, prioritizing smooth user experience and
+        engaging animations.
       </motion.p>
 
       {location.pathname === "/about-me" && (

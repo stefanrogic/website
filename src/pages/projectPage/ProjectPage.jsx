@@ -14,16 +14,7 @@ import { Navigation, EffectFade } from "swiper/modules";
 
 const ProjectPage = ({ getUrl, projects }) => {
   const [selected, setSelected] = useState(0);
-
   const { id } = useParams();
-
-  const technologies = [
-    { name: "React", icon: "react-icon.svg" },
-    { name: "JavaScript", icon: "js-icon.svg" },
-    { name: "Redux", icon: "redux-icon.svg" },
-    { name: "Sass", icon: "sass-icon.svg" },
-    { name: "Framer Motion", icon: "framer-motion-icon.svg" },
-  ];
 
   const projectData = projects.find((project) => project.tag === id);
 
@@ -52,10 +43,9 @@ const ProjectPage = ({ getUrl, projects }) => {
         </div>
       </motion.div>
 
-      <p>
-        Embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words,
-        combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
-      </p>
+      <motion.p initial={{ opacity: 0, rotate: 2, y: 50 }} animate={{ opacity: 1, rotate: 0, y: 0 }} transition={{ duration: 0.5 }}>
+        {projectData.description}
+      </motion.p>
 
       <section id="skills_section">
         <div className="heading-container row-reverse">
@@ -64,7 +54,7 @@ const ProjectPage = ({ getUrl, projects }) => {
         </div>
 
         <div className="skills-container">
-          {technologies.map((skill, i) => {
+          {projectData.technologies.map((skill, i) => {
             if (skill)
               return (
                 <div className="skill" key={skill + i}>
@@ -83,21 +73,22 @@ const ProjectPage = ({ getUrl, projects }) => {
         </div>
 
         <div className="gallery-container">
-          <Swiper slidesPerView={1} centeredSlides={true} effect={"fade"} loop={true} navigation={{ nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" }} modules={[Navigation, EffectFade]}>
+          <Swiper slidesPerView={1} centeredSlides={true} effect={"fade"} loop={true} navigation={{ nextEl: ".swiper-gallery-next", prevEl: ".swiper-gallery-prev" }} modules={[Navigation, EffectFade]}>
             <div className="swiper-buttons">
-              <button className="swiper-button-prev" onClick={() => setTimeout(() => setSelected(selected > 0 ? selected - 1 : 3), 300)}></button>
-              <button className="swiper-button-next" onClick={() => setTimeout(() => setSelected(selected < 3 ? selected + 1 : 0), 300)}></button>
+              <button className="swiper-gallery-prev" onClick={() => setTimeout(() => setSelected(selected > 0 ? selected - 1 : 3), 300)}>
+                <img src={getUrl("icons/arrow-back.svg")} alt="arrow-back" />
+              </button>
+              <button className="swiper-gallery-next" onClick={() => setTimeout(() => setSelected(selected < 3 ? selected + 1 : 0), 300)}>
+                <img src={getUrl("icons/arrow-next.svg")} alt="arrow-next" />
+              </button>
             </div>
-            {[0, 1, 2, 3].map((slide, i) => (
-              <SwiperSlide key={slide + i}>{slide}</SwiperSlide>
+
+            {projectData.gallery.map((img, i) => (
+              <SwiperSlide key={img.link + i}>
+                <img src={img.link} alt={img.alt} />
+              </SwiperSlide>
             ))}
           </Swiper>
-
-          <div className="all-images">
-            {[1, 2, 3, 4].map((img, i) => (
-              <div className="img-preview" key={img + i} style={{ border: selected === i && "1px solid white" }} onClick={() => setSelected(i)}></div>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -108,17 +99,15 @@ const ProjectPage = ({ getUrl, projects }) => {
         </div>
 
         <div className="skills-container">
-          <p>
-            <s>Embarrassing hidden in the middle of text.</s>
-          </p>
-          <p>
-            <s>Embarrassing hidden in the middle of text.</s>
-          </p>
-          <p>
-            <s>Embarrassing hidden in the middle of text.</s>
-          </p>
-          <p>Embarrassing hidden in the middle of text.</p>
-          <p>Embarrassing hidden in the middle of text.</p>
+          {projectData.todo.map((t, i) =>
+            t.done ? (
+              <p key={i}>
+                <s>{t.text}</s>
+              </p>
+            ) : (
+              <p key={i}>{t.text}</p>
+            )
+          )}
         </div>
       </section>
     </section>
