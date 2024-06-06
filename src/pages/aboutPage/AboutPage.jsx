@@ -7,7 +7,7 @@ import AboutSection from "../../components/aboutSection/AboutSection";
 
 import { motion } from "framer-motion";
 
-const AboutPage = ({ getUrl }) => {
+const AboutPage = ({ getUrl, supabase }) => {
   return (
     <motion.section initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.7 }}>
       <PageNavigation position="/about-me" backLink="/home" getUrl={getUrl} />
@@ -18,7 +18,7 @@ const AboutPage = ({ getUrl }) => {
       </motion.div>
 
       <AboutSection getUrl={getUrl} home={false} />
-      <SkillsSection getUrl={getUrl} />
+      <SkillsSection supabase={supabase} relevant={false} />
       <EducationSection getUrl={getUrl} />
 
       <section id="education_section">

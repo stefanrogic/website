@@ -2,16 +2,16 @@ import "./skillsSection.scss";
 
 import { useEffect, useState } from "react";
 
-const SkillsSection = ({ getUrl, supabase }) => {
+const SkillsSection = ({ supabase, relevant = true }) => {
   const [featuredSkills, setFeaturedSkills] = useState([]);
 
-  async function getFeaturedSkills() {
-    const { data } = await supabase.from("skills").select();
+  const getFeaturedSkills = async (q) => {
+    const { data } = await supabase.from("skills").select(q).order("id", { ascending: true });
     setFeaturedSkills(data);
-  }
+  };
 
   useEffect(() => {
-    getFeaturedSkills();
+    getFeaturedSkills("title,img_url,relevant");
   }, []);
 
   return (
@@ -23,11 +23,19 @@ const SkillsSection = ({ getUrl, supabase }) => {
 
       <div className="skills-container">
         {featuredSkills.map((skill, i) => {
-          if (skill)
+          if (relevant && skill.relevant)
             return (
               <div className="skill" key={skill + i}>
-                <img src={getUrl(`icons/${skill.icon}`)} alt="" />
-                <span className="span-nounderline">{skill.name}</span>
+                <img src={skill.img_url} alt="" />
+                <span className="span-nounderline">{skill.title}</span>
+              </div>
+            );
+
+          if (!relevant)
+            return (
+              <div className="skill" key={skill + i}>
+                <img src={skill.img_url} alt="" />
+                <span className="span-nounderline">{skill.title}</span>
               </div>
             );
         })}
