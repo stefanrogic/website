@@ -2,13 +2,12 @@ import "./featuredProjectsSection.scss";
 
 import FeaturedProjectCard from "../featuredProjectCard/FeaturedProjectCard";
 import { Fragment } from "react";
-import { Link } from "react-router-dom";
 
 const FeaturedProjectsSection = ({ getUrl }) => {
   const featuredProjects = [
     { heading: "Bioskop Art", tag: "bioskop-art", paragraph: "Cinema Website", demoLink: "#", codeLink: "https://github.com/stefanrogic/bioskop-art" },
     { heading: "Tera Supplements", tag: "tera-supplements", paragraph: "Supplement Web Store", demoLink: "https://tera-supplements.netlify.app/", codeLink: "https://github.com/stefanrogic/tera-supplements" },
-    { heading: "Hello World Rework", tag: "hello-world-rework", paragraph: "Online Job Board", demoLink: "https://dev-jobs-listings.netlify.app", codeLink: "https://github.com/stefanrogic/dev-jobs" },
+    // { heading: "Hello World Rework", tag: "hello-world-rework", paragraph: "Online Job Board", demoLink: "https://dev-jobs-listings.netlify.app", codeLink: "https://github.com/stefanrogic/dev-jobs" },
     { heading: "My Portfolio", tag: "my-portfolio", paragraph: "Portfolio Website", demoLink: "#", codeLink: "https://github.com/stefanrogic/webdev-portfolio" },
     { heading: "Virtual Fitness Studio", tag: "virtual-fitness-studio", paragraph: "Landing Page", demoLink: "#", codeLink: "https://github.com/stefanrogic/virtual-fitness-studio" },
   ];
@@ -29,10 +28,10 @@ const FeaturedProjectsSection = ({ getUrl }) => {
         ))}
       </div>
 
-      <Link className="text-link inactive" to="#">
+      <a className="text-link" href="https://github.com/stefanrogic?tab=repositories" target="_blank">
         <img src={getUrl("icons/arrow-up-inactive.svg")} alt="arrow-up" />
         ALL PROJECTS
-      </Link>
+      </a>
     </section>
   );
 };

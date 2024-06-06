@@ -1,19 +1,18 @@
 import "./skillsSection.scss";
 
-const SkillsSection = ({ getUrl }) => {
-  const skills = [
-    { name: "React", icon: "react-icon.svg" },
-    { name: "TypeScript", icon: "ts-icon.svg" },
-    { name: "JavaScript", icon: "js-icon.svg" },
-    { name: "Redux", icon: "redux-icon.svg" },
-    { name: "Sass", icon: "sass-icon.svg" },
-    location.pathname === "/about-me" && { name: "PostgreSQL", icon: "postgre-icon.svg" },
-    location.pathname === "/about-me" && { name: "Firebase", icon: "firebase-icon.svg" },
-    { name: "Figma", icon: "figma-icon.svg" },
-    { name: "Framer Motion", icon: "framer-motion-icon.svg" },
-    { name: "TailwindCSS", icon: "tailwind-icon.svg" },
-    location.pathname === "/about-me" && { name: "Bootstrap", icon: "bootstrap-icon.svg" },
-  ];
+import { useEffect, useState } from "react";
+
+const SkillsSection = ({ getUrl, supabase }) => {
+  const [featuredSkills, setFeaturedSkills] = useState([]);
+
+  async function getFeaturedSkills() {
+    const { data } = await supabase.from("skills").select();
+    setFeaturedSkills(data);
+  }
+
+  useEffect(() => {
+    getFeaturedSkills();
+  }, []);
 
   return (
     <section id="skills_section">
@@ -23,7 +22,7 @@ const SkillsSection = ({ getUrl }) => {
       </div>
 
       <div className="skills-container">
-        {skills.map((skill, i) => {
+        {featuredSkills.map((skill, i) => {
           if (skill)
             return (
               <div className="skill" key={skill + i}>

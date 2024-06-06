@@ -40,7 +40,7 @@ const ContactSection = ({ getUrl }) => {
                 emailjs.init("LbOf6uX1O4rSRpoN_");
                 emailjs.send("service_jet6xln", "template_vrs5by3", formFields);
                 toast.success("Message sent!");
-              } else toast.error("Fill all fiels!");
+              } else toast.error("Please fill in all fields.");
             }}
           >
             SEND MESSAGE

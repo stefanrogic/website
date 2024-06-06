@@ -18,7 +18,6 @@ const AboutPage = ({ getUrl }) => {
       </motion.div>
 
       <AboutSection getUrl={getUrl} home={false} />
-
       <SkillsSection getUrl={getUrl} />
       <EducationSection getUrl={getUrl} />
 
