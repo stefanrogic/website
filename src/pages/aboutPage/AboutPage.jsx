@@ -7,7 +7,7 @@ import AboutSection from "../../components/aboutSection/AboutSection";
 
 import { motion } from "framer-motion";
 
-const AboutPage = ({ getUrl, supabase }) => {
+const AboutPage = ({ getUrl }) => {
   return (
     <motion.section initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.7 }}>
       <PageNavigation position="/about-me" backLink="/home" getUrl={getUrl} />
