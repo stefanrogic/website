@@ -25,7 +25,7 @@ const ProjectPage = ({ getUrl }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
     getProjectData("*", id);
-  }, []);
+  }, [id]);
 
   return (
     <div>
