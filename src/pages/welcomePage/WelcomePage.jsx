@@ -14,7 +14,7 @@ const WelcomePage = ({ getUrl }) => {
         </NavLink>
       </motion.div>
 
-      <p>Work in progress.</p>
+      <p>Work in progress</p>
     </div>
   );
 };

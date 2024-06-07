@@ -33,7 +33,7 @@ const FeaturedProjectsSection = ({ getUrl }) => {
       </div>
 
       <a className="text-link" href="https://github.com/stefanrogic?tab=repositories" target="_blank">
-        <img src={getUrl("icons/arrow-up-inactive.svg")} alt="arrow-up" />
+        <img src={getUrl("icons/arrow-up.svg")} alt="arrow-up" />
         ALL PROJECTS
       </a>
     </section>

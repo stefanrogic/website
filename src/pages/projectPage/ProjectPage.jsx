@@ -30,6 +30,7 @@ const ProjectPage = ({ getUrl }) => {
   return (
     <div>
       <PageNavigation position={`/projects/${projectData?.slug}`} backLink="/home" getUrl={getUrl} />
+
       <section>
         <motion.div className="project-heading" initial={{ opacity: 0, rotate: 2, y: 50 }} animate={{ opacity: 1, rotate: 0, y: 0 }} transition={{ duration: 0.5 }}>
           <div className="left">
@@ -100,14 +101,14 @@ const ProjectPage = ({ getUrl }) => {
           </div>
         </section>
 
-        {/* <section id="skills_section">
+        <section>
           <div className="heading-container row-reverse">
             <h1>TODO</h1>
             <div className="heading-line"></div>
           </div>
 
           <div className="skills-container">
-            {projectData.todo.map((t, i) =>
+            {projectData?.todo.map((t, i) =>
               t.done ? (
                 <p key={i}>
                   <s>{t.text}</s>
@@ -117,7 +118,7 @@ const ProjectPage = ({ getUrl }) => {
               )
             )}
           </div>
-        </section> */}
+        </section>
       </section>
     </div>
   );
