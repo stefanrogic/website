@@ -6,7 +6,7 @@ const FeaturedProjectCard = ({ getUrl, projectData }) => {
   return (
     <div className="featured-project-card">
       <div className="project-content">
-        <Link to={`/projects/${projectData.tag}`} className="project-left">
+        <Link to={`/projects/${projectData?.slug}`} className="project-left">
           <h2>{projectData?.title}</h2>
           <p>{projectData?.sub_title}</p>
         </Link>

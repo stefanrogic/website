@@ -13,7 +13,7 @@ const FeaturedProjectsSection = ({ getUrl }) => {
   };
 
   useEffect(() => {
-    getProjectsData("title, sub_title, demo_url, source_url");
+    getProjectsData("slug, title, sub_title, demo_url, source_url");
   }, []);
 
   return (
