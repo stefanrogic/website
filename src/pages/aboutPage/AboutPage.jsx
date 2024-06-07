@@ -7,7 +7,7 @@ import AboutSection from "../../components/aboutSection/AboutSection";
 
 import { motion } from "framer-motion";
 
-const AboutPage = ({ getUrl }) => {
+const AboutPage = () => {
   return (
     <div>
       <PageNavigation position="/about-me" backLink="/home" />
@@ -15,12 +15,15 @@ const AboutPage = ({ getUrl }) => {
         <motion.div className="img-container" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
           <motion.div className="curtain" animate={{ height: "0" }} transition={{ duration: 0.5, delay: 0.5 }}></motion.div>
 
-          <img src={getUrl("images/test-img.jpg")} alt="#" />
+          <img
+            src="https://tghpaytxnfphvnnbkghz.supabase.co/storage/v1/object/sign/images/test-img.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpbWFnZXMvdGVzdC1pbWcuanBnIiwiaWF0IjoxNzE3NzY2MTI3LCJleHAiOjQ4NzEzNjYxMjd9.0SeIOW3cMf776i2_R9NcRHaMZw1blMRGQtadykx2Daw&t=2024-06-07T13%3A15%3A28.059Z"
+            alt="#"
+          />
         </motion.div>
 
-        <AboutSection getUrl={getUrl} home={false} />
+        <AboutSection home={false} />
         <SkillsSection relevant={false} />
-        <EducationSection getUrl={getUrl} />
+        <EducationSection />
 
         <section id="education_section">
           <div className="heading-container row-reverse">
@@ -101,14 +104,18 @@ const AboutPage = ({ getUrl }) => {
 
           <div className="education-content">
             <a className="text-link" href="https://drive.google.com/file/d/1DkL5xPQDqxMa88yyFKdXZk2BGqMzDrR_/view?usp=drive_link" target="_blank">
-              <img src={getUrl("icons/arrow-up.svg")} alt="arrow-up" />
+              <img
+                src="https://tghpaytxnfphvnnbkghz.supabase.co/storage/v1/object/sign/icons/arrow-up.svg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpY29ucy9hcnJvdy11cC5zdmciLCJpYXQiOjE3MTc3NjYwNTMsImV4cCI6NDg3MTM2NjA1M30.W15FJyMOqMIEI3FqZiLT_WKrKjWFhrJz2yRBvvwR6WU&t=2024-06-07T13%3A14%3A13.717Z"
+                alt="arrow-up"
+              />
               GET PDF
             </a>
-            <motion.div className="resume-container" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
-              <motion.div className="curtain" animate={{ height: "0" }} transition={{ duration: 0.5, delay: 0.5 }}></motion.div>
-
-              <img src={getUrl("images/resume.png")} alt="#" />
-            </motion.div>
+            <div className="resume-container">
+              <img
+                src="https://tghpaytxnfphvnnbkghz.supabase.co/storage/v1/object/sign/images/resume.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpbWFnZXMvcmVzdW1lLnBuZyIsImlhdCI6MTcxNzc2NTk5MywiZXhwIjo0ODcxMzY1OTkzfQ.ycqPcZZyxbg9QUYVXVjiO_vLXeYDYCgExoUpAzfGhhU&t=2024-06-07T13%3A13%3A13.929Z"
+                alt="#"
+              />
+            </div>
           </div>
         </section>
       </motion.section>

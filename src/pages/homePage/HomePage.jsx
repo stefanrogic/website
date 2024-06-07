@@ -7,13 +7,13 @@ import ContactSection from "../../components/contactSection/ContactSection";
 
 import { motion } from "framer-motion";
 
-const HomePage = ({ getUrl }) => {
+const HomePage = () => {
   return (
     <motion.div className="home" id="home" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.7 }}>
-      <AboutSection getUrl={getUrl} />
-      <SkillsSection getUrl={getUrl} />
-      <FeaturedProjectsSection getUrl={getUrl} />
-      <ContactSection getUrl={getUrl} />
+      <AboutSection />
+      <SkillsSection relevant={true} />
+      <FeaturedProjectsSection />
+      <ContactSection />
     </motion.div>
   );
 };

@@ -13,7 +13,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, EffectFade } from "swiper/modules";
 import { supabase } from "../../supabaseClient";
 
-const ProjectPage = ({ getUrl }) => {
+const ProjectPage = () => {
   const { id } = useParams();
   const [projectData, setProjectData] = useState();
 
@@ -29,7 +29,7 @@ const ProjectPage = ({ getUrl }) => {
 
   return (
     <div>
-      <PageNavigation position={`/projects/${projectData?.slug}`} backLink="/home" getUrl={getUrl} />
+      <PageNavigation position={`/projects/${projectData?.slug}`} backLink="/home" />
 
       <section>
         <motion.div className="project-heading" initial={{ opacity: 0, rotate: 2, y: 50 }} animate={{ opacity: 1, rotate: 0, y: 0 }} transition={{ duration: 0.5 }}>
@@ -40,13 +40,19 @@ const ProjectPage = ({ getUrl }) => {
           <div className="right">
             <a href={projectData?.demo_url} target="_blank">
               <button>
-                <img src={getUrl("icons/demo-icon.svg")} alt="demo-icon" />
+                <img
+                  src="https://tghpaytxnfphvnnbkghz.supabase.co/storage/v1/object/sign/icons/demo-icon.svg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpY29ucy9kZW1vLWljb24uc3ZnIiwiaWF0IjoxNzE3NzY1NTIxLCJleHAiOjQ4NzEzNjU1MjF9.3aKuyMpCHRWSh2IJKuQ8y6NB-YI71QsnyTTmQZ61AqA&t=2024-06-07T13%3A05%3A21.792Z"
+                  alt="demo-icon"
+                />
                 DEMO
               </button>
             </a>
             <a href={projectData?.source_url} target="_blank">
               <button>
-                <img src={getUrl("icons/github-icon.svg")} alt="github-icon" />
+                <img
+                  src="https://tghpaytxnfphvnnbkghz.supabase.co/storage/v1/object/sign/icons/github-icon.svg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpY29ucy9naXRodWItaWNvbi5zdmciLCJpYXQiOjE3MTc3NjU0ODQsImV4cCI6NDg3MTM2NTQ4NH0.BWztiGfYn7UlFuYNeH9uCfZoMxV-VKfJAHBY0ebdmqo&t=2024-06-07T13%3A04%3A44.840Z"
+                  alt="github-icon"
+                />
                 CODE
               </button>
             </a>
@@ -67,7 +73,7 @@ const ProjectPage = ({ getUrl }) => {
               if (skill)
                 return (
                   <div className="skill" key={skill + i}>
-                    <img src={getUrl(`icons/${skill.icon}`)} alt="" />
+                    <img src={skill.icon} alt="" />
                     <span className="span-nounderline">{skill.name}</span>
                   </div>
                 );
@@ -85,10 +91,16 @@ const ProjectPage = ({ getUrl }) => {
             <Swiper slidesPerView={1} centeredSlides={true} effect={"fade"} loop={true} navigation={{ nextEl: ".swiper-gallery-next", prevEl: ".swiper-gallery-prev" }} modules={[Navigation, EffectFade]}>
               <div className="swiper-buttons">
                 <button className="swiper-gallery-prev">
-                  <img src={getUrl("icons/arrow-back.svg")} alt="arrow-back" />
+                  <img
+                    src="https://tghpaytxnfphvnnbkghz.supabase.co/storage/v1/object/sign/icons/arrow-back.svg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpY29ucy9hcnJvdy1iYWNrLnN2ZyIsImlhdCI6MTcxNzc2NjM4MywiZXhwIjo0ODcxMzY2MzgzfQ.3vGiyP2qCdSRFbjGRn6KBqhh8AH0-vsOxuChI-2UdFg&t=2024-06-07T13%3A19%3A43.420Z"
+                    alt="arrow-back"
+                  />
                 </button>
                 <button className="swiper-gallery-next">
-                  <img src={getUrl("icons/arrow-next.svg")} alt="arrow-next" />
+                  <img
+                    src="https://tghpaytxnfphvnnbkghz.supabase.co/storage/v1/object/sign/icons/arrow-next.svg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpY29ucy9hcnJvdy1uZXh0LnN2ZyIsImlhdCI6MTcxNzc2NjM3MSwiZXhwIjo0ODcxMzY2MzcxfQ.7eR17z0pdFaG846lbQzixiRn1hJHf8aodKVaaNTPg_A&t=2024-06-07T13%3A19%3A31.143Z"
+                    alt="arrow-next"
+                  />
                 </button>
               </div>
 
