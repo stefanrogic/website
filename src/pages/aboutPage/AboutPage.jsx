@@ -18,7 +18,7 @@ const AboutPage = ({ getUrl, supabase }) => {
       </motion.div>
 
       <AboutSection getUrl={getUrl} home={false} />
-      <SkillsSection supabase={supabase} relevant={false} />
+      <SkillsSection relevant={false} />
       <EducationSection getUrl={getUrl} />
 
       <section id="education_section">
@@ -29,10 +29,10 @@ const AboutPage = ({ getUrl, supabase }) => {
 
         <div className="education-content">
           <div className="education-card">
-            <a href="#" className="card-left">
+            <div className="card-left">
               <h2>Web Developer Intern</h2>
               <p>Regional Innovation Startup Center Užice</p>
-            </a>
+            </div>
 
             <div className="card-right">
               <p>
@@ -44,10 +44,10 @@ const AboutPage = ({ getUrl, supabase }) => {
           <div className="line-seperator"></div>
 
           <div className="education-card">
-            <a href="#" className="card-left">
+            <div className="card-left">
               <h2>Frontend Developer & UI/UX Designer</h2>
               <p>Freelance</p>
-            </a>
+            </div>
 
             <div className="card-right">
               <p>
@@ -66,28 +66,28 @@ const AboutPage = ({ getUrl, supabase }) => {
 
         <div className="education-content">
           <div className="education-card">
-            <a href="#" className="card-left">
+            <div className="card-left">
               <h2>English</h2>
               <p>Excellent</p>
-            </a>
+            </div>
           </div>
 
           <div className="line-seperator"></div>
 
           <div className="education-card">
-            <a href="#" className="card-left">
+            <div className="card-left">
               <h2>German</h2>
               <p>Beginner</p>
-            </a>
+            </div>
           </div>
 
           <div className="line-seperator"></div>
 
           <div className="education-card">
-            <a href="#" className="card-left">
+            <div className="card-left">
               <h2>Serbian</h2>
               <p>Native</p>
-            </a>
+            </div>
           </div>
         </div>
       </section>

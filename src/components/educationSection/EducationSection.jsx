@@ -10,10 +10,10 @@ const EducationSection = () => {
 
       <div className="education-content">
         <div className="education-card">
-          <a href="#" className="card-left">
+          <div className="card-left">
             <h2>Bachelors Degree, IT</h2>
             <p>Academy of Vocational Studies of Western Serbia</p>
-          </a>
+          </div>
 
           <div className="card-right">
             <p>
@@ -25,10 +25,10 @@ const EducationSection = () => {
         <div className="line-seperator"></div>
 
         <div className="education-card">
-          <a href="#" className="card-left">
+          <div className="card-left">
             <h2>The Complete JS Course: From Zero to Expert!</h2>
             <p>Udemy - Online Course</p>
-          </a>
+          </div>
 
           <div className="card-right">
             <p>
@@ -40,10 +40,10 @@ const EducationSection = () => {
         <div className="line-seperator"></div>
 
         <div className="education-card">
-          <a href="#" className="card-left">
+          <div className="card-left">
             <h2>React Course</h2>
             <p>Udemy - Online Course</p>
-          </a>
+          </div>
 
           <div className="card-right">
             <p>
@@ -55,10 +55,10 @@ const EducationSection = () => {
         <div className="line-seperator"></div>
 
         <div className="education-card">
-          <a href="#" className="card-left">
+          <div className="card-left">
             <h2>Design Systems for Websites using Figma</h2>
             <p>Domestika - Online Course</p>
-          </a>
+          </div>
 
           <div className="card-right">
             <p>

@@ -13,7 +13,6 @@ const SkillsSection = ({ relevant = true }) => {
 
   useEffect(() => {
     getFeaturedSkills("title,img_url,relevant");
-    console.log(featuredSkills);
   }, []);
 
   return (
