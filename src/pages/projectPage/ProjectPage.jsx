@@ -8,33 +8,43 @@ import PageNavigation from "../../components/pageNavigation/PageNavigation";
 
 import { useParams } from "react-router-dom";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, EffectFade } from "swiper/modules";
+import { supabase } from "../../supabaseClient";
 
-const ProjectPage = ({ getUrl, projects }) => {
-  const [selected, setSelected] = useState(0);
+const ProjectPage = ({ getUrl }) => {
   const { id } = useParams();
+  const [projectData, setProjectData] = useState();
 
-  const projectData = projects.find((project) => project.tag === id);
+  const getProjectData = async (q, eq) => {
+    const { data } = await supabase.from("projects").select(q).eq("slug", eq);
+    setProjectData(data[0]);
+  };
+
+  useEffect(() => {
+    getProjectData("*", id);
+  }, []);
 
   return (
     <section>
-      <PageNavigation position={`/projects/${id}`} backLink="/home" getUrl={getUrl} />
+      <Suspense fallback={<div>Loading...</div>}>
+        <PageNavigation position={`/projects/${projectData?.slug}`} backLink="/home" getUrl={getUrl} />
+      </Suspense>
 
       <motion.div className="project-heading" initial={{ opacity: 0, rotate: 2, y: 50 }} animate={{ opacity: 1, rotate: 0, y: 0 }} transition={{ duration: 0.5 }}>
         <div className="left">
-          <h1>{projectData.heading}</h1>
-          <p>{projectData.paragraph}</p>
+          <h1>{projectData?.title}</h1>
+          <p>{projectData?.sub_title}</p>
         </div>
         <div className="right">
-          <a href={projectData.demoLink} target="_blank">
+          <a href={projectData?.demo_url} target="_blank">
             <button>
               <img src={getUrl("icons/demo-icon.svg")} alt="demo-icon" />
               DEMO
             </button>
           </a>
-          <a href={projectData.codeLink} target="_blank">
+          <a href={projectData?.source_url} target="_blank">
             <button>
               <img src={getUrl("icons/github-icon.svg")} alt="github-icon" />
               CODE
@@ -42,9 +52,8 @@ const ProjectPage = ({ getUrl, projects }) => {
           </a>
         </div>
       </motion.div>
-
       <motion.p initial={{ opacity: 0, rotate: 2, y: 50 }} animate={{ opacity: 1, rotate: 0, y: 0 }} transition={{ duration: 0.5 }}>
-        {projectData.description}
+        {projectData?.description}
       </motion.p>
 
       <section id="skills_section">
@@ -54,7 +63,7 @@ const ProjectPage = ({ getUrl, projects }) => {
         </div>
 
         <div className="skills-container">
-          {projectData.technologies.map((skill, i) => {
+          {projectData?.technologies.map((skill, i) => {
             if (skill)
               return (
                 <div className="skill" key={skill + i}>
@@ -75,16 +84,16 @@ const ProjectPage = ({ getUrl, projects }) => {
         <div className="gallery-container">
           <Swiper slidesPerView={1} centeredSlides={true} effect={"fade"} loop={true} navigation={{ nextEl: ".swiper-gallery-next", prevEl: ".swiper-gallery-prev" }} modules={[Navigation, EffectFade]}>
             <div className="swiper-buttons">
-              <button className="swiper-gallery-prev" onClick={() => setTimeout(() => setSelected(selected > 0 ? selected - 1 : 3), 300)}>
+              <button className="swiper-gallery-prev">
                 <img src={getUrl("icons/arrow-back.svg")} alt="arrow-back" />
               </button>
-              <button className="swiper-gallery-next" onClick={() => setTimeout(() => setSelected(selected < 3 ? selected + 1 : 0), 300)}>
+              <button className="swiper-gallery-next">
                 <img src={getUrl("icons/arrow-next.svg")} alt="arrow-next" />
               </button>
             </div>
 
-            {projectData.gallery.map((img, i) => (
-              <SwiperSlide key={img.link + i}>
+            {projectData?.gallery_url.map((img, i) => (
+              <SwiperSlide key={i}>
                 <img src={img.link} alt={img.alt} />
               </SwiperSlide>
             ))}
@@ -92,24 +101,24 @@ const ProjectPage = ({ getUrl, projects }) => {
         </div>
       </section>
 
-      <section id="skills_section">
-        <div className="heading-container row-reverse">
-          <h1>TODO</h1>
-          <div className="heading-line"></div>
-        </div>
+      {/* <section id="skills_section">
+          <div className="heading-container row-reverse">
+            <h1>TODO</h1>
+            <div className="heading-line"></div>
+          </div>
 
-        <div className="skills-container">
-          {projectData.todo.map((t, i) =>
-            t.done ? (
-              <p key={i}>
-                <s>{t.text}</s>
-              </p>
-            ) : (
-              <p key={i}>{t.text}</p>
-            )
-          )}
-        </div>
-      </section>
+          <div className="skills-container">
+            {projectData.todo.map((t, i) =>
+              t.done ? (
+                <p key={i}>
+                  <s>{t.text}</s>
+                </p>
+              ) : (
+                <p key={i}>{t.text}</p>
+              )
+            )}
+          </div>
+        </section> */}
     </section>
   );
 };

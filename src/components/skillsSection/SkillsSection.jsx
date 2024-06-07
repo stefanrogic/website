@@ -1,8 +1,9 @@
 import "./skillsSection.scss";
 
-import { useEffect, useState } from "react";
+import { supabase } from "../../supabaseClient";
+import { Suspense, useEffect, useState } from "react";
 
-const SkillsSection = ({ supabase, relevant = true }) => {
+const SkillsSection = ({ relevant = true }) => {
   const [featuredSkills, setFeaturedSkills] = useState([]);
 
   const getFeaturedSkills = async (q) => {
@@ -12,35 +13,38 @@ const SkillsSection = ({ supabase, relevant = true }) => {
 
   useEffect(() => {
     getFeaturedSkills("title,img_url,relevant");
+    console.log(featuredSkills);
   }, []);
 
   return (
-    <section id="skills_section">
-      <div className="heading-container row-reverse">
-        <h1>{location.pathname === "/about-me" ? "SKILLS" : "RELEVANT SKILLS"}</h1>
-        <div className="heading-line"></div>
-      </div>
+    <Suspense fallback={<div>Loading...</div>}>
+      <section id="skills_section">
+        <div className="heading-container row-reverse">
+          <h1>{location.pathname === "/about-me" ? "SKILLS" : "RELEVANT SKILLS"}</h1>
+          <div className="heading-line"></div>
+        </div>
 
-      <div className="skills-container">
-        {featuredSkills.map((skill, i) => {
-          if (relevant && skill.relevant)
-            return (
-              <div className="skill" key={skill + i}>
-                <img src={skill.img_url} alt="" />
-                <span className="span-nounderline">{skill.title}</span>
-              </div>
-            );
+        <div className="skills-container">
+          {featuredSkills?.map((skill, i) => {
+            if (relevant && skill.relevant)
+              return (
+                <div className="skill" key={skill + i}>
+                  <img src={skill.img_url} alt="" />
+                  <span className="span-nounderline">{skill.title}</span>
+                </div>
+              );
 
-          if (!relevant)
-            return (
-              <div className="skill" key={skill + i}>
-                <img src={skill.img_url} alt="" />
-                <span className="span-nounderline">{skill.title}</span>
-              </div>
-            );
-        })}
-      </div>
-    </section>
+            if (!relevant)
+              return (
+                <div className="skill" key={skill + i}>
+                  <img src={skill.img_url} alt="" />
+                  <span className="span-nounderline">{skill.title}</span>
+                </div>
+              );
+          })}
+        </div>
+      </section>
+    </Suspense>
   );
 };
 

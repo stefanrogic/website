@@ -1,16 +1,20 @@
 import "./featuredProjectsSection.scss";
 
 import FeaturedProjectCard from "../featuredProjectCard/FeaturedProjectCard";
-import { Fragment } from "react";
+import { Fragment, useEffect, useState } from "react";
+import { supabase } from "../../supabaseClient";
 
 const FeaturedProjectsSection = ({ getUrl }) => {
-  const featuredProjects = [
-    { heading: "Bioskop Art", tag: "bioskop-art", paragraph: "Cinema Website", demoLink: "#", codeLink: "https://github.com/stefanrogic/bioskop-art" },
-    { heading: "Tera Supplements", tag: "tera-supplements", paragraph: "Supplement Web Store", demoLink: "https://tera-supplements.netlify.app/", codeLink: "https://github.com/stefanrogic/tera-supplements" },
-    // { heading: "Hello World Rework", tag: "hello-world-rework", paragraph: "Online Job Board", demoLink: "https://dev-jobs-listings.netlify.app", codeLink: "https://github.com/stefanrogic/dev-jobs" },
-    { heading: "My Portfolio", tag: "my-portfolio", paragraph: "Portfolio Website", demoLink: "#", codeLink: "https://github.com/stefanrogic/webdev-portfolio" },
-    { heading: "Virtual Fitness Studio", tag: "virtual-fitness-studio", paragraph: "Landing Page", demoLink: "#", codeLink: "https://github.com/stefanrogic/virtual-fitness-studio" },
-  ];
+  const [projectsData, setProjectsData] = useState();
+
+  const getProjectsData = async (q) => {
+    const { data } = await supabase.from("projects").select(q);
+    setProjectsData(data);
+  };
+
+  useEffect(() => {
+    getProjectsData("title, sub_title, demo_url, source_url");
+  }, []);
 
   return (
     <section id="featured_projects_section">
@@ -20,10 +24,10 @@ const FeaturedProjectsSection = ({ getUrl }) => {
       </div>
 
       <div className="projects-container">
-        {featuredProjects.map((project, i) => (
+        {projectsData?.map((project, i) => (
           <Fragment key={project + i}>
             <FeaturedProjectCard getUrl={getUrl} projectData={project} />
-            {i + 1 !== featuredProjects.length && <div className="line-seperator"></div>}
+            {i + 1 !== projectsData.length && <div className="line-seperator"></div>}
           </Fragment>
         ))}
       </div>

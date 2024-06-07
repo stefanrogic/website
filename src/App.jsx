@@ -13,12 +13,6 @@ import NotFoundPage from "./pages/notFoundPage/NotFoundPage";
 import { Toaster } from "react-hot-toast";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
-import { createClient } from "@supabase/supabase-js";
-
-const supabase = createClient(
-  "https://tghpaytxnfphvnnbkghz.supabase.co",
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRnaHBheXR4bmZwaHZubmJrZ2h6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTc2NzM3NTUsImV4cCI6MjAzMzI0OTc1NX0.5t49xugzDB1Z44MMNUzANnao-kneqCymzWiMKYQPH5c"
-);
 
 function App() {
   const getUrl = (fileName) => new URL(`/public/${fileName}`, import.meta.url).href;
@@ -166,8 +160,8 @@ function App() {
 
   const router = createBrowserRouter([
     { path: "/", element: Root(<WelcomePage getUrl={getUrl} />, false), errorElement: Root(<NotFoundPage />) },
-    { path: "/home", element: Root(<HomePage getUrl={getUrl} supabase={supabase} />), errorElement: Root(<NotFoundPage />) },
-    { path: "/about-me", element: Root(<AboutPage getUrl={getUrl} supabase={supabase} />) },
+    { path: "/home", element: Root(<HomePage getUrl={getUrl} />), errorElement: Root(<NotFoundPage />) },
+    { path: "/about-me", element: Root(<AboutPage getUrl={getUrl} />) },
     { path: "/projects", element: Root(<ProjectsPage getUrl={getUrl} />) },
     { path: "/projects/:id", element: Root(<ProjectPage getUrl={getUrl} projects={featuredProjects} />) },
   ]);
