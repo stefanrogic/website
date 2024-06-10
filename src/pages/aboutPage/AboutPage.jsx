@@ -8,7 +8,7 @@ import ContentReveal from "../../components/contentReveal/ContentReveal";
 
 import { motion } from "framer-motion";
 
-const AboutPage = () => {
+const AboutPage = ({ scrollTo }) => {
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.5 }}>
       <PageNavigation position="/about-me" backLink="/home" />
@@ -22,7 +22,7 @@ const AboutPage = () => {
           </div>
         </ContentReveal>
 
-        <AboutSection home={false} />
+        <AboutSection home={false} scrollTo={scrollTo} />
         <SkillsSection relevant={false} />
         <EducationSection />
 

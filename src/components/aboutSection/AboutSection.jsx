@@ -1,10 +1,20 @@
 import "./aboutSection.scss";
 
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import ContentReveal from "../contentReveal/ContentReveal";
 
-const AboutSection = ({ home = true }) => {
+const AboutSection = ({ home = true, scrollTo }) => {
+  const location = useLocation();
+
+  const handleScrollTo = (el) => {
+    if (location.pathname === "/home") scrollTo(el);
+    else
+      setTimeout(() => {
+        scrollTo(el);
+      }, 500);
+  };
+
   return (
     <section id="about_section">
       {location.pathname === "/home" && (
@@ -39,7 +49,7 @@ const AboutSection = ({ home = true }) => {
         )}
 
         <ContentReveal delay={1.6}>
-          <Link className="text-link" to="/about-me">
+          <Link className="text-link" to="/home" onClick={() => handleScrollTo("featured_projects_section")}>
             <img
               src="https://tghpaytxnfphvnnbkghz.supabase.co/storage/v1/object/sign/icons/arrow-up.svg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpY29ucy9hcnJvdy11cC5zdmciLCJpYXQiOjE3MTc3NjQyOTgsImV4cCI6NDg3MTM2NDI5OH0.et4eJzEsyGb6veyt3OCzKpA3IHApk8urogAWHT9JBJY&t=2024-06-07T12%3A44%3A58.573Z"
               alt="arrow-up"

@@ -42,8 +42,8 @@ function App() {
 
   const router = createBrowserRouter([
     { path: "/", element: Root(<WelcomePage />, false), errorElement: Root(<NotFoundPage />) },
-    { path: "/home", element: Root(<HomePage />), errorElement: Root(<NotFoundPage />) },
-    { path: "/about-me", element: Root(<AboutPage />) },
+    { path: "/home", element: Root(<HomePage scrollTo={scrollTo} />), errorElement: Root(<NotFoundPage />) },
+    { path: "/about-me", element: Root(<AboutPage scrollTo={scrollTo} />) },
     { path: "/projects/:id", element: Root(<ProjectPage />) },
   ]);
 

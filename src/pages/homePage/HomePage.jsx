@@ -7,10 +7,10 @@ import ContactSection from "../../components/contactSection/ContactSection";
 
 import { motion } from "framer-motion";
 
-const HomePage = () => {
+const HomePage = ({ scrollTo }) => {
   return (
     <motion.div className="home" id="home" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.5 }}>
-      <AboutSection />
+      <AboutSection scrollTo={scrollTo} />
       <SkillsSection relevant={true} />
       <FeaturedProjectsSection />
       <ContactSection />
