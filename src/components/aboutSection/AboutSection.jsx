@@ -8,7 +8,8 @@ const AboutSection = ({ home = true, scrollTo }) => {
   const location = useLocation();
 
   const handleScrollTo = (el) => {
-    if (location.pathname === "/home") scrollTo(el);
+    if (el === "featured_projects_section" && location.pathname === "/home") scrollTo(el);
+    else if (el === "resume_section" && location.pathname === "/about-me") scrollTo(el);
     else
       setTimeout(() => {
         scrollTo(el);
@@ -26,11 +27,12 @@ const AboutSection = ({ home = true, scrollTo }) => {
         </ContentReveal>
       )}
 
+      {/* TODO: ADD MORE  */}
       {location.pathname === "/about-me" && (
         <ContentReveal delay={1.2}>
           <p>
-            Embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words,
-            combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+            Hello, my name is <span>Stefan</span>. <span>Frontend Developer</span> with <span>2+ years</span> of hands on experience. I specialize in designing easy-to-use interfaces for websites and web apps, prioritizing smooth user experience and
+            engaging animations.
           </p>
         </ContentReveal>
       )}
@@ -54,7 +56,17 @@ const AboutSection = ({ home = true, scrollTo }) => {
               src="https://tghpaytxnfphvnnbkghz.supabase.co/storage/v1/object/sign/icons/arrow-up.svg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpY29ucy9hcnJvdy11cC5zdmciLCJpYXQiOjE3MTc3NjQyOTgsImV4cCI6NDg3MTM2NDI5OH0.et4eJzEsyGb6veyt3OCzKpA3IHApk8urogAWHT9JBJY&t=2024-06-07T12%3A44%3A58.573Z"
               alt="arrow-up"
             />
-            MY PROJECTS
+            PROJECTS
+          </Link>
+        </ContentReveal>
+
+        <ContentReveal delay={1.6}>
+          <Link className="text-link" to="/about-me" onClick={() => handleScrollTo("resume_section")}>
+            <img
+              src="https://tghpaytxnfphvnnbkghz.supabase.co/storage/v1/object/sign/icons/arrow-up.svg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpY29ucy9hcnJvdy11cC5zdmciLCJpYXQiOjE3MTc3NjQyOTgsImV4cCI6NDg3MTM2NDI5OH0.et4eJzEsyGb6veyt3OCzKpA3IHApk8urogAWHT9JBJY&t=2024-06-07T12%3A44%3A58.573Z"
+              alt="arrow-up"
+            />
+            RESUME
           </Link>
         </ContentReveal>
 

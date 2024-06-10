@@ -1,5 +1,7 @@
 import "./featuredProjectCard.scss";
 
+import toast from "react-hot-toast";
+
 import { Link } from "react-router-dom";
 
 const FeaturedProjectCard = ({ projectData }) => {
@@ -14,7 +16,7 @@ const FeaturedProjectCard = ({ projectData }) => {
         </Link>
 
         <div className="project-right">
-          <a href={projectData?.demo_url} target="_blank">
+          <a href={projectData?.demo_url} target="_blank" onClick={() => projectData.demo_url === null && toast.error("Work in progress.")}>
             <button>
               <img
                 src="https://tghpaytxnfphvnnbkghz.supabase.co/storage/v1/object/sign/icons/demo-icon.svg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpY29ucy9kZW1vLWljb24uc3ZnIiwiaWF0IjoxNzE3NzY1NTIxLCJleHAiOjQ4NzEzNjU1MjF9.3aKuyMpCHRWSh2IJKuQ8y6NB-YI71QsnyTTmQZ61AqA&t=2024-06-07T13%3A05%3A21.792Z"

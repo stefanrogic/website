@@ -48,9 +48,9 @@ const AboutPage = ({ scrollTo }) => {
               </div>
             </ContentReveal>
 
-            <div className="line-seperator"></div>
+            {/* <div className="line-seperator"></div> */}
 
-            <ContentReveal delay={2.4}>
+            {/* <ContentReveal delay={2.4}>
               <div className="education-card">
                 <div className="card-left">
                   <h2>Frontend Developer & UI/UX Designer</h2>
@@ -63,7 +63,7 @@ const AboutPage = ({ scrollTo }) => {
                   </p>
                 </div>
               </div>
-            </ContentReveal>
+            </ContentReveal> */}
           </div>
         </section>
 
@@ -107,7 +107,7 @@ const AboutPage = ({ scrollTo }) => {
           </div>
         </section>
 
-        <section id="education_section">
+        <section id="resume_section">
           <div className="heading-container row-reverse">
             <h1>RESUME</h1>
             <div className="heading-line"></div>
