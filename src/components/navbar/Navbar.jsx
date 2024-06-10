@@ -50,13 +50,13 @@ const Navbar = ({ scrollTo }) => {
 
       <motion.nav initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.7 }}>
         <div>
-          <NavLink to="/about-me" className={({ isActive }) => (isActive ? "underline" : "")}>
+          <NavLink to="/about-me" className="not-button">
             ABOUT ME
           </NavLink>
-          <NavLink to="/home" onClick={() => handleScrollTo("featured_projects_section")}>
+          <NavLink to="/home" className="not-button" onClick={() => handleScrollTo("featured_projects_section")}>
             PROJECTS
           </NavLink>
-          <NavLink to="/home" onClick={() => handleScrollTo("contact_section")}>
+          <NavLink to="/home" className="not-button" onClick={() => handleScrollTo("contact_section")}>
             CONTACT
           </NavLink>
         </div>

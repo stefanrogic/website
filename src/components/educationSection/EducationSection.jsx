@@ -1,5 +1,6 @@
-import ContentReveal from "../contentReveal/ContentReveal";
 import "./educationSection.scss";
+
+import ContentReveal from "../contentReveal/ContentReveal";
 
 const EducationSection = () => {
   return (

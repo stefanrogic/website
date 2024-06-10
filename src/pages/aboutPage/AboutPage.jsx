@@ -6,9 +6,11 @@ import EducationSection from "../../components/educationSection/EducationSection
 import AboutSection from "../../components/aboutSection/AboutSection";
 import ContentReveal from "../../components/contentReveal/ContentReveal";
 
+import { motion } from "framer-motion";
+
 const AboutPage = () => {
   return (
-    <div>
+    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.5 }}>
       <PageNavigation position="/about-me" backLink="/home" />
       <section>
         <ContentReveal delay={1}>
@@ -31,33 +33,37 @@ const AboutPage = () => {
           </div>
 
           <div className="education-content">
-            <div className="education-card">
-              <div className="card-left">
-                <h2>Web Developer Intern</h2>
-                <p>Regional Innovation Startup Center Užice</p>
-              </div>
+            <ContentReveal delay={2.2}>
+              <div className="education-card">
+                <div className="card-left">
+                  <h2>Web Developer Intern</h2>
+                  <p>Regional Innovation Startup Center Užice</p>
+                </div>
 
-              <div className="card-right">
-                <p>
-                  <i>June - August 2022</i>
-                </p>
+                <div className="card-right">
+                  <p>
+                    <i>June - August 2022</i>
+                  </p>
+                </div>
               </div>
-            </div>
+            </ContentReveal>
 
             <div className="line-seperator"></div>
 
-            <div className="education-card">
-              <div className="card-left">
-                <h2>Frontend Developer & UI/UX Designer</h2>
-                <p>Freelance</p>
-              </div>
+            <ContentReveal delay={2.4}>
+              <div className="education-card">
+                <div className="card-left">
+                  <h2>Frontend Developer & UI/UX Designer</h2>
+                  <p>Freelance</p>
+                </div>
 
-              <div className="card-right">
-                <p>
-                  <i>January 2024 - Now</i>
-                </p>
+                <div className="card-right">
+                  <p>
+                    <i>January 2024 - Now</i>
+                  </p>
+                </div>
               </div>
-            </div>
+            </ContentReveal>
           </div>
         </section>
 
@@ -69,28 +75,34 @@ const AboutPage = () => {
 
           <div className="education-content">
             <div className="education-card">
-              <div className="card-left">
-                <h2>English</h2>
-                <p>Excellent</p>
-              </div>
+              <ContentReveal delay={2.2}>
+                <div className="card-left">
+                  <h2>English</h2>
+                  <p>Excellent</p>
+                </div>
+              </ContentReveal>
             </div>
 
             <div className="line-seperator"></div>
 
             <div className="education-card">
-              <div className="card-left">
-                <h2>German</h2>
-                <p>Beginner</p>
-              </div>
+              <ContentReveal delay={2.4}>
+                <div className="card-left">
+                  <h2>German</h2>
+                  <p>Beginner</p>
+                </div>
+              </ContentReveal>
             </div>
 
             <div className="line-seperator"></div>
 
             <div className="education-card">
-              <div className="card-left">
-                <h2>Serbian</h2>
-                <p>Native</p>
-              </div>
+              <ContentReveal delay={2.6}>
+                <div className="card-left">
+                  <h2>Serbian</h2>
+                  <p>Native</p>
+                </div>
+              </ContentReveal>
             </div>
           </div>
         </section>
@@ -109,16 +121,18 @@ const AboutPage = () => {
               />
               GET PDF
             </a>
-            <div className="resume-container">
-              <img
-                src="https://tghpaytxnfphvnnbkghz.supabase.co/storage/v1/object/sign/images/resume.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpbWFnZXMvcmVzdW1lLnBuZyIsImlhdCI6MTcxNzc2NTk5MywiZXhwIjo0ODcxMzY1OTkzfQ.ycqPcZZyxbg9QUYVXVjiO_vLXeYDYCgExoUpAzfGhhU&t=2024-06-07T13%3A13%3A13.929Z"
-                alt="#"
-              />
-            </div>
+            <ContentReveal delay={2.2}>
+              <div className="resume-container">
+                <img
+                  src="https://tghpaytxnfphvnnbkghz.supabase.co/storage/v1/object/sign/images/resume.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpbWFnZXMvcmVzdW1lLnBuZyIsImlhdCI6MTcxNzc2NTk5MywiZXhwIjo0ODcxMzY1OTkzfQ.ycqPcZZyxbg9QUYVXVjiO_vLXeYDYCgExoUpAzfGhhU&t=2024-06-07T13%3A13%3A13.929Z"
+                  alt="#"
+                />
+              </div>
+            </ContentReveal>
           </div>
         </section>
       </section>
-    </div>
+    </motion.div>
   );
 };
 

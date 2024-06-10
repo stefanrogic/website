@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 
 const HomePage = () => {
   return (
-    <motion.div className="home" id="home" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.7 }}>
+    <motion.div className="home" id="home" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.5 }}>
       <AboutSection />
       <SkillsSection relevant={true} />
       <FeaturedProjectsSection />

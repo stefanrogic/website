@@ -24,7 +24,7 @@ const FeaturedProjectCard = ({ projectData }) => {
             </button>
           </a>
           <a href={projectData?.source_url} target="_blank">
-            <button>
+            <button style={{ textDecoration: "none" }}>
               <img
                 src="https://tghpaytxnfphvnnbkghz.supabase.co/storage/v1/object/sign/icons/github-icon.svg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpY29ucy9naXRodWItaWNvbi5zdmciLCJpYXQiOjE3MTc3NjU0ODQsImV4cCI6NDg3MTM2NTQ4NH0.BWztiGfYn7UlFuYNeH9uCfZoMxV-VKfJAHBY0ebdmqo&t=2024-06-07T13%3A04%3A44.840Z"
                 alt="github-icon"

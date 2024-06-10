@@ -11,8 +11,6 @@ section {
       flex-direction: row;
       justify-content: space-between;
 
-      padding: 2px 0;
-
       .card-left {
         display: flex;
         flex-direction: column;
@@ -26,6 +24,7 @@ section {
 
         p {
           line-height: 16px !important;
+          padding: 2px 0;
         }
       }
 
