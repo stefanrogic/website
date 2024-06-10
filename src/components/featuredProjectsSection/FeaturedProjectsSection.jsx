@@ -3,6 +3,7 @@ import "./featuredProjectsSection.scss";
 import FeaturedProjectCard from "../featuredProjectCard/FeaturedProjectCard";
 import { Fragment, useEffect, useState } from "react";
 import { supabase } from "../../supabaseClient";
+import ContentReveal from "../contentReveal/ContentReveal";
 
 const FeaturedProjectsSection = () => {
   const [projectsData, setProjectsData] = useState();
@@ -26,7 +27,9 @@ const FeaturedProjectsSection = () => {
       <div className="projects-container">
         {projectsData?.map((project, i) => (
           <Fragment key={project + i}>
-            <FeaturedProjectCard projectData={project} />
+            <ContentReveal delay={Number(`2.${i + 2}`)}>
+              <FeaturedProjectCard projectData={project} />
+            </ContentReveal>
             {i + 1 !== projectsData.length && <div className="line-seperator"></div>}
           </Fragment>
         ))}

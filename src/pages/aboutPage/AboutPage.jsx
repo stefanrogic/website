@@ -4,22 +4,21 @@ import PageNavigation from "../../components/pageNavigation/PageNavigation";
 import SkillsSection from "../../components/skillsSection/SkillsSection";
 import EducationSection from "../../components/educationSection/EducationSection";
 import AboutSection from "../../components/aboutSection/AboutSection";
-
-import { motion } from "framer-motion";
+import ContentReveal from "../../components/contentReveal/ContentReveal";
 
 const AboutPage = () => {
   return (
     <div>
       <PageNavigation position="/about-me" backLink="/home" />
       <section>
-        <motion.div className="img-container" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
-          <motion.div className="curtain" animate={{ height: "0" }} transition={{ duration: 0.5, delay: 0.5 }}></motion.div>
-
-          <img
-            src="https://tghpaytxnfphvnnbkghz.supabase.co/storage/v1/object/sign/images/test-img.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpbWFnZXMvdGVzdC1pbWcuanBnIiwiaWF0IjoxNzE3NzY2MTI3LCJleHAiOjQ4NzEzNjYxMjd9.0SeIOW3cMf776i2_R9NcRHaMZw1blMRGQtadykx2Daw&t=2024-06-07T13%3A15%3A28.059Z"
-            alt="#"
-          />
-        </motion.div>
+        <ContentReveal delay={1}>
+          <div className="img-container">
+            <img
+              src="https://tghpaytxnfphvnnbkghz.supabase.co/storage/v1/object/sign/images/test-img.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpbWFnZXMvdGVzdC1pbWcuanBnIiwiaWF0IjoxNzE3NzY2MTI3LCJleHAiOjQ4NzEzNjYxMjd9.0SeIOW3cMf776i2_R9NcRHaMZw1blMRGQtadykx2Daw&t=2024-06-07T13%3A15%3A28.059Z"
+              alt="#"
+            />
+          </div>
+        </ContentReveal>
 
         <AboutSection home={false} />
         <SkillsSection relevant={false} />

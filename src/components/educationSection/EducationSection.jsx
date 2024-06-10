@@ -1,3 +1,4 @@
+import ContentReveal from "../contentReveal/ContentReveal";
 import "./educationSection.scss";
 
 const EducationSection = () => {
@@ -9,63 +10,71 @@ const EducationSection = () => {
       </div>
 
       <div className="education-content">
-        <div className="education-card">
-          <div className="card-left">
-            <h2>Bachelors Degree, IT</h2>
-            <p>Academy of Vocational Studies of Western Serbia</p>
-          </div>
+        <ContentReveal delay={2.2}>
+          <div className="education-card">
+            <div className="card-left">
+              <h2>Bachelors Degree, IT</h2>
+              <p>Academy of Vocational Studies of Western Serbia</p>
+            </div>
 
-          <div className="card-right">
-            <p>
-              <i>2019-2022</i>
-            </p>
+            <div className="card-right">
+              <p>
+                <i>2019-2022</i>
+              </p>
+            </div>
           </div>
-        </div>
+        </ContentReveal>
 
         <div className="line-seperator"></div>
 
-        <div className="education-card">
-          <div className="card-left">
-            <h2>The Complete JS Course: From Zero to Expert!</h2>
-            <p>Udemy - Online Course</p>
-          </div>
+        <ContentReveal delay={2.4}>
+          <div className="education-card">
+            <div className="card-left">
+              <h2>The Complete JS Course: From Zero to Expert!</h2>
+              <p>Udemy - Online Course</p>
+            </div>
 
-          <div className="card-right">
-            <p>
-              <i>2020</i>
-            </p>
+            <div className="card-right">
+              <p>
+                <i>2020</i>
+              </p>
+            </div>
           </div>
-        </div>
+        </ContentReveal>
 
         <div className="line-seperator"></div>
 
-        <div className="education-card">
-          <div className="card-left">
-            <h2>React Course</h2>
-            <p>Udemy - Online Course</p>
-          </div>
+        <ContentReveal delay={2.6}>
+          <div className="education-card">
+            <div className="card-left">
+              <h2>React Course</h2>
+              <p>Udemy - Online Course</p>
+            </div>
 
-          <div className="card-right">
-            <p>
-              <i>2021</i>
-            </p>
+            <div className="card-right">
+              <p>
+                <i>2021</i>
+              </p>
+            </div>
           </div>
-        </div>
+        </ContentReveal>
 
         <div className="line-seperator"></div>
 
-        <div className="education-card">
-          <div className="card-left">
-            <h2>Design Systems for Websites using Figma</h2>
-            <p>Domestika - Online Course</p>
-          </div>
+        <ContentReveal delay={2.8}>
+          <div className="education-card">
+            <div className="card-left">
+              <h2>Design Systems for Websites using Figma</h2>
+              <p>Domestika - Online Course</p>
+            </div>
 
-          <div className="card-right">
-            <p>
-              <i>2021</i>
-            </p>
+            <div className="card-right">
+              <p>
+                <i>2021</i>
+              </p>
+            </div>
           </div>
-        </div>
+        </ContentReveal>
       </div>
     </section>
   );

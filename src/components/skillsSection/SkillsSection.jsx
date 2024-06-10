@@ -3,6 +3,8 @@ import "./skillsSection.scss";
 import { supabase } from "../../supabaseClient";
 import { Suspense, useEffect, useState } from "react";
 
+import ContentReveal from "../contentReveal/ContentReveal";
+
 const SkillsSection = ({ relevant = true }) => {
   const [featuredSkills, setFeaturedSkills] = useState([]);
 
@@ -23,25 +25,27 @@ const SkillsSection = ({ relevant = true }) => {
           <div className="heading-line"></div>
         </div>
 
-        <div className="skills-container">
-          {featuredSkills?.map((skill, i) => {
-            if (relevant && skill.relevant)
-              return (
-                <div className="skill" key={skill + i}>
-                  <img src={skill.img_url} alt="" />
-                  <span className="span-nounderline">{skill.title}</span>
-                </div>
-              );
+        <ContentReveal delay={2}>
+          <div className="skills-container" style={{ minHeight: relevant ? "85px" : "135px" }}>
+            {featuredSkills?.map((skill, i) => {
+              if (relevant && skill.relevant)
+                return (
+                  <div className="skill" key={skill + i}>
+                    <img src={skill.img_url} alt="#" />
+                    <span className="span-nounderline">{skill.title}</span>
+                  </div>
+                );
 
-            if (!relevant)
-              return (
-                <div className="skill" key={skill + i}>
-                  <img src={skill.img_url} alt="" />
-                  <span className="span-nounderline">{skill.title}</span>
-                </div>
-              );
-          })}
-        </div>
+              if (!relevant)
+                return (
+                  <div className="skill" key={skill + i}>
+                    <img src={skill.img_url} alt="#" />
+                    <span className="span-nounderline">{skill.title}</span>
+                  </div>
+                );
+            })}
+          </div>
+        </ContentReveal>
       </section>
     </Suspense>
   );
