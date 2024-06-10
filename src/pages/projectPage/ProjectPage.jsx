@@ -81,45 +81,47 @@ const ProjectPage = () => {
           </div>
         </section>
 
-        <section id="skills_section">
-          <div className="heading-container">
-            <h1>GALLERY</h1>
-            <div className="heading-line"></div>
-          </div>
+        {projectData?.gallery && (
+          <section id="skills_section">
+            <div className="heading-container">
+              <h1>GALLERY</h1>
+              <div className="heading-line"></div>
+            </div>
 
-          <div className="gallery-container">
-            <Swiper slidesPerView={1} centeredSlides={true} effect={"fade"} loop={true} navigation={{ nextEl: ".swiper-gallery-next", prevEl: ".swiper-gallery-prev" }} modules={[Navigation, EffectFade]}>
-              <div className="swiper-buttons">
-                <button className="swiper-gallery-prev">
-                  <img
-                    src="https://tghpaytxnfphvnnbkghz.supabase.co/storage/v1/object/sign/icons/arrow-back.svg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpY29ucy9hcnJvdy1iYWNrLnN2ZyIsImlhdCI6MTcxNzc2NjM4MywiZXhwIjo0ODcxMzY2MzgzfQ.3vGiyP2qCdSRFbjGRn6KBqhh8AH0-vsOxuChI-2UdFg&t=2024-06-07T13%3A19%3A43.420Z"
-                    alt="arrow-back"
-                  />
-                </button>
-                <button className="swiper-gallery-next">
-                  <img
-                    src="https://tghpaytxnfphvnnbkghz.supabase.co/storage/v1/object/sign/icons/arrow-next.svg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpY29ucy9hcnJvdy1uZXh0LnN2ZyIsImlhdCI6MTcxNzc2NjM3MSwiZXhwIjo0ODcxMzY2MzcxfQ.7eR17z0pdFaG846lbQzixiRn1hJHf8aodKVaaNTPg_A&t=2024-06-07T13%3A19%3A31.143Z"
-                    alt="arrow-next"
-                  />
-                </button>
-              </div>
+            <div className="gallery-container">
+              <Swiper slidesPerView={1} centeredSlides={true} effect={"fade"} loop={true} navigation={{ nextEl: ".swiper-gallery-next", prevEl: ".swiper-gallery-prev" }} modules={[Navigation, EffectFade]}>
+                <div className="swiper-buttons">
+                  <button className="swiper-gallery-prev">
+                    <img
+                      src="https://tghpaytxnfphvnnbkghz.supabase.co/storage/v1/object/sign/icons/arrow-back.svg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpY29ucy9hcnJvdy1iYWNrLnN2ZyIsImlhdCI6MTcxNzc2NjM4MywiZXhwIjo0ODcxMzY2MzgzfQ.3vGiyP2qCdSRFbjGRn6KBqhh8AH0-vsOxuChI-2UdFg&t=2024-06-07T13%3A19%3A43.420Z"
+                      alt="arrow-back"
+                    />
+                  </button>
+                  <button className="swiper-gallery-next">
+                    <img
+                      src="https://tghpaytxnfphvnnbkghz.supabase.co/storage/v1/object/sign/icons/arrow-next.svg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpY29ucy9hcnJvdy1uZXh0LnN2ZyIsImlhdCI6MTcxNzc2NjM3MSwiZXhwIjo0ODcxMzY2MzcxfQ.7eR17z0pdFaG846lbQzixiRn1hJHf8aodKVaaNTPg_A&t=2024-06-07T13%3A19%3A31.143Z"
+                      alt="arrow-next"
+                    />
+                  </button>
+                </div>
 
-              {projectData?.gallery_url.map((img, i) => (
-                <SwiperSlide key={i}>
-                  <img src={img.link} alt={img.alt} />
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
-        </section>
+                {projectData?.gallery.map((img, i) => (
+                  <SwiperSlide key={i}>
+                    <img src={img.url} alt={img.alt} />
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </div>
+          </section>
+        )}
 
         <section>
-          <div className="heading-container row-reverse">
+          <div className={`heading-container ${projectData?.gallery ? "row-reverse" : ""}`}>
             <h1>TODO</h1>
             <div className="heading-line"></div>
           </div>
 
-          <div className="skills-container">
+          <div className="todo-container">
             {projectData?.todo.map((t, i) =>
               t.done ? (
                 <p key={i}>

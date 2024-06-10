@@ -31,6 +31,14 @@ const AboutSection = ({ home = true }) => {
           </Link>
         )}
 
+        <Link className="text-link" to="/about-me">
+          <img
+            src="https://tghpaytxnfphvnnbkghz.supabase.co/storage/v1/object/sign/icons/arrow-up.svg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpY29ucy9hcnJvdy11cC5zdmciLCJpYXQiOjE3MTc3NjQyOTgsImV4cCI6NDg3MTM2NDI5OH0.et4eJzEsyGb6veyt3OCzKpA3IHApk8urogAWHT9JBJY&t=2024-06-07T12%3A44%3A58.573Z"
+            alt="arrow-up"
+          />
+          MY PROJECTS
+        </Link>
+
         <Link className="text-link inactive" to="#">
           <img
             src="https://tghpaytxnfphvnnbkghz.supabase.co/storage/v1/object/sign/icons/arrow-up-inactive.svg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpY29ucy9hcnJvdy11cC1pbmFjdGl2ZS5zdmciLCJpYXQiOjE3MTc3NjQzMzksImV4cCI6NDg3MTM2NDMzOX0.jrqWCKLKm4Ul60yYSzucUgZoho3mtsE98Vu7N2gBODY&t=2024-06-07T12%3A45%3A39.208Z"

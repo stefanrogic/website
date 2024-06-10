@@ -8,7 +8,7 @@ const FeaturedProjectsSection = () => {
   const [projectsData, setProjectsData] = useState();
 
   const getProjectsData = async (q) => {
-    const { data } = await supabase.from("projects").select(q);
+    const { data } = await supabase.from("projects").select(q).order("id", { ascending: true });
     setProjectsData(data);
   };
 
