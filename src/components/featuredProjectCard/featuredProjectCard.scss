@@ -3,16 +3,23 @@
 .featured-project-card {
   display: flex;
   flex-direction: column;
+  width: 100%;
 
   .project-content {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
+
+    width: 100%;
+
+    // &:hover {
+
+    // }
 
     a {
       text-decoration: none;
       text-align: start !important;
+      width: 100%;
     }
 
     .project-left {
@@ -20,6 +27,8 @@
       flex-direction: column !important;
       align-items: flex-start;
       gap: 10px;
+
+      width: 100%;
 
       h2 {
         font-size: $font-size-heading-medium;

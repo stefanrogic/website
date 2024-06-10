@@ -7,17 +7,43 @@ const AboutSection = ({ home = true }) => {
   return (
     <section id="about_section">
       {location.pathname === "/home" && (
-        <motion.p initial={{ opacity: 0, rotate: 2, y: 50 }} animate={{ opacity: 1, rotate: 0, y: 0 }} transition={{ duration: 0.5 }}>
-          Hello, my name is <span>Stefan</span>. <span>Frontend Developer</span> with <span>2+ years</span> of hands on experience. I specialize in designing easy-to-use interfaces for websites and web apps, prioritizing smooth user experience and
-          engaging animations.
-        </motion.p>
+        <div style={{ position: "relative" }}>
+          <motion.div
+            className="content-reveal"
+            initial={{ height: "100%" }}
+            animate={{
+              height: 0,
+              transitionEnd: {
+                display: "none",
+              },
+            }}
+            transition={{ duration: 0.5, delay: 1 }}
+          ></motion.div>
+          <p>
+            Hello, my name is <span>Stefan</span>. <span>Frontend Developer</span> with <span>2+ years</span> of hands on experience. I specialize in designing easy-to-use interfaces for websites and web apps, prioritizing smooth user experience and
+            engaging animations.
+          </p>
+        </div>
       )}
 
       {location.pathname === "/about-me" && (
-        <motion.p initial={{ opacity: 0, rotate: 2, y: 50 }} animate={{ opacity: 1, rotate: 0, y: 0 }} transition={{ duration: 0.5 }}>
-          Embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words,
-          combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
-        </motion.p>
+        <div style={{ position: "relative" }}>
+          <motion.div
+            className="content-reveal"
+            initial={{ height: "100%" }}
+            animate={{
+              height: 0,
+              transitionEnd: {
+                display: "none",
+              },
+            }}
+            transition={{ duration: 0.5, delay: 1 }}
+          ></motion.div>
+          <p>
+            Embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words,
+            combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+          </p>
+        </div>
       )}
 
       <div className="button-container">

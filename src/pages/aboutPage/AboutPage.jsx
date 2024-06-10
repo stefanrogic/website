@@ -11,7 +11,7 @@ const AboutPage = () => {
   return (
     <div>
       <PageNavigation position="/about-me" backLink="/home" />
-      <motion.section initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.7 }}>
+      <section>
         <motion.div className="img-container" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
           <motion.div className="curtain" animate={{ height: "0" }} transition={{ duration: 0.5, delay: 0.5 }}></motion.div>
 
@@ -118,7 +118,7 @@ const AboutPage = () => {
             </div>
           </div>
         </section>
-      </motion.section>
+      </section>
     </div>
   );
 };
