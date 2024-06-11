@@ -2,13 +2,15 @@ import "./welcomePage.scss";
 
 import { useNavigate } from "react-router-dom";
 import { motion, useAnimation } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const WelcomePage = () => {
   const [redirect, setRedirect] = useState(false);
   const [percent, setPercent] = useState(0);
+
   const mainControls = useAnimation();
   const navigate = useNavigate();
+  const ref = useRef();
 
   useEffect(() => {
     const timerOne = setTimeout(() => {
@@ -21,6 +23,19 @@ const WelcomePage = () => {
   });
 
   useEffect(() => {
+    ref.current.focus();
+
+    const timerThree = setTimeout(() => {
+      ref.current.focus();
+    }, 1);
+
+    return () => {
+      clearTimeout(timerThree);
+    };
+  }, []);
+
+  useEffect(() => {
+    ref.current.focus();
     if (redirect) {
       const timerTwo = setTimeout(() => {
         navigate("/home");
@@ -33,7 +48,17 @@ const WelcomePage = () => {
   }, [redirect]);
 
   return (
-    <div className="welcome-page">
+    <div
+      ref={ref}
+      className="welcome-page"
+      onKeyDown={(e) => {
+        e.preventDefault();
+        if (e.code === "Enter") {
+          setRedirect(true);
+        }
+      }}
+      tabIndex={-1}
+    >
       <motion.img
         className="signature"
         src="https://tghpaytxnfphvnnbkghz.supabase.co/storage/v1/object/sign/icons/signature.svg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpY29ucy9zaWduYXR1cmUuc3ZnIiwiaWF0IjoxNzE3NzcyNzQzLCJleHAiOjExMTc4NTcyNzQzfQ.sqD7YFS725w81QIFrs1SG-C10kyLZ9g5s_2LY09Yu1Q&t=2024-06-07T15%3A05%3A44.043Z"
@@ -57,7 +82,7 @@ const WelcomePage = () => {
       </motion.div>
 
       <motion.div className="loading-line" initial={{ display: "flex" }} animate={{ display: "none", transitionEnd: { display: "none" } }} transition={{ duration: 1, delay: 4 }}>
-        <motion.div initial={{ width: 0 }} animate={{ width: "100%" }} transition={{ duration: 3 }} style={{ height: "2px", background: "#ff2e63" }}></motion.div>
+        <motion.div className="line" initial={{ width: 0 }} animate={{ width: "100%" }} transition={{ duration: 3 }} style={{ height: "2px", background: "#ff2e63" }}></motion.div>
 
         <h2>{percent}%</h2>
       </motion.div>

@@ -8,6 +8,8 @@
   align-items: center;
   text-align: center;
 
+  outline: none;
+
   .signature,
   .button-container {
     position: absolute;
@@ -23,10 +25,15 @@
   }
 
   .loading-line {
+    position: relative;
     width: 100%;
 
     display: flex;
     flex-direction: column;
+
+    .line {
+      position: absolute;
+    }
 
     h2 {
       margin-top: 10px;
