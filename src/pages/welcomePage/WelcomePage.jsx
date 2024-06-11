@@ -54,6 +54,7 @@ const WelcomePage = () => {
       onKeyDown={(e) => {
         e.preventDefault();
         if (e.code === "Enter") {
+          mainControls.start("secondPhase");
           setRedirect(true);
         }
       }}
