@@ -140,8 +140,32 @@ const ProjectPage = () => {
           </section>
         )}
 
+        {projectData?.video_url && (
+          <section>
+            <div className={`heading-container  ${projectData?.gallery ? "row-reverse" : ""} `}>
+              <ContentRevealSuper>
+                <h1>VIDEO</h1>
+              </ContentRevealSuper>
+              <HeadingLine />
+            </div>
+
+            <div className="todo-container" style={{ minHeight: "165px" }}>
+              <ContentRevealSuper width="100%">
+                <iframe
+                  src={projectData?.video_url}
+                  style={{ width: "100%", aspectRatio: "16 / 9" }}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  title="Embedded youtube"
+                ></iframe>
+              </ContentRevealSuper>
+            </div>
+          </section>
+        )}
+
         <section>
-          <div className={`heading-container ${projectData?.gallery ? "row-reverse" : ""}`}>
+          <div className={`heading-container ${projectData?.gallery || (projectData?.video_url ? "row-reverse" : "")}`}>
             <ContentRevealSuper>
               <h1>TODO</h1>
             </ContentRevealSuper>
