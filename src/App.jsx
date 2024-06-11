@@ -11,6 +11,7 @@ import NotFoundPage from "./pages/notFoundPage/NotFoundPage";
 
 import { Toaster } from "react-hot-toast";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Analytics } from "@vercel/analytics/react";
 
 function App() {
   const scrollTo = (el) => {
@@ -48,6 +49,7 @@ function App() {
 
   return (
     <div className="App">
+      <Analytics />
       <RouterProvider router={router} />
     </div>
   );
