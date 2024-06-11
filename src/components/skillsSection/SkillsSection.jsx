@@ -33,7 +33,7 @@ const SkillsSection = ({ relevant = true }) => {
             if (relevant && skill.relevant)
               return (
                 <ContentRevealSuper key={skill + i}>
-                  <div className="skill">
+                  <div className="skill" style={{ minHeight: "35px" }}>
                     <img src={skill.img_url} alt="#" />
                     <span className="span-nounderline">{skill.title}</span>
                   </div>
