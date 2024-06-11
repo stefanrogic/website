@@ -11,16 +11,24 @@ const WelcomePage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    setTimeout(() => {
+    const timerOne = setTimeout(() => {
       if (percent < 100) setPercent(percent + 1);
     }, 30);
+
+    return () => {
+      clearTimeout(timerOne);
+    };
   });
 
   useEffect(() => {
     if (redirect) {
-      setTimeout(() => {
+      const timerTwo = setTimeout(() => {
         navigate("/home");
       }, 500);
+
+      return () => {
+        clearTimeout(timerTwo);
+      };
     }
   }, [redirect]);
 
