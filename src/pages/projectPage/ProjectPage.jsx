@@ -131,7 +131,7 @@ const ProjectPage = () => {
                   {projectData?.gallery.map((img, i) => (
                     <SwiperSlide key={i} style={{ position: "relative" }}>
                       <img src={img.url} alt={img.alt} />
-                      <h2 style={{ position: "absolute", left: "50%", top: "50%", transform: "translate(-50%, -50%)", padding: "10px", background: "#b22045" }}>Work in progress.</h2>
+                      <h2 style={{ position: "absolute", left: "50%", top: "50%", transform: "translate(-50%, -50%)", padding: "10px", background: "#b22045", textAlign: "center" }}>Work in progress</h2>
                     </SwiperSlide>
                   ))}
                 </Swiper>
