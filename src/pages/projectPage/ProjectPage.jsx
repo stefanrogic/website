@@ -13,6 +13,7 @@ import { Navigation, EffectFade } from "swiper/modules";
 import { supabase } from "../../supabaseClient";
 import ContentRevealSuper from "../../components/contentReveal/ContentRevealSuper";
 import HeadingLine from "../../components/headingLine/HeadingLine";
+import ScrollToTop from "../../components/scrollToTop/ScrollToTop";
 
 const ProjectPage = () => {
   const { id } = useParams();
@@ -24,12 +25,12 @@ const ProjectPage = () => {
   };
 
   useEffect(() => {
-    window.scrollTo(0, 0);
     getProjectData("*", id);
   }, [id]);
 
   return (
     <>
+      <ScrollToTop />
       <PageNavigation position={`/projects/${projectData?.slug ? projectData?.slug : ""}`} backLink="/home" />
 
       <section>
