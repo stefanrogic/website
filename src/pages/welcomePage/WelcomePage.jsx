@@ -6,8 +6,15 @@ import { useEffect, useState } from "react";
 
 const WelcomePage = () => {
   const [redirect, setRedirect] = useState(false);
+  const [percent, setPercent] = useState(0);
   const mainControls = useAnimation();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    setTimeout(() => {
+      if (percent < 100) setPercent(percent + 1);
+    }, 30);
+  });
 
   useEffect(() => {
     if (redirect) {
@@ -29,7 +36,7 @@ const WelcomePage = () => {
         transition={{ duration: 0.5 }}
       />
 
-      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 1 }}>
+      <motion.div className="button-container" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 4 }}>
         <span
           style={{ cursor: "pointer" }}
           onClick={() => {
@@ -39,6 +46,12 @@ const WelcomePage = () => {
         >
           ENTER
         </span>
+      </motion.div>
+
+      <motion.div className="loading-line" initial={{ display: "flex" }} animate={{ display: "none", transitionEnd: { display: "none" } }} transition={{ duration: 1, delay: 4 }}>
+        <motion.div initial={{ width: 0 }} animate={{ width: "100%" }} transition={{ duration: 3 }} style={{ height: "2px", background: "#ff2e63" }}></motion.div>
+
+        <h2>{percent}%</h2>
       </motion.div>
 
       <p>Work in progress</p>
