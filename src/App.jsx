@@ -49,9 +49,7 @@ function App() {
 
   return (
     <div className="App">
-      <AnimatePresence>
-        <RouterProvider router={router} />
-      </AnimatePresence>
+      <RouterProvider router={router} />
     </div>
   );
 }
