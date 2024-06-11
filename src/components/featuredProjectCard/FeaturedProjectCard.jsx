@@ -8,25 +8,33 @@ import ContentRevealSuper from "../contentReveal/ContentRevealSuper";
 const FeaturedProjectCard = ({ projectData }) => {
   return (
     <div className="featured-project-card">
-      <ContentRevealSuper width="100%">
-        <div className="project-content">
-          <Link to={`/projects/${projectData?.slug}`}>
-            <div className="project-left">
+      <div className="project-content">
+        <Link to={`/projects/${projectData?.slug}`}>
+          <div className="project-left">
+            <ContentRevealSuper>
               <h2>{projectData?.title}</h2>
+            </ContentRevealSuper>
+            <ContentRevealSuper>
               <p>{projectData?.sub_title}</p>
-            </div>
-          </Link>
+            </ContentRevealSuper>
+          </div>
+        </Link>
 
-          <div className="project-right">
-            <a href={projectData?.demo_url} target="_blank" onClick={() => projectData.demo_url === null && toast.error("Work in progress.")}>
-              <button>
-                <img
-                  src="https://tghpaytxnfphvnnbkghz.supabase.co/storage/v1/object/sign/icons/demo-icon.svg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpY29ucy9kZW1vLWljb24uc3ZnIiwiaWF0IjoxNzE3NzY1NTIxLCJleHAiOjQ4NzEzNjU1MjF9.3aKuyMpCHRWSh2IJKuQ8y6NB-YI71QsnyTTmQZ61AqA&t=2024-06-07T13%3A05%3A21.792Z"
-                  alt="demo-icon"
-                />
-                DEMO
-              </button>
-            </a>
+        <div className="project-right">
+          {projectData?.demo_url && (
+            <ContentRevealSuper>
+              <a href={projectData?.demo_url} target="_blank" onClick={() => projectData.demo_url === null && toast.error("Work in progress.")}>
+                <button>
+                  <img
+                    src="https://tghpaytxnfphvnnbkghz.supabase.co/storage/v1/object/sign/icons/demo-icon.svg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpY29ucy9kZW1vLWljb24uc3ZnIiwiaWF0IjoxNzE3NzY1NTIxLCJleHAiOjQ4NzEzNjU1MjF9.3aKuyMpCHRWSh2IJKuQ8y6NB-YI71QsnyTTmQZ61AqA&t=2024-06-07T13%3A05%3A21.792Z"
+                    alt="demo-icon"
+                  />
+                  DEMO
+                </button>
+              </a>
+            </ContentRevealSuper>
+          )}
+          <ContentRevealSuper>
             <a href={projectData?.source_url} target="_blank">
               <button style={{ textDecoration: "none" }}>
                 <img
@@ -36,9 +44,9 @@ const FeaturedProjectCard = ({ projectData }) => {
                 CODE
               </button>
             </a>
-          </div>
+          </ContentRevealSuper>
         </div>
-      </ContentRevealSuper>
+      </div>
     </div>
   );
 };

@@ -37,36 +37,46 @@ const ProjectPage = () => {
       <section>
         <div className="project-heading">
           <div className="left">
-            <ContentRevealSuper>
-              <h1>{projectData?.title}</h1>
-            </ContentRevealSuper>
-            <ContentRevealSuper>
-              <p>{projectData?.sub_title}</p>
-            </ContentRevealSuper>
+            {projectData?.title && (
+              <ContentRevealSuper>
+                <h1>{projectData?.title}</h1>
+              </ContentRevealSuper>
+            )}
+            {projectData?.sub_title && (
+              <ContentRevealSuper>
+                <p>{projectData?.sub_title}</p>
+              </ContentRevealSuper>
+            )}
           </div>
 
           <div className="right">
             <a href={projectData?.demo_url} target="_blank">
-              <ContentRevealSuper>
-                <button>
-                  <img
-                    src="https://tghpaytxnfphvnnbkghz.supabase.co/storage/v1/object/sign/icons/demo-icon.svg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpY29ucy9kZW1vLWljb24uc3ZnIiwiaWF0IjoxNzE3NzY1NTIxLCJleHAiOjQ4NzEzNjU1MjF9.3aKuyMpCHRWSh2IJKuQ8y6NB-YI71QsnyTTmQZ61AqA&t=2024-06-07T13%3A05%3A21.792Z"
-                    alt="demo-icon"
-                  />
-                  DEMO
-                </button>
-              </ContentRevealSuper>
+              {projectData?.demo_url ? (
+                <ContentRevealSuper>
+                  <button>
+                    <img
+                      src="https://tghpaytxnfphvnnbkghz.supabase.co/storage/v1/object/sign/icons/demo-icon.svg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpY29ucy9kZW1vLWljb24uc3ZnIiwiaWF0IjoxNzE3NzY1NTIxLCJleHAiOjQ4NzEzNjU1MjF9.3aKuyMpCHRWSh2IJKuQ8y6NB-YI71QsnyTTmQZ61AqA&t=2024-06-07T13%3A05%3A21.792Z"
+                      alt="demo-icon"
+                    />
+                    DEMO
+                  </button>
+                </ContentRevealSuper>
+              ) : (
+                <></>
+              )}
             </a>
             <a href={projectData?.source_url} target="_blank">
-              <ContentRevealSuper>
-                <button>
-                  <img
-                    src="https://tghpaytxnfphvnnbkghz.supabase.co/storage/v1/object/sign/icons/github-icon.svg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpY29ucy9naXRodWItaWNvbi5zdmciLCJpYXQiOjE3MTc3NjU0ODQsImV4cCI6NDg3MTM2NTQ4NH0.BWztiGfYn7UlFuYNeH9uCfZoMxV-VKfJAHBY0ebdmqo&t=2024-06-07T13%3A04%3A44.840Z"
-                    alt="github-icon"
-                  />
-                  CODE
-                </button>
-              </ContentRevealSuper>
+              {projectData?.source_url && (
+                <ContentRevealSuper>
+                  <button>
+                    <img
+                      src="https://tghpaytxnfphvnnbkghz.supabase.co/storage/v1/object/sign/icons/github-icon.svg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpY29ucy9naXRodWItaWNvbi5zdmciLCJpYXQiOjE3MTc3NjU0ODQsImV4cCI6NDg3MTM2NTQ4NH0.BWztiGfYn7UlFuYNeH9uCfZoMxV-VKfJAHBY0ebdmqo&t=2024-06-07T13%3A04%3A44.840Z"
+                      alt="github-icon"
+                    />
+                    CODE
+                  </button>
+                </ContentRevealSuper>
+              )}
             </a>
           </div>
         </div>

@@ -34,12 +34,15 @@ const ContactSection = () => {
       </ContentRevealSuper>
 
       <div className="form">
-        <ContentRevealSuper width="100%">
-          <div className="form-row">
+        <div className="form-row">
+          <ContentRevealSuper width="100%">
             <input type="text" placeholder="Your name" name="name" onChange={(e) => handleInputChange(e, "name")} required />
+          </ContentRevealSuper>
+          <ContentRevealSuper width="100%">
             <input type="email" placeholder="Your email" name="email" onChange={(e) => handleInputChange(e, "email")} required />
-          </div>
-        </ContentRevealSuper>
+          </ContentRevealSuper>
+        </div>
+
         <ContentRevealSuper width="100%">
           <input type="text" placeholder="Subject" name="subject" onChange={(e) => handleInputChange(e, "subject")} required />
         </ContentRevealSuper>
