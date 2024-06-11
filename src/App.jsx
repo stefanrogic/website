@@ -11,7 +11,6 @@ import NotFoundPage from "./pages/notFoundPage/NotFoundPage";
 
 import { Toaster } from "react-hot-toast";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { AnimatePresence } from "framer-motion";
 
 function App() {
   const scrollTo = (el) => {
