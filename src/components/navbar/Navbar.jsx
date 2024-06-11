@@ -93,15 +93,18 @@ const Navbar = ({ scrollTo }) => {
           </div>
         </NavLink>
 
-        <motion.img
-          className="theme-icon"
-          src="https://tghpaytxnfphvnnbkghz.supabase.co/storage/v1/object/sign/icons/moon-icon.svg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpY29ucy9tb29uLWljb24uc3ZnIiwiaWF0IjoxNzE3NzY2NDkyLCJleHAiOjQ4NzEzNjY0OTJ9.lA4lDv1o63ZXw6ipvj9U3uYX1I2cq-hQ8jRqcP6qqlg&t=2024-06-07T13%3A21%3A32.548Z"
-          alt="theme-icon"
-          onClick={() => console.log("change-theme")}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1 }}
-        />
+        <NavLink to="/" className="moon-link">
+          <motion.div whileHover={{ scale: 1.5 }} whileTap={{ scale: 0.9 }}>
+            <motion.img
+              className="theme-icon"
+              src="https://tghpaytxnfphvnnbkghz.supabase.co/storage/v1/object/sign/icons/moon-icon.svg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpY29ucy9tb29uLWljb24uc3ZnIiwiaWF0IjoxNzE3NzY2NDkyLCJleHAiOjQ4NzEzNjY0OTJ9.lA4lDv1o63ZXw6ipvj9U3uYX1I2cq-hQ8jRqcP6qqlg&t=2024-06-07T13%3A21%3A32.548Z"
+              alt="theme-icon"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 1 }}
+            />
+          </motion.div>
+        </NavLink>
       </div>
 
       <motion.nav initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 0.5 }}>

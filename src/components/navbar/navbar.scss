@@ -45,16 +45,10 @@ header {
       top: 0;
     }
 
-    .theme-icon {
+    .moon-link {
       position: absolute;
       top: 0;
       right: 0;
-
-      cursor: pointer;
-
-      &:hover {
-        scale: 1.5;
-      }
     }
 
     a {
