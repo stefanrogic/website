@@ -32,7 +32,7 @@ const Navbar = ({ scrollTo }) => {
               alt="frontend-developer"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.7 }}
+              transition={{ duration: 1 }}
             />
           </div>
         </NavLink>
@@ -44,11 +44,11 @@ const Navbar = ({ scrollTo }) => {
           onClick={() => console.log("change-theme")}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 1 }}
+          transition={{ duration: 1, delay: 1 }}
         />
       </div>
 
-      <motion.nav initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.7 }}>
+      <motion.nav initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 0.5 }}>
         <div>
           <NavLink to="/about-me" className="not-button">
             ABOUT ME
