@@ -11,6 +11,7 @@ import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, EffectFade } from "swiper/modules";
 import { supabase } from "../../supabaseClient";
+
 import ContentRevealSuper from "../../components/contentReveal/ContentRevealSuper";
 import HeadingLine from "../../components/headingLine/HeadingLine";
 import ScrollToTop from "../../components/scrollToTop/ScrollToTop";
@@ -73,7 +74,7 @@ const ProjectPage = () => {
         <div className="project-description">
           {projectData?.description.map((d, i) => (
             <ContentRevealSuper key={i}>
-              <p style={{ minHeight: "150px" }}>{d}</p>
+              <p>{d}</p>
             </ContentRevealSuper>
           ))}
         </div>
