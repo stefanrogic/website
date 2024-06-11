@@ -160,6 +160,7 @@ const ProjectPage = () => {
                   title="Embedded youtube"
                 ></iframe>
               </ContentRevealSuper>
+              <h2 style={{ padding: "10px", background: "#b22045", textAlign: "center" }}>Work in progress</h2>
             </div>
           </section>
         )}
