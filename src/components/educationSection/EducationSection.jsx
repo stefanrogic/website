@@ -17,7 +17,7 @@ const EducationSection = () => {
         <ContentRevealSuper width="100%">
           <div className="education-card">
             <div className="card-left">
-              <h2>Bachelors Degree, Computer Engineering</h2>
+              <h2>Bachelors Degree, Computer Engineering and Electrotechnics</h2>
               <p>Academy of Vocational Studies of Western Serbia</p>
             </div>
 
