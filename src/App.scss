@@ -16,6 +16,11 @@
     background-color: #414141;
   }
 
+  .span-highlight {
+    color: #ff2e63;
+    text-decoration: none !important;
+  }
+
   .App {
     width: 100%;
 
@@ -102,6 +107,10 @@
     a {
       text-decoration: none;
       color: $white;
+
+      &:hover {
+        color: $red;
+      }
     }
 
     .not-button {
@@ -124,12 +133,12 @@
 
       border: none;
       color: $white;
-      background-color: $blue;
+      background-color: $red-alt;
 
       cursor: pointer;
 
       &:hover {
-        background-color: $blue-alt;
+        background-color: $red-hover;
       }
     }
 

@@ -3,7 +3,8 @@ import "./skillsSection.scss";
 import { supabase } from "../../supabaseClient";
 import { Suspense, useEffect, useState } from "react";
 
-import ContentReveal from "../contentReveal/ContentReveal";
+import ContentRevealSuper from "../contentReveal/ContentRevealSuper";
+import HeadingLine from "../headingLine/HeadingLine";
 
 const SkillsSection = ({ relevant = true }) => {
   const [featuredSkills, setFeaturedSkills] = useState([]);
@@ -21,31 +22,35 @@ const SkillsSection = ({ relevant = true }) => {
     <Suspense fallback={<div>Loading...</div>}>
       <section id="skills_section">
         <div className="heading-container row-reverse">
-          <h1>{location.pathname === "/about-me" ? "SKILLS" : "RELEVANT SKILLS"}</h1>
-          <div className="heading-line"></div>
+          <ContentRevealSuper>
+            <h1>{location.pathname === "/about-me" ? "SKILLS" : "RELEVANT SKILLS"}</h1>
+          </ContentRevealSuper>
+          <HeadingLine />
         </div>
 
-        <ContentReveal delay={2}>
-          <div className="skills-container" style={{ minHeight: relevant ? "85px" : "135px" }}>
-            {featuredSkills?.map((skill, i) => {
-              if (relevant && skill.relevant)
-                return (
-                  <div className="skill" key={skill + i}>
+        <div className="skills-container" style={{ minHeight: relevant ? "85px" : "135px" }}>
+          {featuredSkills?.map((skill, i) => {
+            if (relevant && skill.relevant)
+              return (
+                <ContentRevealSuper key={skill + i}>
+                  <div className="skill">
                     <img src={skill.img_url} alt="#" />
                     <span className="span-nounderline">{skill.title}</span>
                   </div>
-                );
+                </ContentRevealSuper>
+              );
 
-              if (!relevant)
-                return (
-                  <div className="skill" key={skill + i}>
+            if (!relevant)
+              return (
+                <ContentRevealSuper key={skill + i}>
+                  <div className="skill">
                     <img src={skill.img_url} alt="#" />
                     <span className="span-nounderline">{skill.title}</span>
                   </div>
-                );
-            })}
-          </div>
-        </ContentReveal>
+                </ContentRevealSuper>
+              );
+          })}
+        </div>
       </section>
     </Suspense>
   );

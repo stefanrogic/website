@@ -1,17 +1,20 @@
 import "./educationSection.scss";
 
-import ContentReveal from "../contentReveal/ContentReveal";
+import ContentRevealSuper from "../contentReveal/ContentRevealSuper";
+import HeadingLine from "../headingLine/HeadingLine";
 
 const EducationSection = () => {
   return (
     <section id="education_section">
       <div className="heading-container">
-        <h1>EDUCATION & CERTIFICATION</h1>
-        <div className="heading-line"></div>
+        <ContentRevealSuper>
+          <h1>EDUCATION & CERTIFICATION</h1>
+        </ContentRevealSuper>
+        <HeadingLine />
       </div>
 
       <div className="education-content">
-        <ContentReveal delay={2.2}>
+        <ContentRevealSuper width="100%">
           <div className="education-card">
             <div className="card-left">
               <h2>Bachelors Degree, IT</h2>
@@ -24,11 +27,13 @@ const EducationSection = () => {
               </p>
             </div>
           </div>
-        </ContentReveal>
+        </ContentRevealSuper>
 
-        <div className="line-seperator"></div>
+        <ContentRevealSuper>
+          <div className="line-seperator"></div>
+        </ContentRevealSuper>
 
-        <ContentReveal delay={2.4}>
+        <ContentRevealSuper width="100%">
           <div className="education-card">
             <div className="card-left">
               <h2>The Complete JS Course: From Zero to Expert!</h2>
@@ -41,11 +46,13 @@ const EducationSection = () => {
               </p>
             </div>
           </div>
-        </ContentReveal>
+        </ContentRevealSuper>
 
-        <div className="line-seperator"></div>
+        <ContentRevealSuper>
+          <div className="line-seperator"></div>
+        </ContentRevealSuper>
 
-        <ContentReveal delay={2.6}>
+        <ContentRevealSuper width="100%">
           <div className="education-card">
             <div className="card-left">
               <h2>React Course</h2>
@@ -58,11 +65,13 @@ const EducationSection = () => {
               </p>
             </div>
           </div>
-        </ContentReveal>
+        </ContentRevealSuper>
 
-        <div className="line-seperator"></div>
+        <ContentRevealSuper>
+          <div className="line-seperator"></div>
+        </ContentRevealSuper>
 
-        <ContentReveal delay={2.8}>
+        <ContentRevealSuper width="100%">
           <div className="education-card">
             <div className="card-left">
               <h2>Design Systems for Websites using Figma</h2>
@@ -75,7 +84,7 @@ const EducationSection = () => {
               </p>
             </div>
           </div>
-        </ContentReveal>
+        </ContentRevealSuper>
       </div>
     </section>
   );
