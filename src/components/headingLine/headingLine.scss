@@ -1,0 +1,7 @@
+@import "../../index.scss";
+
+.heading-line {
+  @include rwd("600px") {
+    display: none;
+  }
+}

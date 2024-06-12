@@ -8,8 +8,14 @@ section {
 
     .education-card {
       display: flex;
-      flex-direction: row;
-      justify-content: space-between;
+      flex-direction: column;
+      text-align: start;
+
+      @include rwd("600px") {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: auto;
+      }
 
       .card-left {
         display: flex;
@@ -19,7 +25,7 @@ section {
 
         h2 {
           font-size: $font-size-heading-medium;
-          line-height: $font-size-heading-medium !important;
+          line-height: 30px !important;
         }
 
         p {
@@ -29,10 +35,19 @@ section {
       }
 
       .card-right {
-        justify-content: flex-end;
+        margin-top: 20px;
+
+        @include rwd("600px") {
+          margin-top: 0;
+          justify-content: end;
+        }
 
         p {
-          text-align: end;
+          text-align: start;
+
+          @include rwd("600px") {
+            text-align: end;
+          }
         }
       }
     }

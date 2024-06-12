@@ -23,7 +23,7 @@ const EducationSection = () => {
 
             <div className="card-right">
               <p>
-                <i>2019-2022</i>
+                <i>2019-2022 October</i>
               </p>
             </div>
           </div>
@@ -33,18 +33,12 @@ const EducationSection = () => {
           <div className="line-seperator"></div>
         </ContentRevealSuper>
 
-        <ContentRevealSuper width="100%">
+        <ContentRevealSuper>
           <div className="education-card">
             <div className="card-left">
               <h2>The Complete JS Course: From Zero to Expert!</h2>
               <p>Udemy - Online Course</p>
             </div>
-
-            <div className="card-right">
-              <p>
-                <i>2020</i>
-              </p>
-            </div>
           </div>
         </ContentRevealSuper>
 
@@ -52,18 +46,12 @@ const EducationSection = () => {
           <div className="line-seperator"></div>
         </ContentRevealSuper>
 
-        <ContentRevealSuper width="100%">
+        <ContentRevealSuper>
           <div className="education-card">
             <div className="card-left">
               <h2>React Course</h2>
               <p>Udemy - Online Course</p>
             </div>
-
-            <div className="card-right">
-              <p>
-                <i>2021</i>
-              </p>
-            </div>
           </div>
         </ContentRevealSuper>
 
@@ -71,17 +59,11 @@ const EducationSection = () => {
           <div className="line-seperator"></div>
         </ContentRevealSuper>
 
-        <ContentRevealSuper width="100%">
+        <ContentRevealSuper>
           <div className="education-card">
             <div className="card-left">
               <h2>Design Systems for Websites using Figma</h2>
               <p>Domestika - Online Course</p>
-            </div>
-
-            <div className="card-right">
-              <p>
-                <i>2021</i>
-              </p>
             </div>
           </div>
         </ContentRevealSuper>

@@ -8,12 +8,8 @@ footer {
   justify-content: space-between;
 
   p {
-    text-align: center;
+    text-align: start;
     font-size: 16px !important;
-
-    @include rwd("600px") {
-      text-align: start;
-    }
   }
 
   a {

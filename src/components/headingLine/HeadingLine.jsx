@@ -1,3 +1,5 @@
+import "./headingLine.scss";
+
 import { motion, useInView, useAnimation } from "framer-motion";
 import { useEffect, useRef } from "react";
 

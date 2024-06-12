@@ -75,7 +75,7 @@ const ContactSection = () => {
         </div>
       </div>
 
-      <ContentRevealSuper>
+      <ContentRevealSuper width="100%">
         <div className="socials-container">
           <a href="https://www.linkedin.com/in/stefanrogic/" target="_blank" className="not-button">
             <img
