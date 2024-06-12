@@ -84,8 +84,8 @@ const Navbar = ({ scrollTo }) => {
         <NavLink to="/home">
           <div className="img-container">
             <motion.img
-              src="https://tghpaytxnfphvnnbkghz.supabase.co/storage/v1/object/sign/icons/frontend-developer.svg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpY29ucy9mcm9udGVuZC1kZXZlbG9wZXIuc3ZnIiwiaWF0IjoxNzE3NzY2NDU5LCJleHAiOjQ4NzEzNjY0NTl9.VgCSPDB89iz-143z4dIAr0Xyp9vwtnOCzlmbAjnEVmI&t=2024-06-07T13%3A20%3A59.671Z"
-              alt="frontend-developer"
+              src="https://tghpaytxnfphvnnbkghz.supabase.co/storage/v1/object/sign/icons/web-developer.svg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpY29ucy93ZWItZGV2ZWxvcGVyLnN2ZyIsImlhdCI6MTcxODIxNzE1OSwiZXhwIjo0ODcxODE3MTU5fQ.ElMpXkpVqKFpYfCL6OO6fXy2rCQ20M_MjbdNbmXWU8I&t=2024-06-12T18%3A32%3A39.913Z"
+              alt="web-developer"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1 }}
