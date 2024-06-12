@@ -23,11 +23,11 @@ const WelcomePage = () => {
   useEffect(() => {
     const timerOne = setTimeout(() => {
       setFill(true);
-      loadingControls.start("hide");
     }, 6500);
 
     const timerTwo = setTimeout(() => {
       setRedirect(true);
+      loadingControls.start("hide");
       mainControls.start("secondPhase");
       secondaryControls.start("secondPhase");
     }, 7000);
