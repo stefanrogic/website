@@ -137,10 +137,10 @@ const AboutPage = ({ scrollTo }) => {
             <ContentRevealSuper>
               <div className="resume-container">
                 <img
-                  src="https://tghpaytxnfphvnnbkghz.supabase.co/storage/v1/object/sign/images/resume.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpbWFnZXMvcmVzdW1lLnBuZyIsImlhdCI6MTcxNzc2NTk5MywiZXhwIjo0ODcxMzY1OTkzfQ.ycqPcZZyxbg9QUYVXVjiO_vLXeYDYCgExoUpAzfGhhU&t=2024-06-07T13%3A13%3A13.929Z"
+                  src="https://tghpaytxnfphvnnbkghz.supabase.co/storage/v1/object/sign/images/RESUME.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpbWFnZXMvUkVTVU1FLnBuZyIsImlhdCI6MTcxODE5NzA2NiwiZXhwIjo0ODcxNzk3MDY2fQ.jv9q4ZHozq7XsoaSA_vUcnL37D_VQy4Ly3vZgvoyEbA&t=2024-06-12T12%3A57%3A46.540Z"
                   alt="#"
                 />
-                <h2 style={{ position: "absolute", left: "50%", top: "50%", transform: "translate(-50%, -50%)", padding: "30px", background: "#b22045", fontSize: "100px", textAlign: "center", lineHeight: "80px" }}>Work in progress</h2>
+                {/* <h2 style={{ position: "absolute", left: "50%", top: "50%", transform: "translate(-50%, -50%)", padding: "30px", background: "#b22045", fontSize: "100px", textAlign: "center", lineHeight: "80px" }}>Work in progress</h2> */}
               </div>
             </ContentRevealSuper>
           </div>
