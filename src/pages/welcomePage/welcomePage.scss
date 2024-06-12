@@ -10,6 +10,10 @@
 
   outline: none;
 
+  .signature {
+    width: 300px;
+  }
+
   .signature,
   .button-container {
     position: absolute;
@@ -25,7 +29,8 @@
   }
 
   .loading-line {
-    position: relative;
+    position: fixed;
+    top: 1px;
     width: 100%;
 
     display: flex;

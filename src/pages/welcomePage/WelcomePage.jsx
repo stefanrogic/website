@@ -11,10 +11,12 @@ const WelcomePage = () => {
   const mainControls = useAnimation();
   const secondaryControls = useAnimation();
   const lineControls = useAnimation();
+  const loadingControls = useAnimation();
 
   const navigate = useNavigate();
   const ref = useRef();
 
+  //? START WITING SIGNATURE
   useEffect(() => {
     lineControls.start("draw");
   });
@@ -71,7 +73,7 @@ const WelcomePage = () => {
         className="signature"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 195.44 79.25"
-        variants={{ firstPhase: { width: "300px" }, secondPhase: { opacity: 0 } }}
+        variants={{ firstPhase: { opacity: 1 }, secondPhase: { opacity: 0 } }}
         initial="firstPhase"
         animate={secondaryControls}
         transition={{ duration: 0 }}
@@ -225,6 +227,7 @@ const WelcomePage = () => {
         <span
           style={{ cursor: "pointer" }}
           onClick={() => {
+            loadingControls.start("hide");
             secondaryControls.start("secondPhase");
             mainControls.start("secondPhase");
             setRedirect(true);
@@ -234,11 +237,9 @@ const WelcomePage = () => {
         </span>
       </motion.div>
 
-      {/* <motion.div className="loading-line" initial={{ display: "flex" }} animate={{ display: "none", transitionEnd: { display: "none" } }} transition={{ duration: 1, delay: 6.5 }}>
+      <motion.div className="loading-line" variants={{ show: { opacity: 1 }, hide: { opacity: 0, transition: { duration: 0.5 } } }} initial="show" animate={loadingControls}>
         <motion.div className="line" initial={{ width: 0 }} animate={{ width: "100%" }} transition={{ duration: 6.5 }} style={{ height: "2px", background: "#ff2e63" }}></motion.div>
-
-        <h2>{percent}%</h2>
-      </motion.div> */}
+      </motion.div>
 
       <p>Work in progress</p>
     </div>
