@@ -23,7 +23,7 @@ const EducationSection = () => {
 
             <div className="card-right">
               <p>
-                <i>2019-2022 October</i>
+                <i>2019-October 2022</i>
               </p>
             </div>
           </div>
