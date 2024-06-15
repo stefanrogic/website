@@ -137,7 +137,7 @@ const AboutPage = ({ scrollTo }) => {
             <ContentRevealSuper>
               <div className="resume-container">
                 <img
-                  src="https://tghpaytxnfphvnnbkghz.supabase.co/storage/v1/object/sign/images/resume.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpbWFnZXMvcmVzdW1lLnBuZyIsImlhdCI6MTcxODQ0NTM3NywiZXhwIjo0ODcyMDQ1Mzc3fQ.WyBVPOUoyUqtVGfugYDiLJQJOtKVDXVv4Cm4UJaEYWQ&t=2024-06-15T09%3A56%3A17.321Z"
+                  src="https://tghpaytxnfphvnnbkghz.supabase.co/storage/v1/object/sign/images/resume.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpbWFnZXMvcmVzdW1lLnBuZyIsImlhdCI6MTcxODQ0NTY4MywiZXhwIjo0ODcyMDQ1NjgzfQ._ZXvA6k2dgBU2xs39YpCSA9C48MiQqxz0XlnU-5MdvE&t=2024-06-15T10%3A01%3A23.229Z"
                   alt="#"
                 />
                 {/* <h2 style={{ position: "absolute", left: "50%", top: "50%", transform: "translate(-50%, -50%)", padding: "30px", background: "#b22045", fontSize: "100px", textAlign: "center", lineHeight: "80px" }}>Work in progress</h2> */}
