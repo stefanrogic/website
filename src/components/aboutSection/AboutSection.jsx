@@ -21,19 +21,21 @@ const AboutSection = ({ home = true, scrollTo }) => {
       {location.pathname === "/home" && (
         <ContentRevealSuper>
           <p>
-            Hello, my name is <span className="span-highlight">Stefan</span>. I am a <span className="span-highlight">Web Developer</span> with more than <span className="span-highlight">2 years</span> of hands on experience with background in System
+            Hello, my name is <span className="span-highlight">Stefan</span>, <span className="span-highlight">Web Developer</span> with more than <span className="span-highlight">2 years</span> of hands on experience with background in System
             Administration, Tech Support and Sales.
           </p>
         </ContentRevealSuper>
       )}
 
-      {/* TODO: ADD MORE  */}
       {location.pathname === "/about-me" && (
         <ContentRevealSuper>
           <p>
-            Hello, my name is <span className="span-highlight">Stefan</span>. I am a <span className="span-highlight">Web Developer</span> with more than <span className="span-highlight">2 years</span> of hands on experience with background in System
-            Administration, Tech Support and Sales.
+            <span className="span-highlight">Web Developer</span> with more than <span className="span-highlight">2 years</span> of hands on experience with background in System Administration, Tech Support and Sales.
           </p>
+
+          <br />
+          {/* TODO: ADD MORE  */}
+          <p></p>
         </ContentRevealSuper>
       )}
 
