@@ -7,6 +7,6 @@ section {
   .button-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 30px;
+    column-gap: 30px;
   }
 }

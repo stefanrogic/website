@@ -36,11 +36,17 @@
       scroll-margin: $scroll-margin;
 
       .heading-container {
+        width: 100%;
+
         display: flex;
         flex-direction: row;
         align-items: center;
-        gap: 30px;
         justify-content: center;
+        gap: 30px;
+
+        @include rwd("600px") {
+          justify-content: flex-start;
+        }
 
         h1 {
           width: 100%;

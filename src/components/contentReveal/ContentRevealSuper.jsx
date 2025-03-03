@@ -22,7 +22,7 @@ const ContentRevealSuper = ({ width = "fit-content", children }) => {
   }, [isInView]);
 
   return (
-    <div ref={ref} style={{ position: "relative", width, overflow: "hidden" }}>
+    <div ref={ref} style={{ position: "relative", width, overflow: "hidden", height: "fit-content" }}>
       <motion.div variants={mainVariants} initial="hidden" animate={mainControls} transition={mainTransition}>
         {children}
       </motion.div>

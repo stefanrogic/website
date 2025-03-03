@@ -7,15 +7,10 @@ section {
     row-gap: 15px;
 
     .skill {
-      height: 35px;
-      // padding: 10px 15px;
-
       display: flex;
       flex-direction: row;
       align-items: center;
       gap: 15px;
-
-      // border: 1px solid #414141;
 
       cursor: default;
     }
