@@ -7,7 +7,7 @@ import "swiper/css/effect-fade";
 import PageNavigation from "../../components/pageNavigation/PageNavigation";
 
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, EffectFade } from "swiper/modules";
 
@@ -120,12 +120,12 @@ const ProjectPage = ({ projectsData }) => {
                     </button>
                   </div>
 
-                  {/* {projectData?.gallery.map((img, i) => (
+                  {projectData?.gallery.map((img, i) => (
                     <SwiperSlide key={i} style={{ position: "relative" }}>
                       <img src={img.url} alt={img.alt} />
                       <h2 style={{ position: "absolute", left: "50%", top: "50%", transform: "translate(-50%, -50%)", padding: "10px", background: "#b22045", textAlign: "center" }}>Work in progress</h2>
                     </SwiperSlide>
-                  ))} */}
+                  ))}
                 </Swiper>
               </div>
             </ContentRevealSuper>
@@ -157,30 +157,32 @@ const ProjectPage = ({ projectsData }) => {
           </section>
         )}
 
-        <section>
-          <div className={`heading-container ${projectData?.gallery || (projectData?.video_url ? "row-reverse" : "")}`}>
-            <ContentRevealSuper>
-              <h1>TODO</h1>
-            </ContentRevealSuper>
-            <HeadingLine />
-          </div>
+        {projectData?.todo && (
+          <section>
+            <div className={`heading-container ${projectData?.gallery || (projectData?.video_url ? "row-reverse" : "")}`}>
+              <ContentRevealSuper>
+                <h1>TODO</h1>
+              </ContentRevealSuper>
+              <HeadingLine />
+            </div>
 
-          <div className="todo-container" style={{ minHeight: "165px" }}>
-            {/* {projectData?.todo.map((t, i) =>
-              t.done ? (
-                <ContentRevealSuper key={i}>
-                  <p>
-                    <s>{t.text}</s>
-                  </p>
-                </ContentRevealSuper>
-              ) : (
-                <ContentRevealSuper key={i}>
-                  <p>{t.text}</p>
-                </ContentRevealSuper>
-              )
-            )} */}
-          </div>
-        </section>
+            <div className="todo-container" style={{ minHeight: "165px" }}>
+              {projectData?.todo.map((t, i) =>
+                t.done ? (
+                  <ContentRevealSuper key={i}>
+                    <p>
+                      <s>{t.text}</s>
+                    </p>
+                  </ContentRevealSuper>
+                ) : (
+                  <ContentRevealSuper key={i}>
+                    <p>{t.text}</p>
+                  </ContentRevealSuper>
+                )
+              )}
+            </div>
+          </section>
+        )}
       </section>
     </div>
   );
