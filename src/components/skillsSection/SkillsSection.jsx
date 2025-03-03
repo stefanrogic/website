@@ -28,6 +28,11 @@ const SkillsSection = ({ relevant = true }) => {
       relevant: true,
     },
     {
+      name: "Tailwind CSS",
+      image: "/icons/tailwind-icon.svg",
+      relevant: true,
+    },
+    {
       name: "Redux",
       image: "/icons/redux-icon.svg",
       relevant: true,

@@ -1,48 +1,11 @@
 import "./featuredProjectsSection.scss";
 
 import FeaturedProjectCard from "../featuredProjectCard/FeaturedProjectCard";
-import { Fragment, useState } from "react";
+import { Fragment } from "react";
 import ContentRevealSuper from "../contentReveal/ContentRevealSuper";
 import HeadingLine from "../headingLine/HeadingLine";
 
-const FeaturedProjectsSection = () => {
-  const [projectsData] = useState([
-    {
-      slug: "read-me-fast",
-      title: "Read Me Fast",
-      sub_title: "App",
-      demo_url: "#",
-      source_url: "#",
-    },
-    {
-      slug: "portfolio",
-      title: "Portfolio",
-      sub_title: "My Portfolio Website",
-      demo_url: "#",
-      source_url: "#",
-    },
-    {
-      slug: "microphone-test",
-      title: "Microphone Test",
-      sub_title: "App",
-      demo_url: "#",
-      source_url: "#",
-    },
-    {
-      slug: "blackjack",
-      title: "Blackjack",
-      sub_title: "Game",
-      demo_url: "#",
-      source_url: "#",
-    },
-    {
-      slug: "my-linux-config",
-      title: "My Linux Config",
-      sub_title: "Dotfiles",
-      source_url: "https://github.com/stefanrogic/dotfiles",
-    },
-  ]);
-
+const FeaturedProjectsSection = ({ projectsData }) => {
   return (
     <section id="featured_projects_section">
       <div className="heading-container">

@@ -17,11 +17,8 @@ const AboutPage = ({ scrollTo }) => {
       <section>
         <ContentRevealSuper width="100%">
           <div className="img-container">
-            <img
-              src="https://tghpaytxnfphvnnbkghz.supabase.co/storage/v1/object/sign/images/test-img.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpbWFnZXMvdGVzdC1pbWcuanBnIiwiaWF0IjoxNzE3NzY2MTI3LCJleHAiOjQ4NzEzNjYxMjd9.0SeIOW3cMf776i2_R9NcRHaMZw1blMRGQtadykx2Daw&t=2024-06-07T13%3A15%3A28.059Z"
-              alt="#"
-            />
-            <h2 style={{ position: "absolute", left: "50%", top: "50%", transform: "translate(-50%, -50%)", padding: "10px", background: "#b22045", textAlign: "center" }}>Work in progress</h2>
+            <img src="/images/about-img.jpg" alt="#" />
+            {/* <h2 style={{ position: "absolute", left: "50%", top: "50%", transform: "translate(-50%, -50%)", padding: "10px", background: "#b22045", textAlign: "center" }}>Work in progress</h2> */}
           </div>
         </ContentRevealSuper>
 

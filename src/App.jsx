@@ -14,6 +14,67 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Analytics } from "@vercel/analytics/react";
 
 function App() {
+  const projectsData = [
+    {
+      slug: "read-me-fast",
+      title: "Read Me Fast",
+      sub_title: "App",
+      description: ["A tool for reading, studying and memorizing large volumes of text for speeches, presentations or lectures."],
+      technologies: [
+        {
+          name: "Next.js",
+          image: "/icons/nextjs-icon.svg",
+          relevant: true,
+        },
+        {
+          name: "Typescript",
+          image: "/icons/ts-icon.svg",
+          relevant: true,
+        },
+        {
+          name: "Tailwind CSS",
+          image: "/icons/tailwind-icon.svg",
+          relevant: true,
+        },
+      ],
+      demo_url: "#",
+      source_url: "#",
+      video_url: "https://www.youtube.com/embed/erEgovG9WBs?si=U4GSAaK47pHHbkkG",
+    },
+    {
+      slug: "portfolio",
+      title: "Portfolio",
+      sub_title: "My Portfolio Website",
+      demo_url: "#",
+      source_url: "#",
+      video_url: "https://www.youtube.com/embed/erEgovG9WBs?si=U4GSAaK47pHHbkkG",
+    },
+    {
+      slug: "microphone-test",
+      title: "Microphone Test",
+      sub_title: "App",
+      demo_url: "#",
+      source_url: "#",
+      video_url: "https://www.youtube.com/embed/erEgovG9WBs?si=U4GSAaK47pHHbkkG",
+    },
+    {
+      slug: "blackjack",
+      title: "Blackjack",
+      sub_title: "Game",
+      demo_url: "#",
+      source_url: "#",
+      video_url: "https://www.youtube.com/embed/erEgovG9WBs?si=U4GSAaK47pHHbkkG",
+    },
+    {
+      slug: "my-linux-config",
+      title: "My Linux Config",
+      sub_title: "Dotfiles",
+      description: ["Arch Linux dotfiles."],
+      source_url: "https://github.com/stefanrogic/dotfiles",
+      video_url: "https://www.youtube.com/embed/RuofJYG2yak?si=KzIxAgTRj3aJ2uEN",
+    },
+  ];
+
   const scrollTo = (el) => {
     const element = document.getElementById(el);
     element.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
@@ -42,9 +103,9 @@ function App() {
 
   const router = createBrowserRouter([
     { path: "/", element: Root(<WelcomePage />, false), errorElement: Root(<NotFoundPage />) },
-    { path: "/home", element: Root(<HomePage scrollTo={scrollTo} />), errorElement: Root(<NotFoundPage />) },
-    { path: "/about-me", element: Root(<AboutPage scrollTo={scrollTo} />) },
-    { path: "/projects/:id", element: Root(<ProjectPage />) },
+    { path: "/home", element: Root(<HomePage scrollTo={scrollTo} projectsData={projectsData} />), errorElement: Root(<NotFoundPage />) },
+    { path: "/about-me", element: Root(<AboutPage scrollTo={scrollTo} />), errorElement: Root(<NotFoundPage />) },
+    { path: "/projects/:id", element: Root(<ProjectPage projectsData={projectsData} />), errorElement: Root(<NotFoundPage />) },
   ]);
 
   return (

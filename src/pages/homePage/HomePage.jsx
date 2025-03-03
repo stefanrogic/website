@@ -5,12 +5,12 @@ import SkillsSection from "../../components/skillsSection/SkillsSection";
 import FeaturedProjectsSection from "../../components/featuredProjectsSection/FeaturedProjectsSection";
 import ContactSection from "../../components/contactSection/ContactSection";
 
-const HomePage = ({ scrollTo }) => {
+const HomePage = ({ scrollTo, projectsData }) => {
   return (
     <div className="home" id="home">
       <AboutSection scrollTo={scrollTo} />
       <SkillsSection relevant={true} />
-      <FeaturedProjectsSection />
+      <FeaturedProjectsSection projectsData={projectsData} />
       <ContactSection />
     </div>
   );
