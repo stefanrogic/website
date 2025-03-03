@@ -65,10 +65,7 @@ const ContactSection = () => {
           </ContentRevealSuper>
           <ContentRevealSuper>
             <a href="mailto: stefanrogic@protonmail.com" className="not-button">
-              <img
-                src="https://tghpaytxnfphvnnbkghz.supabase.co/storage/v1/object/sign/icons/arrow-up.svg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpY29ucy9hcnJvdy11cC5zdmciLCJpYXQiOjE3MTc3NjU2ODIsImV4cCI6NDg3MTM2NTY4Mn0.sKT7Gz29KKbURxKNVzMnRqNfsHcf7W33UyHERzys020&t=2024-06-07T13%3A08%3A02.495Z"
-                alt="arrow-up"
-              />
+              <img src="/icons/arrow-up.svg" alt="arrow-up" />
               OR SEND ME AN EMAIL
             </a>
           </ContentRevealSuper>
@@ -78,18 +75,12 @@ const ContactSection = () => {
       <ContentRevealSuper width="100%">
         <div className="socials-container">
           <a href="https://www.linkedin.com/in/stefanrogic/" target="_blank" className="not-button">
-            <img
-              src="https://tghpaytxnfphvnnbkghz.supabase.co/storage/v1/object/sign/icons/linkedin-icon.svg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpY29ucy9saW5rZWRpbi1pY29uLnN2ZyIsImlhdCI6MTcxNzc2NTcwMywiZXhwIjo0ODcxMzY1NzAzfQ.KxQql90TRpDamAlsISH2pz6AjSsYZgaV7puB-W-g3M0&t=2024-06-07T13%3A08%3A23.323Z"
-              alt="linkedin-icon"
-            />
+            <img src="/icons/linkedin-icon.svg" alt="linkedin-icon" />
             linkedin.com/in/stefanrogic
           </a>
           <div className="line-seperator"></div>
           <a href="https://github.com/stefanrogic" target="_blank" className="not-button">
-            <img
-              src="https://tghpaytxnfphvnnbkghz.supabase.co/storage/v1/object/sign/icons/github-icon.svg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpY29ucy9naXRodWItaWNvbi5zdmciLCJpYXQiOjE3MTc3NjU0ODQsImV4cCI6NDg3MTM2NTQ4NH0.BWztiGfYn7UlFuYNeH9uCfZoMxV-VKfJAHBY0ebdmqo&t=2024-06-07T13%3A04%3A44.840Z"
-              alt="github-icon"
-            />
+            <img src="/icons/github-icon.svg" alt="github-icon" />
             github.com/stefanrogic
           </a>
         </div>
