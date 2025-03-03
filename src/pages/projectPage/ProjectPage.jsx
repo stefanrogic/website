@@ -1,19 +1,20 @@
 import "./projectPage.scss";
+
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
 
 import PageNavigation from "../../components/pageNavigation/PageNavigation";
+import ContentRevealSuper from "../../components/contentReveal/ContentRevealSuper";
+import HeadingLine from "../../components/headingLine/HeadingLine";
+import ScrollToTop from "../../components/scrollToTop/ScrollToTop";
 
 import { useParams } from "react-router-dom";
 import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, EffectFade } from "swiper/modules";
-
-import ContentRevealSuper from "../../components/contentReveal/ContentRevealSuper";
-import HeadingLine from "../../components/headingLine/HeadingLine";
-import ScrollToTop from "../../components/scrollToTop/ScrollToTop";
+import { motion } from "framer-motion";
 
 const ProjectPage = ({ projectsData }) => {
   const { id } = useParams();
@@ -65,6 +66,10 @@ const ProjectPage = ({ projectsData }) => {
           </div>
         </div>
 
+        <ContentRevealSuper>
+          <motion.div className="line-seperator"></motion.div>
+        </ContentRevealSuper>
+
         {projectData.description && (
           <div className="project-description">
             {projectData?.description.map((d, i) => (
@@ -84,19 +89,19 @@ const ProjectPage = ({ projectsData }) => {
               <HeadingLine />
             </div>
 
-            <ContentRevealSuper>
-              <div className="skills-container" style={{ minHeight: "85px" }}>
-                {projectData?.technologies.map((skill, i) => {
-                  if (skill)
-                    return (
-                      <div className="skill" key={skill + i}>
+            <div className="skills-container">
+              {projectData?.technologies.map((skill, i) => {
+                if (skill)
+                  return (
+                    <ContentRevealSuper key={skill + i}>
+                      <div className="skill">
                         <img src={skill.image} alt="" />
                         <span className="span-nounderline">{skill.name}</span>
                       </div>
-                    );
-                })}
-              </div>
-            </ContentRevealSuper>
+                    </ContentRevealSuper>
+                  );
+              })}
+            </div>
           </section>
         )}
 
@@ -152,7 +157,7 @@ const ProjectPage = ({ projectsData }) => {
                   title="Embedded youtube"
                 ></iframe>
               </ContentRevealSuper>
-              <h2 style={{ padding: "10px", background: "#b22045", textAlign: "center" }}>Work in progress</h2>
+              {/* <h2 style={{ padding: "10px", background: "#b22045", textAlign: "center" }}>Work in progress</h2> */}
             </div>
           </section>
         )}

@@ -95,4 +95,11 @@ section {
     flex-direction: column;
     gap: 10px;
   }
+
+  .line-seperator {
+    width: 50px;
+    height: 1px;
+
+    background-color: white;
+  }
 }

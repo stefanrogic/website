@@ -170,6 +170,7 @@ const AboutPage = ({ scrollTo }) => {
                 GET PDF
               </a>
             </ContentRevealSuper>
+
             <ContentRevealSuper>
               <div className="resume-container">
                 <img src="/images/resume.png" alt="resume" />
