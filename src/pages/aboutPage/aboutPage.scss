@@ -20,23 +20,8 @@ section {
 
   .resume-container {
     position: relative;
-    height: auto;
 
-    // background-color: $dark-grey;
-
-    @include rwd("600px") {
-      height: auto;
-    }
-
-    .curtain {
-      height: inherit;
-      width: 100%;
-
-      position: absolute;
-      top: 0;
-
-      background-color: $dark-grey;
-    }
+    background-color: $dark-grey;
 
     img {
       height: inherit;
