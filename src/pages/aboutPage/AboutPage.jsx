@@ -7,6 +7,8 @@ import AboutSection from "../../components/aboutSection/AboutSection";
 import ContentRevealSuper from "../../components/contentReveal/ContentRevealSuper";
 import HeadingLine from "../../components/headingLine/HeadingLine";
 
+import { motion } from "framer-motion";
+
 const AboutPage = ({ scrollTo }) => {
   return (
     <div>
@@ -39,6 +41,44 @@ const AboutPage = ({ scrollTo }) => {
             <ContentRevealSuper width="100%">
               <div className="education-card">
                 <div className="card-left">
+                  <h2>Freelance</h2>
+                  <p>Technical Support, Computer Service & Graphical Design</p>
+                </div>
+
+                <div className="card-right">
+                  <p>
+                    <i>2015 - Currently</i>
+                  </p>
+                </div>
+              </div>
+            </ContentRevealSuper>
+
+            <ContentRevealSuper>
+              <motion.div className="line-seperator"></motion.div>
+            </ContentRevealSuper>
+
+            <ContentRevealSuper width="100%">
+              <div className="education-card">
+                <div className="card-left">
+                  <h2>System Administrator</h2>
+                  <p>Medical School Užice</p>
+                </div>
+
+                <div className="card-right">
+                  <p>
+                    <i>June - November 2024</i>
+                  </p>
+                </div>
+              </div>
+            </ContentRevealSuper>
+
+            <ContentRevealSuper>
+              <motion.div className="line-seperator"></motion.div>
+            </ContentRevealSuper>
+
+            <ContentRevealSuper width="100%">
+              <div className="education-card">
+                <div className="card-left">
                   <h2>Web Developer Intern</h2>
                   <p>Regional Innovation Startup Center Užice</p>
                 </div>
@@ -51,22 +91,24 @@ const AboutPage = ({ scrollTo }) => {
               </div>
             </ContentRevealSuper>
 
-            {/* <ContentRevealSuper><div className="line-seperator"></div></ContentRevealSuper> */}
+            <ContentRevealSuper>
+              <motion.div className="line-seperator"></motion.div>
+            </ContentRevealSuper>
 
-            {/* <ContentReveal delay={2.4}>
+            <ContentRevealSuper width="100%">
               <div className="education-card">
                 <div className="card-left">
-                  <h2>Frontend Developer & UI/UX Designer</h2>
-                  <p>Freelance</p>
+                  <h2>Salesman</h2>
+                  <p>WinWin</p>
                 </div>
 
                 <div className="card-right">
                   <p>
-                    <i>January 2024 - Now</i>
+                    <i>2016 - 2019</i>
                   </p>
                 </div>
               </div>
-            </ContentReveal> */}
+            </ContentRevealSuper>
           </div>
         </section>
 
@@ -83,26 +125,26 @@ const AboutPage = ({ scrollTo }) => {
               <ContentRevealSuper>
                 <div className="card-left">
                   <h2>English</h2>
-                  <p>Excellent</p>
+                  <p>C2</p>
                 </div>
               </ContentRevealSuper>
             </div>
 
             <ContentRevealSuper>
-              <div className="line-seperator"></div>
+              <motion.div className="line-seperator"></motion.div>
             </ContentRevealSuper>
 
             <div className="education-card">
               <ContentRevealSuper>
                 <div className="card-left">
                   <h2>German</h2>
-                  <p>Beginner</p>
+                  <p>A1</p>
                 </div>
               </ContentRevealSuper>
             </div>
 
             <ContentRevealSuper>
-              <div className="line-seperator"></div>
+              <motion.div className="line-seperator"></motion.div>
             </ContentRevealSuper>
 
             <div className="education-card">
@@ -127,19 +169,13 @@ const AboutPage = ({ scrollTo }) => {
           <div className="education-content">
             <ContentRevealSuper>
               <a className="text-link" href="https://drive.google.com/file/d/1DkL5xPQDqxMa88yyFKdXZk2BGqMzDrR_/view?usp=drive_link" target="_blank">
-                <img
-                  src="https://tghpaytxnfphvnnbkghz.supabase.co/storage/v1/object/sign/icons/arrow-up.svg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpY29ucy9hcnJvdy11cC5zdmciLCJpYXQiOjE3MTc3NjYwNTMsImV4cCI6NDg3MTM2NjA1M30.W15FJyMOqMIEI3FqZiLT_WKrKjWFhrJz2yRBvvwR6WU&t=2024-06-07T13%3A14%3A13.717Z"
-                  alt="arrow-up"
-                />
+                <img src="/icons/arrow-up.svg" alt="arrow-up" />
                 GET PDF
               </a>
             </ContentRevealSuper>
             <ContentRevealSuper>
               <div className="resume-container">
-                <img
-                  src="https://tghpaytxnfphvnnbkghz.supabase.co/storage/v1/object/sign/images/resume.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpbWFnZXMvcmVzdW1lLnBuZyIsImlhdCI6MTcxODQ0NjMxNiwiZXhwIjo0ODcyMDQ2MzE2fQ.r6oDgf2veG5gHXE-S5Q2IMaS245GunkvNdyd7cdn9tI&t=2024-06-15T10%3A11%3A56.888Z"
-                  alt="#"
-                />
+                <img src="/images/resume.png" alt="#" />
                 {/* <h2 style={{ position: "absolute", left: "50%", top: "50%", transform: "translate(-50%, -50%)", padding: "30px", background: "#b22045", fontSize: "100px", textAlign: "center", lineHeight: "80px" }}>Work in progress</h2> */}
               </div>
             </ContentRevealSuper>

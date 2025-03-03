@@ -1,22 +1,47 @@
 import "./featuredProjectsSection.scss";
 
 import FeaturedProjectCard from "../featuredProjectCard/FeaturedProjectCard";
-import { Fragment, useEffect, useState } from "react";
-import { supabase } from "../../supabaseClient";
+import { Fragment, useState } from "react";
 import ContentRevealSuper from "../contentReveal/ContentRevealSuper";
 import HeadingLine from "../headingLine/HeadingLine";
 
 const FeaturedProjectsSection = () => {
-  const [projectsData, setProjectsData] = useState();
-
-  const getProjectsData = async (q) => {
-    const { data } = await supabase.from("projects").select(q).order("id", { ascending: true });
-    setProjectsData(data);
-  };
-
-  useEffect(() => {
-    getProjectsData("slug, title, sub_title, demo_url, source_url");
-  }, []);
+  const [projectsData] = useState([
+    {
+      slug: "read-me-fast",
+      title: "Read Me Fast",
+      sub_title: "App",
+      demo_url: "#",
+      source_url: "#",
+    },
+    {
+      slug: "portfolio",
+      title: "Portfolio",
+      sub_title: "My Portfolio Website",
+      demo_url: "#",
+      source_url: "#",
+    },
+    {
+      slug: "microphone-test",
+      title: "Microphone Test",
+      sub_title: "App",
+      demo_url: "#",
+      source_url: "#",
+    },
+    {
+      slug: "blackjack",
+      title: "Blackjack",
+      sub_title: "Game",
+      demo_url: "#",
+      source_url: "#",
+    },
+    {
+      slug: "my-linux-config",
+      title: "My Linux Config",
+      sub_title: "Dotfiles",
+      source_url: "https://github.com/stefanrogic/dotfiles",
+    },
+  ]);
 
   return (
     <section id="featured_projects_section">
@@ -43,10 +68,7 @@ const FeaturedProjectsSection = () => {
 
       <ContentRevealSuper>
         <a className="text-link" href="https://github.com/stefanrogic?tab=repositories" target="_blank">
-          <img
-            src="https://tghpaytxnfphvnnbkghz.supabase.co/storage/v1/object/sign/icons/arrow-up.svg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpY29ucy9hcnJvdy11cC5zdmciLCJpYXQiOjE3MTc3NjQyOTgsImV4cCI6NDg3MTM2NDI5OH0.et4eJzEsyGb6veyt3OCzKpA3IHApk8urogAWHT9JBJY&t=2024-06-07T12%3A44%3A58.573Z"
-            alt="arrow-up"
-          />
+          <img src="/icons/arrow-up.svg" alt="arrow-up" />
           ALL PROJECTS
         </a>
       </ContentRevealSuper>

@@ -21,8 +21,8 @@ const AboutSection = ({ home = true, scrollTo }) => {
       {location.pathname === "/home" && (
         <ContentRevealSuper>
           <p>
-            Hello, my name is <span className="span-highlight">Stefan</span>. I am a <span className="span-highlight">Web Developer</span> with more than <span className="span-highlight">2 years</span> of hands on experience, specializing in building
-            easy-to-use interfaces for websites and web apps while prioritizing smooth user experience and engaging animations.
+            Hello, my name is <span className="span-highlight">Stefan</span>. I am a <span className="span-highlight">Web Developer</span> with more than <span className="span-highlight">2 years</span> of hands on experience with background in System
+            Administration, Tech Support and Sales.
           </p>
         </ContentRevealSuper>
       )}
@@ -31,8 +31,8 @@ const AboutSection = ({ home = true, scrollTo }) => {
       {location.pathname === "/about-me" && (
         <ContentRevealSuper>
           <p>
-            Hello, my name is <span className="span-highlight">Stefan</span>. I am a <span className="span-highlight">Web Developer</span> with more than <span className="span-highlight">2 years</span> of hands on experience, specializing in building
-            easy-to-use interfaces for websites and web apps while prioritizing smooth user experience and engaging animations.
+            Hello, my name is <span className="span-highlight">Stefan</span>. I am a <span className="span-highlight">Web Developer</span> with more than <span className="span-highlight">2 years</span> of hands on experience with background in System
+            Administration, Tech Support and Sales.
           </p>
         </ContentRevealSuper>
       )}

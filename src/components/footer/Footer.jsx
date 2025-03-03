@@ -1,5 +1,6 @@
-import ContentRevealSuper from "../contentReveal/ContentRevealSuper";
 import "./footer.scss";
+
+import ContentRevealSuper from "../contentReveal/ContentRevealSuper";
 
 const Footer = () => {
   return (

@@ -64,7 +64,7 @@ const SkillsSection = ({ relevant = true }) => {
           <HeadingLine />
         </div>
 
-        <div className="skills-container" style={{ minHeight: relevant ? "85px" : "135px" }}>
+        <div className="skills-container">
           {featuredSkills?.map((skill, i) => {
             if (relevant && skill.relevant)
               return (
