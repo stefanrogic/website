@@ -18,8 +18,8 @@ function App() {
     {
       slug: "neldor",
       title: "Neldor",
-      sub_title: "Tool for reading",
-      description: ["A tool for reading, studying and memorizing large volumes of text for speeches, presentations or lectures."],
+      sub_title: "Tool for reading and stydying",
+      description: ["Tool for reading, studying and memorizing large volumes of text for speeches, presentations or lectures."],
       technologies: [
         {
           name: "Next.js",

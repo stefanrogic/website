@@ -15,7 +15,7 @@ const FeaturedProjectsSection = ({ projectsData }) => {
         <HeadingLine />
       </div>
 
-      <div className="projects-container" style={{ minHeight: "454px" }}>
+      <div className="projects-container">
         {projectsData?.map((project, i) => (
           <Fragment key={project + i}>
             <FeaturedProjectCard projectData={project} />
