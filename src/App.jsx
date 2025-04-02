@@ -16,9 +16,9 @@ import { Analytics } from "@vercel/analytics/react";
 function App() {
   const projectsData = [
     {
-      slug: "read-me-fast",
-      title: "Read Me Fast",
-      sub_title: "App",
+      slug: "neldor",
+      title: "Neldor",
+      sub_title: "Tool for reading",
       description: ["A tool for reading, studying and memorizing large volumes of text for speeches, presentations or lectures."],
       technologies: [
         {
@@ -39,7 +39,7 @@ function App() {
       ],
       demo_url: "#",
       source_url: "#",
-      video_url: "https://www.youtube.com/embed/erEgovG9WBs?si=U4GSAaK47pHHbkkG",
+      // video_url: "https://www.youtube.com/embed/erEgovG9WBs?si=U4GSAaK47pHHbkkG",
     },
     {
       slug: "portfolio",
@@ -47,23 +47,23 @@ function App() {
       sub_title: "My Portfolio Website",
       demo_url: "#",
       source_url: "#",
-      video_url: "https://www.youtube.com/embed/erEgovG9WBs?si=U4GSAaK47pHHbkkG",
+      // video_url: "https://www.youtube.com/embed/erEgovG9WBs?si=U4GSAaK47pHHbkkG",
     },
-    {
-      slug: "microphone-test",
-      title: "Microphone Test",
-      sub_title: "App",
-      demo_url: "#",
-      source_url: "#",
-      video_url: "https://www.youtube.com/embed/erEgovG9WBs?si=U4GSAaK47pHHbkkG",
-    },
+    // {
+    // slug: "microphone-test",
+    // title: "Microphone Test",
+    // sub_title: "App",
+    // demo_url: "#",
+    // source_url: "#",
+    // video_url: "https://www.youtube.com/embed/erEgovG9WBs?si=U4GSAaK47pHHbkkG",
+    // },
     {
       slug: "blackjack",
       title: "Blackjack",
       sub_title: "Game",
       demo_url: "#",
       source_url: "#",
-      video_url: "https://www.youtube.com/embed/erEgovG9WBs?si=U4GSAaK47pHHbkkG",
+      // video_url: "https://www.youtube.com/embed/erEgovG9WBs?si=U4GSAaK47pHHbkkG",
     },
     {
       slug: "my-linux-config",
@@ -71,7 +71,7 @@ function App() {
       sub_title: "Dotfiles",
       description: ["Arch Linux dotfiles."],
       source_url: "https://github.com/stefanrogic/dotfiles",
-      video_url: "https://www.youtube.com/embed/RuofJYG2yak?si=KzIxAgTRj3aJ2uEN",
+      // video_url: "https://www.youtube.com/embed/RuofJYG2yak?si=KzIxAgTRj3aJ2uEN",
     },
   ];
 
