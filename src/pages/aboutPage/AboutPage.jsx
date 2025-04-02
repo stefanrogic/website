@@ -44,7 +44,7 @@ const AboutPage = ({ scrollTo }) => {
 
                 <div className="card-right">
                   <p>
-                    <i>2015 - Currently</i>
+                    <i>2018 - Currently</i>
                   </p>
                 </div>
               </div>

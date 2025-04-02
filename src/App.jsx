@@ -37,7 +37,7 @@ function App() {
           relevant: true,
         },
       ],
-      demo_url: "#",
+      // demo_url: "#",
       source_url: "https://github.com/stefanrogic/neldor",
       // video_url: "https://www.youtube.com/embed/erEgovG9WBs?si=U4GSAaK47pHHbkkG",
     },
