@@ -16,32 +16,6 @@ import { Analytics } from "@vercel/analytics/react";
 function App() {
   const projectsData = [
     {
-      slug: "neldor",
-      title: "Neldor",
-      sub_title: "Tool for reading and stydying",
-      description: ["Tool for reading, studying and memorizing large volumes of text for speeches, presentations or lectures."],
-      technologies: [
-        {
-          name: "Next.js",
-          image: "/icons/nextjs-icon.svg",
-          relevant: true,
-        },
-        {
-          name: "Typescript",
-          image: "/icons/ts-icon.svg",
-          relevant: true,
-        },
-        {
-          name: "Tailwind CSS",
-          image: "/icons/tailwind-icon.svg",
-          relevant: true,
-        },
-      ],
-      // demo_url: "#",
-      source_url: "https://github.com/stefanrogic/neldor",
-      // video_url: "https://www.youtube.com/embed/erEgovG9WBs?si=U4GSAaK47pHHbkkG",
-    },
-    {
       slug: "portfolio",
       title: "Portfolio",
       sub_title: "My Portfolio Website",
@@ -49,22 +23,6 @@ function App() {
       source_url: "https://github.com/stefanrogic/website",
       // video_url: "https://www.youtube.com/embed/erEgovG9WBs?si=U4GSAaK47pHHbkkG",
     },
-    // {
-    // slug: "microphone-test",
-    // title: "Microphone Test",
-    // sub_title: "App",
-    // demo_url: "#",
-    // source_url: "#",
-    // video_url: "https://www.youtube.com/embed/erEgovG9WBs?si=U4GSAaK47pHHbkkG",
-    // },
-    // {
-    //   slug: "blackjack",
-    //   title: "Blackjack",
-    //   sub_title: "Game",
-    //   demo_url: "#",
-    //   source_url: "#",
-    //   // video_url: "https://www.youtube.com/embed/erEgovG9WBs?si=U4GSAaK47pHHbkkG",
-    // },
     {
       slug: "my-linux-config",
       title: "My Linux Config",
