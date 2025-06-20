@@ -170,13 +170,14 @@ const AboutPage = ({ scrollTo }) => {
                 GET PDF
               </a>
             </ContentRevealSuper>
-
+            {/* 
             <ContentRevealSuper>
               <div className="resume-container">
                 <img src="/images/resume.png" alt="resume" />
-                {/* <h2 style={{ position: "absolute", left: "50%", top: "50%", transform: "translate(-50%, -50%)", padding: "30px", background: "#b22045", fontSize: "100px", textAlign: "center", lineHeight: "80px" }}>Work in progress</h2> */}
+                <h2 style={{ position: "absolute", left: "50%", top: "50%", transform: "translate(-50%, -50%)", padding: "30px", background: "#b22045", fontSize: "100px", textAlign: "center", lineHeight: "80px" }}>Work in progress</h2> 
               </div>
             </ContentRevealSuper>
+            */}
           </div>
         </section>
       </section>
