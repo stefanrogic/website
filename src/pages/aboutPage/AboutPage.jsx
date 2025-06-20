@@ -154,7 +154,7 @@ const AboutPage = ({ scrollTo }) => {
             </div>
           </div>
         </section>
-
+        {/* 
         <section id="resume_section">
           <div className="heading-container row-reverse">
             <ContentRevealSuper>
@@ -162,7 +162,7 @@ const AboutPage = ({ scrollTo }) => {
             </ContentRevealSuper>
             <HeadingLine />
           </div>
-          {/* 
+          
           <div className="education-content">
             <ContentRevealSuper>
               <a className="text-link" href="https://drive.google.com/file/d/1DkL5xPQDqxMa88yyFKdXZk2BGqMzDrR_/view?usp=drive_link" target="_blank">
@@ -178,8 +178,8 @@ const AboutPage = ({ scrollTo }) => {
               </div>
             </ContentRevealSuper>
           </div>
-          */}
         </section>
+        */}
       </section>
     </div>
   );
