@@ -16,6 +16,7 @@ import { Analytics } from "@vercel/analytics/react";
 function App() {
   const projectsData = [
     {
+      // add dropdown menu for categories
       slug: "portfolio",
       title: "Portfolio",
       sub_title: "My Portfolio Website",
