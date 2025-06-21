@@ -1,105 +1,106 @@
-@import "../../index.scss";
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+// =============================================================================
+// PROJECT PAGE COMPONENT
+// =============================================================================
+
+.project-page {
+  // Your project page styles here
+}
 
 section {
   .project-heading {
-    display: flex;
-    justify-content: space-between;
-
+    @include flex-between;
+    
     .left {
       h1 {
-        font-size: 40px;
+        font-size: $font-size-3xl;
       }
     }
-
+    
     .right {
-      display: flex;
-      gap: 10px;
+      @include flex-start;
+      gap: 12px;
     }
   }
-
+  
   .project-description {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+    @include flex-column;
+    gap: $spacing-3xl;
   }
-
+  
+  .project-sections {
+    @include flex-column;
+    gap: $spacing-4xl;
+  }
+  
+  .project-section {
+    @include flex-column;
+    gap: $spacing-2xl;
+  }
+  
   .gallery-container {
     position: relative;
-
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-
-    .pagination {
+    width: 100%;
+    
+    .gallery-swiper {
+      height: 400px;
       width: 100%;
-      z-index: 60;
-
-      display: flex;
-      flex-direction: row;
-      gap: 15px;
-      justify-content: center;
-
-      .pagination-bullet {
-        height: 70px;
-        width: 100px;
-
-        background-color: $dark-grey;
-
-        cursor: pointer;
-
+      background-color: $color-dark-gray;
+      overflow: hidden;
+      
+      .swiper-slide {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
         img {
           width: 100%;
-          height: inherit;
+          height: 100%;
           object-fit: cover;
         }
       }
-    }
-
-    .swiper {
-      height: 400px;
-      width: 100%;
-
-      background-color: $dark-grey;
-
-      cursor: pointer;
-
-      .swiper-buttons {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 50;
-
-        width: 100%;
-
-        display: flex;
-        justify-content: space-between;
-
-        button {
-          margin: 0 15px;
-          padding: 10px !important;
-          border-radius: 50% !important;
-          background-color: $red-alt !important;
+      
+      // Style Swiper's default navigation buttons
+      .swiper-button-next,
+      .swiper-button-prev {
+        color: $color-white;
+        background-color: rgba($color-primary, 0.8);
+        width: 40px;
+        height: 40px;
+        border-radius: $border-radius-full;
+        transition: all $transition-normal;
+        
+        &:hover {
+          background-color: $color-primary;
+          transform: scale(1.1);
+        }
+        
+        &::after {
+          font-size: 16px;
+          font-weight: bold;
         }
       }
-
-      .swiper-slide {
-        background: grey;
-        overflow-y: hidden;
-        overflow-x: hidden;
+      
+      .swiper-button-next {
+        right: $spacing-lg;
+      }
+      
+      .swiper-button-prev {
+        left: $spacing-lg;
       }
     }
   }
-
+  
   .todo-container {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+    @include flex-column;
+    gap: $spacing-sm;
   }
-
+  
   .line-seperator {
     width: 50px;
     height: 1px;
-
-    background-color: white;
+    background-color: $color-white;
   }
 }

@@ -1,24 +1,23 @@
 import "./featuredProjectsSection.scss";
 
-import FeaturedProjectCard from "../featuredProjectCard/FeaturedProjectCard";
+import ProjectCard from "../projects/ProjectCard";
 import { Fragment } from "react";
 import ContentRevealSuper from "../contentReveal/ContentRevealSuper";
-import HeadingLine from "../headingLine/HeadingLine";
+import { HeadingContainer } from "../ui";
+import { getFeaturedProjects } from "../../data/projects";
+import { SOCIAL_LINKS } from "../../constants";
 
-const FeaturedProjectsSection = ({ projectsData }) => {
+const FeaturedProjectsSection = () => {
+  const projectsData = getFeaturedProjects();
+
   return (
     <section id="featured_projects_section">
-      <div className="heading-container">
-        <ContentRevealSuper>
-          <h1>FEATURED PROJECTS</h1>
-        </ContentRevealSuper>
-        <HeadingLine />
-      </div>
+      <HeadingContainer title="FEATURED PROJECTS" />
 
       <div className="projects-container">
         {projectsData?.map((project, i) => (
-          <Fragment key={project + i}>
-            <FeaturedProjectCard projectData={project} />
+          <Fragment key={project.slug + i}>
+            <ProjectCard project={project} variant="featured" />
 
             {i + 1 !== projectsData.length && (
               <ContentRevealSuper>
@@ -30,7 +29,7 @@ const FeaturedProjectsSection = ({ projectsData }) => {
       </div>
 
       <ContentRevealSuper>
-        <a className="text-link" href="https://github.com/stefanrogic?tab=repositories" target="_blank">
+        <a className="text-link" href={SOCIAL_LINKS.GITHUB_REPOS} target="_blank" rel="noopener noreferrer">
           <img src="/icons/arrow-up.svg" alt="arrow-up" />
           ALL PROJECTS
         </a>

@@ -1,24 +1,20 @@
 import "./aboutSection.scss";
 
-import { Link, useLocation } from "react-router-dom";
-
+import { Link } from "../ui";
 import ContentRevealSuper from "../contentReveal/ContentRevealSuper";
+import { useNavigation } from "../../hooks/useNavigation";
+import { ROUTES, SECTION_IDS } from "../../constants";
 
-const AboutSection = ({ home = true, scrollTo }) => {
-  const location = useLocation();
+const AboutSection = ({ home = true }) => {
+  const { navigateAndScroll, isCurrentPath } = useNavigation();
 
-  const handleScrollTo = (el) => {
-    if (el === "featured_projects_section" && location.pathname === "/home") scrollTo(el);
-    else if (el === "resume_section" && location.pathname === "/about-me") scrollTo(el);
-    else
-      setTimeout(() => {
-        scrollTo(el);
-      }, 500);
+  const handleNavClick = (path, sectionId) => {
+    navigateAndScroll(path, sectionId);
   };
 
   return (
     <section id="about_section">
-      {location.pathname === "/home" && (
+      {isCurrentPath(ROUTES.HOME) && (
         <ContentRevealSuper>
           <p>
             Hello, my name is <span className="span-highlight">Stefan</span>, <span className="span-highlight">Web Developer</span> with more than <span className="span-highlight">2 years</span> of hands on experience with background in System
@@ -27,12 +23,11 @@ const AboutSection = ({ home = true, scrollTo }) => {
         </ContentRevealSuper>
       )}
 
-      {location.pathname === "/about-me" && (
+      {isCurrentPath(ROUTES.ABOUT) && (
         <ContentRevealSuper>
           <p>
             <span className="span-highlight">Web Developer</span> with more than <span className="span-highlight">2 years</span> of hands on experience with background in System Administration, Tech Support and Sales.
           </p>
-
           <br />
           {/* TODO: ADD MORE  */}
           <p></p>
@@ -42,30 +37,47 @@ const AboutSection = ({ home = true, scrollTo }) => {
       <div className="button-container">
         {home && (
           <ContentRevealSuper>
-            <Link className="text-link" to="/about-me">
-              <img src="/icons/arrow-up.svg" alt="arrow-up" />
+            <Link 
+              to={ROUTES.ABOUT} 
+              icon="/icons/arrow-up.svg"
+              variant="text"
+              noZoom={true}
+            >
               MORE DETAILS
             </Link>
           </ContentRevealSuper>
         )}
 
         <ContentRevealSuper>
-          <Link className="text-link" to="/home" onClick={() => handleScrollTo("featured_projects_section")}>
-            <img src="/icons/arrow-up.svg" alt="arrow-up" />
+          <Link 
+            to={`${ROUTES.HOME}#${SECTION_IDS.FEATURED_PROJECTS}`}
+            icon="/icons/arrow-up.svg"
+            variant="text"
+            noZoom={true}
+          >
             PROJECTS
           </Link>
         </ContentRevealSuper>
 
         <ContentRevealSuper>
-          <Link className="text-link" to="/about-me" onClick={() => handleScrollTo("resume_section")}>
-            <img src="/icons/arrow-up.svg" alt="arrow-up" />
+          <Link 
+            to={`${ROUTES.ABOUT}#${SECTION_IDS.RESUME}`}
+            icon="/icons/arrow-up.svg"
+            variant="text"
+            noZoom={true}
+          >
             RESUME
           </Link>
         </ContentRevealSuper>
 
         <ContentRevealSuper>
-          <Link className="text-link inactive" to="#">
-            <img src="/icons/arrow-up-inactive.svg" alt="arrow-up-inactive" />
+          <Link 
+            to="#" 
+            icon="/icons/arrow-up-inactive.svg"
+            variant="inactive"
+            className="inactive"
+            noZoom={true}
+          >
             SERVICES
           </Link>
         </ContentRevealSuper>

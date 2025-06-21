@@ -1,63 +1,64 @@
-@import "../../index.scss";
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+// =============================================================================
+// EDUCATION SECTION COMPONENT
+// =============================================================================
 
 section {
   .education-content {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-
+    @include flex-column;
+    gap: $spacing-xl;
+    
     .education-card {
-      display: flex;
-      flex-direction: column;
+      @include flex-column;
       text-align: start;
-
-      @include rwd("600px") {
+      
+      @include desktop {
         flex-direction: row;
         justify-content: space-between;
         text-align: auto;
       }
-
+      
       .card-left {
-        display: flex;
-        flex-direction: column;
+        @include flex-column;
         align-items: flex-start;
-        gap: 10px;
+        gap: $spacing-sm;
         max-width: 500px;
-
+        
         h2 {
-          font-size: $font-size-heading-medium;
+          font-size: $font-size-xl;
           line-height: 30px !important;
         }
-
+        
         p {
           line-height: 16px !important;
           padding: 2px 0;
         }
       }
-
+      
       .card-right {
-        margin-top: 20px;
-
-        @include rwd("600px") {
+        margin-top: $spacing-xl;
+        
+        @include desktop {
           margin-top: 0;
           justify-content: end;
         }
-
+        
         p {
           text-align: start;
-
-          @include rwd("600px") {
+          
+          @include desktop {
             text-align: end;
           }
         }
       }
     }
-
+    
     .line-seperator {
       width: 50px;
       height: 1px;
-
-      background-color: white;
+      background-color: $color-white;
     }
   }
 }

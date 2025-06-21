@@ -3,7 +3,7 @@ import "./skillsSection.scss";
 import { Suspense, useState } from "react";
 
 import ContentRevealSuper from "../contentReveal/ContentRevealSuper";
-import HeadingLine from "../headingLine/HeadingLine";
+import { HeadingContainer } from "../ui";
 
 const SkillsSection = ({ relevant = true }) => {
   const [featuredSkills] = useState([
@@ -62,12 +62,10 @@ const SkillsSection = ({ relevant = true }) => {
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <section id="skills_section">
-        <div className="heading-container row-reverse">
-          <ContentRevealSuper>
-            <h1>{location.pathname === "/about-me" ? "SKILLS" : "RELEVANT SKILLS"}</h1>
-          </ContentRevealSuper>
-          <HeadingLine />
-        </div>
+        <HeadingContainer 
+          title={location.pathname === "/about-me" ? "SKILLS" : "RELEVANT SKILLS"}
+          variant="row-reverse"
+        />
 
         <div className="skills-container">
           {featuredSkills?.map((skill, i) => {

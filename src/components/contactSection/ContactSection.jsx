@@ -5,7 +5,8 @@ import toast from "react-hot-toast";
 
 import { useState } from "react";
 import ContentRevealSuper from "../contentReveal/ContentRevealSuper";
-import HeadingLine from "../headingLine/HeadingLine";
+import { Button, Link, HeadingContainer } from "../ui";
+import { SOCIAL_LINKS } from "../../constants";
 
 const ContactSection = () => {
   const [formFields] = useState({
@@ -19,15 +20,17 @@ const ContactSection = () => {
     formFields[input] = e.target.value;
   };
 
+  const handleSendMessage = () => {
+    if (formFields.name.length !== 0 || formFields.email.length !== 0 || formFields.subject.length !== 0 || formFields.message.length !== 0) {
+      emailjs.init("LbOf6uX1O4rSRpoN_");
+      emailjs.send("service_jet6xln", "template_vrs5by3", formFields);
+      toast.success("Message sent!");
+    } else toast.error("Please fill in all fields.");
+  };
+
   return (
     <section id="contact_section">
-      <div className="heading-container row-reverse">
-        <ContentRevealSuper>
-          <h1>CONTACT</h1>
-        </ContentRevealSuper>
-
-        <HeadingLine />
-      </div>
+      <HeadingContainer title="CONTACT" variant="row-reverse" />
 
       <ContentRevealSuper>
         <p>Feel free to contact me using the form below or by sending me an email if you have any questions or if you wish to work with me.</p>
@@ -51,38 +54,48 @@ const ContactSection = () => {
         </ContentRevealSuper>
         <div className="form-row bottom-row">
           <ContentRevealSuper>
-            <button
-              onClick={() => {
-                if (formFields.name.length !== 0 || formFields.email.length !== 0 || formFields.subject.length !== 0 || formFields.message.length !== 0) {
-                  emailjs.init("LbOf6uX1O4rSRpoN_");
-                  emailjs.send("service_jet6xln", "template_vrs5by3", formFields);
-                  toast.success("Message sent!");
-                } else toast.error("Please fill in all fields.");
-              }}
+            <Button
+              onClick={handleSendMessage}
+              variant="primary"
+              noZoom={true}
             >
               SEND MESSAGE
-            </button>
+            </Button>
           </ContentRevealSuper>
           <ContentRevealSuper>
-            <a href="mailto: stefanrogic@protonmail.com" className="not-button">
-              <img src="/icons/arrow-up.svg" alt="arrow-up" />
+            <Link 
+              href="mailto:stefanrogic@protonmail.com"
+              icon="/icons/arrow-up.svg"
+              variant="text"
+              noZoom={true}
+            >
               OR SEND ME AN EMAIL
-            </a>
+            </Link>
           </ContentRevealSuper>
         </div>
       </div>
 
       <ContentRevealSuper width="100%">
         <div className="socials-container">
-          <a href="https://www.linkedin.com/in/stefanrogic/" target="_blank" className="not-button">
-            <img src="/icons/linkedin-icon.svg" alt="linkedin-icon" />
+          <Link 
+            href={SOCIAL_LINKS.LINKEDIN}
+            icon="/icons/linkedin-icon.svg"
+            variant="text"
+            noZoom={true}
+            target="_blank"
+          >
             linkedin.com/in/stefanrogic
-          </a>
+          </Link>
           <div className="line-seperator"></div>
-          <a href="https://github.com/stefanrogic" target="_blank" className="not-button">
-            <img src="/icons/github-icon.svg" alt="github-icon" />
+          <Link 
+            href={SOCIAL_LINKS.GITHUB}
+            icon="/icons/github-icon.svg"
+            variant="text"
+            noZoom={true}
+            target="_blank"
+          >
             github.com/stefanrogic
-          </a>
+          </Link>
         </div>
       </ContentRevealSuper>
     </section>

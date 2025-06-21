@@ -1,11 +1,6 @@
 import { motion, useInView, useAnimation } from "framer-motion";
 import { useEffect, useRef } from "react";
-
-const mainVariants = { hidden: { opacity: 0, y: 75 }, visible: { opacity: 1, y: 0 } };
-const mainTransition = { duration: 0.5, delay: 0.25 };
-
-const slideVariants = { hidden: { left: 0 }, visible: { left: "100%" } };
-const slideTransition = { duration: 0.5, ease: "easeIn" };
+import { ANIMATION_CONFIG } from "../../constants";
 
 const ContentRevealSuper = ({ width = "fit-content", children }) => {
   const ref = useRef(null);
@@ -19,14 +14,32 @@ const ContentRevealSuper = ({ width = "fit-content", children }) => {
       mainControls.start("visible");
       slideControls.start("visible");
     }
-  }, [isInView]);
+  }, [isInView, mainControls, slideControls]);
 
   return (
     <div ref={ref} style={{ position: "relative", width, overflow: "hidden", height: "fit-content" }}>
-      <motion.div variants={mainVariants} initial="hidden" animate={mainControls} transition={mainTransition}>
+      <motion.div 
+        variants={ANIMATION_CONFIG.mainVariants} 
+        initial="hidden" 
+        animate={mainControls} 
+        transition={ANIMATION_CONFIG.mainTransition}
+      >
         {children}
       </motion.div>
-      <motion.div variants={slideVariants} animate={slideControls} transition={slideTransition} style={{ position: "absolute", top: 4, bottom: 4, left: 0, right: 0, background: "#ff2e63", zIndex: 20 }}></motion.div>
+      <motion.div 
+        variants={ANIMATION_CONFIG.slideVariants} 
+        animate={slideControls} 
+        transition={ANIMATION_CONFIG.slideTransition} 
+        style={{ 
+          position: "absolute", 
+          top: 4, 
+          bottom: 4, 
+          left: 0, 
+          right: 0, 
+          background: "#ff2e63", 
+          zIndex: 20 
+        }}
+      />
     </div>
   );
 };

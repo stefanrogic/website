@@ -1,121 +1,108 @@
-@import "../../index.scss";
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+// =============================================================================
+// CONTACT SECTION COMPONENT
+// =============================================================================
 
 section {
+  // Form styling
   .form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-
+    @include flex-column;
+    gap: $spacing-lg;
+    
+    // Form row
     .form-row {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      gap: 15px;
-
+      @include flex-start;
+      gap: $spacing-lg;
+      
       input {
         width: 100%;
       }
-
-      a {
-        padding: 0 !important;
-        margin-left: 25px;
-
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 10px;
-
-        border: none;
-        background: none;
-        color: $white;
-
-        @include rwd("600px") {
-          padding: 15px 25px;
-        }
-
-        img {
-          height: 15px;
-          aspect-ratio: 1 / 1;
+      
+      .ui-link {
+        margin-left: $spacing-2xl;
+        
+        @include desktop {
+          padding: $spacing-lg $spacing-2xl;
         }
       }
     }
-
+    
+    // Bottom row
     .bottom-row {
-      flex-direction: column;
+      @include flex-column;
       align-items: center;
-
-      a {
+      
+      .ui-link {
         margin-left: 0;
-        margin-top: 20px;
-
-        @include rwd("600px") {
-          margin-left: 20px;
+        margin-top: $spacing-xl;
+        
+        @include desktop {
+          margin-left: $spacing-xl;
           margin-top: 0;
         }
       }
-
-      button {
+      
+      .ui-button {
         width: 100%;
         justify-content: center;
       }
-
-      @include rwd("600px") {
+      
+      @include desktop {
         flex-direction: row;
         align-items: center;
-
-        button,
-        a {
+        
+        .ui-button,
+        .ui-link {
           width: auto;
         }
       }
     }
-
+    
+    // Form inputs
     input,
     textarea {
-      padding: 10px 20px;
+      padding: $spacing-sm $spacing-xl;
       width: 100%;
-      font-size: 16px;
-
+      font-size: $font-size-base;
       border: none;
-      color: $white;
-      background-color: $dark-grey;
+      color: $color-white;
+      background-color: $color-dark-gray;
     }
-
+    
     input {
       height: 25px;
     }
   }
-
+  
+  // Socials container
   .socials-container {
-    display: flex;
-    flex-direction: column;
+    @include flex-column;
     align-items: center;
-    gap: 20px;
-
-    @include rwd("600px") {
+    gap: $spacing-xl;
+    
+    @include desktop {
       flex-direction: row;
     }
-
-    a {
+    
+    .ui-link {
       margin: 0;
       text-decoration: underline;
-      font-weight: 400;
-
-      align-items: center;
-
-      display: flex;
-      gap: 10px;
-
+      font-weight: $font-weight-regular;
+      @include flex-start;
+      gap: $spacing-sm;
+      
       img {
         height: 25px;
       }
     }
-
+    
+    // Line separator
     .line-seperator {
       height: 1px;
       width: 25px;
-
-      background-color: $white;
+      background-color: $color-white;
     }
   }
 }

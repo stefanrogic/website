@@ -1,0 +1,127 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+// =============================================================================
+// SECTION COMPONENT
+// =============================================================================
+
+.ui-section {
+  padding: $section-padding;
+  
+  // Section content wrapper
+  .section-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 $spacing-xl;
+    
+    @include mobile {
+      padding: 0 $spacing-lg;
+    }
+  }
+  
+  // Heading container
+  .heading-container {
+    @include flex-start;
+    gap: $heading-gap;
+    margin-bottom: $heading-margin-bottom;
+    
+    // Reverse layout variant
+    &.row-reverse {
+      flex-direction: row-reverse;
+      text-align: right;
+    }
+    
+    // Stack on mobile
+    @include mobile {
+      flex-direction: column;
+      gap: $spacing-lg;
+      text-align: center;
+      
+      &.row-reverse {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+    
+    // Heading styles
+    h1, h2, h3 {
+      font-size: $font-size-2xl;
+      font-weight: $font-weight-bold;
+      margin: 0;
+      line-height: $line-height-tight;
+      @include text-balance;
+      
+      @include mobile {
+        font-size: $font-size-xl;
+      }
+    }
+    
+    h2 {
+      font-size: $font-size-xl;
+      
+      @include mobile {
+        font-size: $font-size-lg;
+      }
+    }
+    
+    h3 {
+      font-size: $font-size-lg;
+      
+      @include mobile {
+        font-size: $font-size-base;
+      }
+    }
+  }
+  
+  // Section variants
+  &.compact {
+    padding: $spacing-4xl 0;
+    
+    .heading-container {
+      margin-bottom: $spacing-3xl;
+    }
+  }
+  
+  &.spacious {
+    padding: $spacing-6xl 0;
+    
+    .heading-container {
+      margin-bottom: $spacing-5xl;
+    }
+  }
+  
+  // Background variants
+  &.with-background {
+    background: rgba(255, 255, 255, 0.02);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  &.glass {
+    @include glass-effect;
+    border-radius: $border-radius-lg;
+    margin: $spacing-xl 0;
+  }
+  
+  // Animation variants
+  &.fade-in {
+    @include fade-in;
+  }
+  
+  &.slide-up {
+    @include slide-up;
+  }
+  
+  // Responsive adjustments
+  @include mobile {
+    padding: $spacing-4xl 0;
+    
+    &.compact {
+      padding: $spacing-3xl 0;
+    }
+    
+    &.spacious {
+      padding: $spacing-5xl 0;
+    }
+  }
+} 

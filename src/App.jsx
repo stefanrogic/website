@@ -12,66 +12,52 @@ import NotFoundPage from "./pages/notFoundPage/NotFoundPage";
 import { Toaster } from "react-hot-toast";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Analytics } from "@vercel/analytics/react";
+import { TOAST_CONFIG } from "./constants";
+import { ThemeProvider } from "./contexts/ThemeContext";
+import { ErrorBoundary } from "./components/ui";
 
 function App() {
-  const projectsData = [
-    {
-      // add dropdown menu for categories
-      slug: "portfolio",
-      title: "Portfolio",
-      sub_title: "My Portfolio Website",
-      demo_url: "https://stefanrogic.vercel.app",
-      source_url: "https://github.com/stefanrogic/website",
-      // video_url: "https://www.youtube.com/embed/erEgovG9WBs?si=U4GSAaK47pHHbkkG",
-    },
-    {
-      slug: "my-linux-config",
-      title: "My Linux Config",
-      sub_title: "Dotfiles",
-      description: ["Arch Linux dotfiles."],
-      source_url: "https://github.com/stefanrogic/dotfiles",
-      // video_url: "https://www.youtube.com/embed/RuofJYG2yak?si=KzIxAgTRj3aJ2uEN",
-    },
-  ];
-
-  const scrollTo = (el) => {
-    const element = document.getElementById(el);
-    element.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
-  };
-
   const Root = (el, navFoot = true) => (
     <>
-      {navFoot && <Navbar scrollTo={scrollTo} />}
-      <Toaster
-        position="bottom-center"
-        reverseOrder={false}
-        toastOptions={{
-          style: {
-            border: "1px solid #414141",
-            padding: "15px 100px",
-            fontSize: "16px",
-            color: "#fff",
-            backgroundColor: "rgb(27, 27, 27)",
-          },
-        }}
-      />
+      {navFoot && <Navbar />}
+      <Toaster {...TOAST_CONFIG} />
       {el}
       {navFoot && <Footer />}
     </>
   );
 
   const router = createBrowserRouter([
-    { path: "/", element: Root(<WelcomePage />, false), errorElement: Root(<NotFoundPage />) },
-    { path: "/home", element: Root(<HomePage scrollTo={scrollTo} projectsData={projectsData} />), errorElement: Root(<NotFoundPage />) },
-    { path: "/about-me", element: Root(<AboutPage scrollTo={scrollTo} />), errorElement: Root(<NotFoundPage />) },
-    { path: "/projects/:id", element: Root(<ProjectPage projectsData={projectsData} />), errorElement: Root(<NotFoundPage />) },
+    { 
+      path: "/", 
+      element: Root(<WelcomePage />, false), 
+      errorElement: Root(<NotFoundPage />) 
+    },
+    { 
+      path: "/home", 
+      element: Root(<HomePage />), 
+      errorElement: Root(<NotFoundPage />) 
+    },
+    { 
+      path: "/about-me", 
+      element: Root(<AboutPage />), 
+      errorElement: Root(<NotFoundPage />) 
+    },
+    { 
+      path: "/projects/:id", 
+      element: Root(<ProjectPage />), 
+      errorElement: Root(<NotFoundPage />) 
+    },
   ]);
 
   return (
-    <div className="App">
-      <Analytics />
-      <RouterProvider router={router} />
-    </div>
+    <ErrorBoundary>
+      <ThemeProvider>
+        <div className="App">
+          <Analytics />
+          <RouterProvider router={router} />
+        </div>
+      </ThemeProvider>
+    </ErrorBoundary>
   );
 }
 

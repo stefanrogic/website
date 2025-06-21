@@ -1,0 +1,165 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+// =============================================================================
+// BUTTON COMPONENT
+// =============================================================================
+
+button.ui-button,
+.ui-button {
+  @include flex-start;
+  @include button-reset;
+  @include focus-visible;
+  
+  gap: $link-gap;
+  padding: $button-padding-y $button-padding-x;
+  border-radius: $border-radius-none;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  text-decoration: none;
+  transition: all $transition-normal;
+  background: transparent;
+  height: 44px !important; // Fixed height with !important to override any conflicts
+  line-height: 1; // Reset line height
+  align-items: center; // Ensure vertical centering
+  flex-shrink: 0; // Prevent shrinking
+  box-sizing: border-box; // Ensure padding is included in height calculation
+  
+  // Prevent underlines on hover for buttons with links
+  &:hover {
+    text-decoration: none !important;
+  }
+  
+  // Icon styling
+  img {
+    width: $button-icon-size;
+    height: $button-icon-size;
+    flex-shrink: 0;
+  }
+  
+  // Disable transitions for users who prefer reduced motion
+  @include reduced-motion {
+    transition: none;
+  }
+  
+  // Primary button variant
+  &.primary {
+    background: $color-primary;
+    color: $color-white;
+    
+    &:hover:not(:disabled) {
+      background: $color-primary-hover;
+      color: $color-white;
+      box-shadow: $shadow-md;
+    }
+    
+    &:active:not(:disabled) {
+      box-shadow: $shadow-sm;
+    }
+    
+    &:disabled {
+      background: $color-primary-disabled;
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+  }
+  
+  // Secondary button variant
+  &.secondary {
+    background: transparent;
+    color: $color-primary-hover;
+    border: 1px solid $color-white;
+    
+    &:hover:not(:disabled) {
+      background: $color-primary-hover;
+      color: $color-white;
+      border-color: transparent;
+      box-shadow: $shadow-md;
+    }
+    
+    &:active:not(:disabled) {
+      box-shadow: $shadow-sm;
+    }
+    
+    &:disabled {
+      border-color: $color-primary-disabled;
+      color: $color-primary-disabled;
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+  }
+  
+  // Text button variant
+  &.text {
+    background: transparent;
+    color: $color-primary;
+    padding: $spacing-sm $spacing-lg;
+    height: auto; // Allow text buttons to size naturally
+    
+    &:hover:not(:disabled) {
+      background: $color-primary-light;
+      text-decoration: underline;
+    }
+    
+    &:disabled {
+      color: $color-primary-disabled;
+      cursor: not-allowed;
+    }
+  }
+  
+  // Size variants
+  &.small {
+    padding: $spacing-sm $spacing-lg;
+    font-size: $font-size-xs;
+    height: 36px !important; // Fixed height for small buttons
+    
+    img {
+      width: 14px;
+      height: 14px;
+    }
+  }
+  
+  &.large {
+    padding: $spacing-lg $spacing-3xl;
+    font-size: $font-size-base;
+    height: 52px !important; // Fixed height for large buttons
+    
+    img {
+      width: 18px;
+      height: 18px;
+    }
+  }
+  
+  // Full width variant
+  &.full-width {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  // Loading state
+  &.loading {
+    position: relative;
+    color: transparent;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 16px;
+      height: 16px;
+      margin: -8px 0 0 -8px;
+      border: 2px solid transparent;
+      border-top: 2px solid currentColor;
+      border-radius: $border-radius-full;
+      animation: spin 1s linear infinite;
+    }
+  }
+}
+
+// Loading animation
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+} 

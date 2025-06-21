@@ -1,0 +1,205 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+// =============================================================================
+// HEADING CONTAINER COMPONENT
+// =============================================================================
+
+.heading-container {
+  @include flex-start;
+  gap: $heading-gap;
+  margin-bottom: $heading-margin-bottom;
+  
+  // Reverse layout variant
+  &.row-reverse {
+    flex-direction: row-reverse;
+    text-align: right;
+  }
+  
+  // Center alignment variant
+  &.center {
+    justify-content: center;
+    text-align: center;
+  }
+  
+  // Stack on mobile
+  @include mobile {
+    flex-direction: column;
+    gap: $spacing-lg;
+    text-align: center;
+    
+    &.row-reverse {
+      flex-direction: column;
+      text-align: center;
+    }
+    
+    &.center {
+      justify-content: center;
+    }
+  }
+  
+  // Heading styles
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: $font-weight-bold;
+    margin: 0;
+    line-height: $line-height-tight;
+    @include text-balance;
+    
+    // Responsive font sizes
+    @include mobile {
+      font-size: clamp($font-size-lg, 4vw, $font-size-2xl);
+    }
+  }
+  
+  h1 {
+    font-size: $font-size-2xl;
+    
+    @include desktop {
+      font-size: $font-size-3xl;
+    }
+  }
+  
+  h2 {
+    font-size: $font-size-xl;
+    
+    @include desktop {
+      font-size: $font-size-2xl;
+    }
+  }
+  
+  h3 {
+    font-size: $font-size-lg;
+    
+    @include desktop {
+      font-size: $font-size-xl;
+    }
+  }
+  
+  h4 {
+    font-size: $font-size-base;
+    
+    @include desktop {
+      font-size: $font-size-lg;
+    }
+  }
+  
+  // Subtitle styling
+  .subtitle {
+    color: $color-gray;
+    font-size: $font-size-base;
+    font-weight: $font-weight-regular;
+    line-height: $line-height-base;
+    margin-top: $spacing-sm;
+    
+    @include mobile {
+      font-size: $font-size-sm;
+    }
+  }
+  
+  // Icon styling
+  .icon {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    color: $color-primary;
+    
+    @include mobile {
+      width: 24px;
+      height: 24px;
+    }
+    
+    &.large {
+      width: 48px;
+      height: 48px;
+      
+      @include mobile {
+        width: 32px;
+        height: 32px;
+      }
+    }
+  }
+  
+  // Badge styling
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    padding: $spacing-xs $spacing-sm;
+    background: rgba($color-primary, 0.1);
+    color: $color-primary;
+    border-radius: $border-radius-sm;
+    font-size: $font-size-xs;
+    font-weight: $font-weight-semibold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  // Divider line
+  .divider {
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(90deg, $color-primary, transparent);
+    border-radius: $border-radius-sm;
+    
+    &.reverse {
+      background: linear-gradient(90deg, transparent, $color-primary);
+    }
+    
+    @include mobile {
+      display: none;
+    }
+  }
+  
+  // Compact variant
+  &.compact {
+    margin-bottom: $spacing-3xl;
+    
+    @include mobile {
+      margin-bottom: $spacing-2xl;
+    }
+  }
+  
+  // Spacious variant
+  &.spacious {
+    margin-bottom: $spacing-5xl;
+    
+    @include mobile {
+      margin-bottom: $spacing-4xl;
+    }
+  }
+  
+  // With background variant
+  &.with-background {
+    padding: $spacing-xl;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: $border-radius-md;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  // Animation variants
+  &.fade-in {
+    @include fade-in;
+  }
+  
+  &.slide-up {
+    @include slide-up;
+  }
+  
+  // Color variants
+  &.primary {
+    h1, h2, h3, h4, h5, h6 {
+      color: $color-primary;
+    }
+  }
+  
+  &.light {
+    h1, h2, h3, h4, h5, h6 {
+      color: $color-light-gray;
+    }
+  }
+  
+  &.white {
+    h1, h2, h3, h4, h5, h6 {
+      color: $color-white;
+    }
+  }
+} 

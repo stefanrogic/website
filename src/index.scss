@@ -1,112 +1,312 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap");
+@import './styles/variables';
+@import './styles/mixins';
 
-// COLORS
-$dark-grey: #414141;
-$white: #eaeaea;
-$red: #ff2e63;
-$red-alt: #b22045;
-$red-hover: #661227;
-
-// WIDTHS - HEIGHTS
-$site-width: 600px;
-
-// PADDINGS - MARGINGS - GAPS
-$mobile-padding: auto 10px;
-$button-padding: 10px 15px;
-
-$scroll-margin: 50px;
-
-$component-gap: 30px;
-$section-gap: 30px;
-
-// BACKGROUND
-$bg-img: url("/images/bg-dark.png");
-$bg-color: rgb(27, 27, 27);
-$bg-size: contain;
-$bg-repeat: repeat;
-
-// TEXT
-$font-family: "Roboto Condensed", sans-serif;
-$text-color: white;
-
-$font-weight-light: 300;
-$font-weight-regular: 500;
-$font-weight-bold: 700;
-
-$font-size-paragraph: 18px;
-$font-size-heading-medium: 24px;
-$font-size-heading-large: 40px;
-$font-size-button: 14px;
-$font-size-link: 16px;
-$font-size-span: 16px;
+// =============================================================================
+// GLOBAL STYLES & RESET
+// =============================================================================
 
 :root {
   font-family: $font-family;
-
-  background-image: $bg-img;
-  background-color: $bg-color;
-  background-repeat: $bg-repeat;
-  background-size: $bg-size;
-
-  color: $text-color;
-
-  // PREVENT-DEFAULT //////////////////////
-  body {
-    margin: 0 8px;
+  background-image: url("/images/bg-dark.png");
+  background-color: $color-background;
+  background-repeat: repeat;
+  background-size: contain;
+  color: $color-white;
+  
+  // Prevent text selection on interactive elements
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  
+  // Smooth scrolling
+  scroll-behavior: smooth;
+  
+  // Custom scrollbar
+  &::-webkit-scrollbar {
+    width: 8px;
   }
-
-  a,
-  input,
-  textarea,
-  button {
-    font-family: $font-family;
+  
+  &::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
   }
-
-  textarea {
-    resize: none;
+  
+  &::-webkit-scrollbar-thumb {
+    background: rgba($color-primary, 0.5);
+    border-radius: $border-radius-sm;
+    
+    &:hover {
+      background: rgba($color-primary, 0.7);
+    }
   }
+}
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  p {
-    padding: 0;
+// =============================================================================
+// BASE ELEMENT STYLES
+// =============================================================================
+
+// Body reset
+body {
+  margin: 0 $spacing-sm;
+  line-height: $line-height-base;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  @include mobile {
     margin: 0;
   }
-  ///////////////////////////////////////////
 }
 
-// MIXINS FOR RESPONSIVE DESIGN
-@mixin mobile {
-  @media (min-width: 250px) {
-    @content;
+// Form elements
+a,
+input,
+textarea,
+button,
+select {
+  font-family: $font-family;
+  color: inherit;
+}
+
+// Links
+a {
+  text-decoration: none;
+  transition: color $transition-normal;
+  
+  &:hover {
+    text-decoration: underline;
   }
 }
 
-@mixin tablet {
-  @media (min-width: 760px) {
-    @content;
+// Form inputs
+input,
+textarea {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: $border-radius-sm;
+  padding: $spacing-md;
+  color: $color-white;
+  transition: all $transition-normal;
+  
+  &:focus {
+    outline: none;
+    border-color: $color-primary;
+    box-shadow: 0 0 0 2px rgba($color-primary, 0.2);
+  }
+  
+  &::placeholder {
+    color: rgba(255, 255, 255, 0.5);
   }
 }
 
-@mixin desktop {
-  @media (min-width: 1280px) {
-    @content;
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+// Buttons
+button {
+  @include button-reset;
+  cursor: pointer;
+}
+
+// Typography reset
+h1, h2, h3, h4, h5, h6,
+p, ul, ol, li, blockquote {
+  margin: 0;
+  padding: 0;
+}
+
+// Lists
+ul, ol {
+  list-style: none;
+}
+
+// Images
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+// =============================================================================
+// UTILITY CLASSES
+// =============================================================================
+
+// Text utilities
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.text-primary { color: $color-primary; }
+.text-white { color: $color-white; }
+.text-gray { color: $color-gray; }
+.text-light-gray { color: $color-light-gray; }
+
+// Font weights
+.font-light { font-weight: $font-weight-light; }
+.font-regular { font-weight: $font-weight-regular; }
+.font-semibold { font-weight: $font-weight-semibold; }
+.font-bold { font-weight: $font-weight-bold; }
+
+// Font sizes
+.text-xs { font-size: $font-size-xs; }
+.text-sm { font-size: $font-size-sm; }
+.text-base { font-size: $font-size-base; }
+.text-lg { font-size: $font-size-lg; }
+.text-xl { font-size: $font-size-xl; }
+.text-2xl { font-size: $font-size-2xl; }
+.text-3xl { font-size: $font-size-3xl; }
+
+// Spacing utilities
+.m-0 { margin: 0; }
+.m-1 { margin: $spacing-xs; }
+.m-2 { margin: $spacing-sm; }
+.m-3 { margin: $spacing-md; }
+.m-4 { margin: $spacing-lg; }
+.m-5 { margin: $spacing-xl; }
+
+.p-0 { padding: 0; }
+.p-1 { padding: $spacing-xs; }
+.p-2 { padding: $spacing-sm; }
+.p-3 { padding: $spacing-md; }
+.p-4 { padding: $spacing-lg; }
+.p-5 { padding: $spacing-xl; }
+
+// Flex utilities
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.items-center { align-items: center; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.gap-1 { gap: $spacing-xs; }
+.gap-2 { gap: $spacing-sm; }
+.gap-3 { gap: $spacing-md; }
+.gap-4 { gap: $spacing-lg; }
+.gap-5 { gap: $spacing-xl; }
+
+// Display utilities
+.hidden { display: none; }
+.block { display: block; }
+.inline-block { display: inline-block; }
+
+// Position utilities
+.relative { position: relative; }
+.absolute { position: absolute; }
+.fixed { position: fixed; }
+.sticky { position: sticky; }
+
+// Z-index utilities
+.z-10 { z-index: $z-index-dropdown; }
+.z-20 { z-index: $z-index-sticky; }
+.z-30 { z-index: $z-index-fixed; }
+.z-40 { z-index: $z-index-modal; }
+.z-50 { z-index: $z-index-popover; }
+
+// =============================================================================
+// RESPONSIVE UTILITIES
+// =============================================================================
+
+// Mobile-first responsive utilities
+@include mobile {
+  .mobile\:hidden { display: none; }
+  .mobile\:block { display: block; }
+  .mobile\:text-center { text-align: center; }
+  .mobile\:text-left { text-align: left; }
+  .mobile\:text-right { text-align: right; }
+}
+
+@include desktop {
+  .desktop\:hidden { display: none; }
+  .desktop\:block { display: block; }
+  .desktop\:text-center { text-align: center; }
+  .desktop\:text-left { text-align: left; }
+  .desktop\:text-right { text-align: right; }
+}
+
+// =============================================================================
+// ACCESSIBILITY
+// =============================================================================
+
+// Focus visible for keyboard navigation
+*:focus-visible {
+  outline: 2px solid $color-primary;
+  outline-offset: 2px;
+}
+
+// Reduced motion support
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
 
-@mixin desktopLarge {
-  @media (min-width: 1920px) {
-    @content;
+// High contrast mode support
+@media (prefers-contrast: high) {
+  :root {
+    --color-primary: #ff0000;
+    --color-background: #000000;
+    --color-text: #ffffff;
   }
 }
 
-// CUSTOM SCREEN SIZE
-@mixin rwd($screen) {
-  @media (min-width: $screen) {
-    @content;
+// =============================================================================
+// PRINT STYLES
+// =============================================================================
+
+@media print {
+  * {
+    background: transparent !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+  
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+  
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+  
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+  
+  thead {
+    display: table-header-group;
+  }
+  
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+  
+  img {
+    max-width: 100% !important;
+  }
+  
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  
+  h2,
+  h3 {
+    page-break-after: avoid;
   }
 }

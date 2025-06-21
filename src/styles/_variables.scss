@@ -1,0 +1,95 @@
+// =============================================================================
+// DESIGN TOKENS & VARIABLES
+// =============================================================================
+
+// COLORS
+$color-primary: #e02452;
+$color-primary-hover: #8a1a35;
+$color-primary-light: rgba(255, 46, 99, 0.1);
+$color-primary-disabled: #666;
+
+$color-white: #ffffff;
+$color-light-gray: #eaeaea;
+$color-gray: #888888;
+$color-dark-gray: #414141;
+$color-background: rgb(27, 27, 27);
+
+// TYPOGRAPHY
+$font-family: "Roboto Condensed", sans-serif;
+$font-weight-light: 300;
+$font-weight-regular: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+$font-size-xs: 12px;
+$font-size-sm: 14px;
+$font-size-base: 16px;
+$font-size-lg: 18px;
+$font-size-xl: 24px;
+$font-size-2xl: 32px;
+$font-size-3xl: 40px;
+
+$line-height-base: 1.6;
+$line-height-tight: 1.2;
+
+// SPACING
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 12px;
+$spacing-lg: 16px;
+$spacing-xl: 20px;
+$spacing-2xl: 24px;
+$spacing-3xl: 32px;
+$spacing-4xl: 40px;
+$spacing-5xl: 60px;
+$spacing-6xl: 80px;
+
+// BORDERS
+$border-radius-none: 0;
+$border-radius-sm: 4px;
+$border-radius-md: 8px;
+$border-radius-lg: 12px;
+$border-radius-full: 50%;
+
+$border-width-thin: 1px;
+$border-width-normal: 2px;
+$border-width-thick: 4px;
+
+// TRANSITIONS
+$transition-fast: 0.15s ease;
+$transition-normal: 0.2s ease;
+$transition-slow: 0.3s ease;
+
+// BREAKPOINTS
+$breakpoint-mobile: 768px;
+$breakpoint-tablet: 1024px;
+$breakpoint-desktop: 1280px;
+$breakpoint-desktop-lg: 1920px;
+
+// Z-INDEX
+$z-index-dropdown: 1000;
+$z-index-sticky: 1020;
+$z-index-fixed: 1030;
+$z-index-modal: 1040;
+$z-index-popover: 1050;
+$z-index-tooltip: 1060;
+
+// SHADOWS
+$shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+$shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+
+// COMPONENT SPECIFIC
+$button-padding-x: $spacing-2xl;
+$button-padding-y: $spacing-sm;
+$button-icon-size: 16px;
+
+$link-icon-size: 16px;
+$link-gap: $spacing-sm;
+
+$section-padding: $spacing-5xl 0;
+$heading-gap: $spacing-xl;
+$heading-margin-bottom: 0;
+
+$loading-spinner-size: 40px;
+$loading-dot-size: 12px; 

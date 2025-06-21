@@ -1,34 +1,32 @@
-import "./featuredProjectCard.scss";
-
-import toast from "react-hot-toast";
-
 import { Link } from "react-router-dom";
-import ContentRevealSuper from "../contentReveal/ContentRevealSuper";
 import { ProjectActionButton } from "../ui";
+import ContentRevealSuper from "../contentReveal/ContentRevealSuper";
+import "./ProjectCard.scss";
 
-const FeaturedProjectCard = ({ projectData }) => {
+const ProjectCard = ({ project, variant = "featured" }) => {
+  const { slug, title, sub_title, demo_url, source_url } = project;
+
   return (
-    <div className="featured-project-card">
+    <div className={`project-card ${variant}`}>
       <div className="project-content">
-        <Link to={`/projects/${projectData?.slug}`}>
+        <Link to={`/projects/${slug}`} className="project-info">
           <div className="project-left">
             <ContentRevealSuper>
-              <h2>{projectData?.title}</h2>
+              <h2>{title}</h2>
             </ContentRevealSuper>
             <ContentRevealSuper>
-              <p>{projectData?.sub_title}</p>
+              <p>{sub_title}</p>
             </ContentRevealSuper>
           </div>
         </Link>
 
-        <div className="project-right">
-          {projectData?.demo_url && (
+        <div className="project-actions">
+          {demo_url && (
             <ContentRevealSuper>
               <ProjectActionButton 
-                href={projectData?.demo_url} 
+                href={demo_url} 
                 icon="/icons/demo-icon.svg"
                 variant="primary"
-                onClick={() => projectData.demo_url === null && toast.error("Work in progress.")}
               >
                 DEMO
               </ProjectActionButton>
@@ -36,7 +34,7 @@ const FeaturedProjectCard = ({ projectData }) => {
           )}
           <ContentRevealSuper>
             <ProjectActionButton 
-              href={projectData?.source_url} 
+              href={source_url} 
               icon="/icons/github-icon.svg"
               variant="primary"
             >
@@ -49,4 +47,4 @@ const FeaturedProjectCard = ({ projectData }) => {
   );
 };
 
-export default FeaturedProjectCard;
+export default ProjectCard; 

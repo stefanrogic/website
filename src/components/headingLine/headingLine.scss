@@ -1,7 +1,12 @@
-@import "../../index.scss";
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+// =============================================================================
+// HEADING LINE COMPONENT
+// =============================================================================
 
 .heading-line {
-  @include rwd("600px") {
-    display: none;
+  @include desktop {
+    // Your desktop styles here
   }
 }

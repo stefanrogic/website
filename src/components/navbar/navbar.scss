@@ -1,93 +1,110 @@
-@import "../../index.scss";
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+// =============================================================================
+// NAVBAR COMPONENT
+// =============================================================================
 
 header {
   width: inherit;
-
-  margin-top: 25px;
-
-  display: flex;
-  flex-direction: column;
+  margin-top: $spacing-2xl;
+  @include flex-column;
   justify-content: center;
-  gap: 13px;
-
-  @include rwd("600px") {
-    margin-top: 50px;
+  gap: $spacing-lg;
+  
+  @include desktop {
+    margin-top: $spacing-4xl;
   }
-
+  
+  // Header top section
   .header-top {
     position: relative;
     height: 35vw;
     width: inherit;
-
-    @include rwd("600px") {
+    
+    @include desktop {
       height: 200px;
     }
-
+    
+    // Image container
     .img-container {
       width: 100%;
-
       position: absolute;
       bottom: 0;
-
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
+      @include flex-center;
+      
       .home-page {
         max-height: 47px;
       }
     }
-
+    
+    // Signature
     .signature {
       width: 100%;
-
       position: absolute;
       top: 0;
     }
-
+    
+    // Moon link
     .moon-link {
       position: absolute;
       top: 0;
       right: 0;
     }
-
+    
+    // Links
     a {
       text-decoration: none;
-
+      
       img {
         bottom: 0;
         width: 100%;
       }
     }
   }
-
+  
+  // Navigation
   nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-
-    z-index: 50;
-
+    @include flex-between;
+    z-index: $z-index-popover;
+    
     div {
-      display: flex;
-      flex-direction: row;
-      gap: 15px;
-
+      @include flex-start;
+      gap: $spacing-lg;
+      
       a {
-        font-size: 18px;
-        font-weight: 900;
+        font-size: $font-size-lg;
+        font-weight: $font-weight-bold;
       }
-
+      
+      // Nav link styling
+      a.nav-link {
+        @include button-reset;
+        font-size: $font-size-lg !important;
+        font-weight: $font-weight-bold !important;
+        color: $color-white !important;
+        text-decoration: none !important;
+        cursor: pointer !important;
+        transition: color $transition-normal !important;
+        display: inline-block !important;
+        
+        &:hover {
+          color: $color-primary !important;
+        }
+      }
+      
+      // Icons
       img {
         height: 20px;
         width: 20px;
       }
     }
-
+    
+    // Socials container
     .socials-container {
       display: none;
-
-      @include rwd("600px") {
+      
+      @include desktop {
         display: flex;
       }
     }

@@ -1,9 +1,18 @@
-@import "../../index.scss";
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+// =============================================================================
+// HOME PAGE COMPONENT
+// =============================================================================
+
+.home-page {
+  // Your home page styles here
+}
 
 .home {
   width: inherit;
 
   display: flex;
   flex-direction: column;
-  gap: $section-gap;
+  gap: $spacing-3xl;
 }

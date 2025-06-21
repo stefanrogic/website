@@ -1,0 +1,140 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+// =============================================================================
+// LINK COMPONENT
+// =============================================================================
+
+.ui-link {
+  @include flex-start;
+  @include focus-visible;
+  
+  gap: $link-gap;
+  text-decoration: none;
+  color: inherit;
+  transition: all $transition-normal;
+  cursor: pointer;
+  
+  // Icon styling
+  img {
+    width: $link-icon-size;
+    height: $link-icon-size;
+    flex-shrink: 0;
+    transition: transform $transition-normal;
+  }
+  
+  // Disable transitions for users who prefer reduced motion
+  @include reduced-motion {
+    transition: none;
+    
+    img {
+      transition: none;
+    }
+  }
+  
+  // Text link variant
+  &.text {
+    color: $color-primary;
+    font-weight: $font-weight-semibold;
+    
+    &:hover:not(.inactive) {
+      text-decoration: underline;
+    }
+    
+    &:active:not(.inactive) {
+      transform: scale(0.98);
+    }
+  }
+  
+  // Navigation link variant
+  &.nav {
+    color: $color-white;
+    font-weight: $font-weight-regular;
+    
+    &:hover:not(.inactive) {
+      text-decoration: underline;
+    }
+    
+    &.active {
+      color: $color-primary;
+      font-weight: $font-weight-semibold;
+    }
+  }
+  
+  // Inactive state
+  &.inactive {
+    color: $color-primary-disabled;
+    cursor: not-allowed;
+    pointer-events: none;
+    
+    &:hover {
+      color: $color-primary-disabled;
+      text-decoration: none;
+      
+      img {
+        transform: none;
+      }
+    }
+  }
+  
+  // External link indicator
+  &.external {
+    &::after {
+      content: '↗';
+      margin-left: $spacing-xs;
+      font-size: $font-size-xs;
+      opacity: 0.7;
+      transition: opacity $transition-normal;
+    }
+    
+    &:hover::after {
+      opacity: 1;
+    }
+  }
+  
+  // Size variants
+  &.small {
+    font-size: $font-size-sm;
+    
+    img {
+      width: 14px;
+      height: 14px;
+    }
+  }
+  
+  &.large {
+    font-size: $font-size-lg;
+    
+    img {
+      width: 18px;
+      height: 18px;
+    }
+  }
+  
+  // Underline animation variant
+  &.underline-animated {
+    position: relative;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: currentColor;
+      transition: width $transition-normal;
+    }
+    
+    &:hover:not(.inactive)::after {
+      width: 100%;
+    }
+  }
+  
+  // Focus styles for keyboard navigation
+  &:focus-visible {
+    outline: 2px solid $color-primary;
+    outline-offset: 2px;
+    border-radius: $border-radius-sm;
+  }
+} 

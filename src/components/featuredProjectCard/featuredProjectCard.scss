@@ -1,16 +1,17 @@
-@import "../../index.scss";
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+// =============================================================================
+// FEATURED PROJECT CARD COMPONENT
+// =============================================================================
 
 .featured-project-card {
-  display: flex;
-  flex-direction: column;
+  @include flex-column;
   width: 100%;
   padding: 2px 0;
 
   .project-content {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-
+    @include flex-start;
     width: 100%;
 
     a {
@@ -20,16 +21,14 @@
     }
 
     .project-left {
-      display: flex;
-      flex-direction: column !important;
+      @include flex-column;
       align-items: flex-start;
-      gap: 10px;
-
+      gap: $spacing-sm;
       width: 100%;
 
       h2 {
-        font-size: $font-size-heading-medium;
-        line-height: $font-size-heading-medium !important;
+        font-size: $font-size-xl;
+        line-height: $font-size-xl !important;
       }
 
       p {
@@ -38,18 +37,17 @@
     }
 
     .project-right {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
+      @include flex-column;
+      gap: $spacing-sm;
 
-      @include rwd("600px") {
+      @include desktop {
         flex-direction: row;
       }
 
       a {
         margin-left: auto;
 
-        @include rwd("600px") {
+        @include desktop {
           margin-left: 0;
         }
         img {

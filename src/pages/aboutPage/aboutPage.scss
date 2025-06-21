@@ -1,31 +1,47 @@
-@import "../../index.scss";
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+// =============================================================================
+// ABOUT PAGE COMPONENT
+// =============================================================================
+
+.about-page {
+  @include desktop {
+    // Your desktop styles here
+  }
+}
 
 section {
+  .about-heading {
+    background-color: $color-dark-gray;
+  }
+  
+  .about-content {
+    background-color: $color-dark-gray;
+  }
+
   .img-container {
     height: 55vw;
-
-    background-color: $dark-grey;
-
-    @include rwd("600px") {
+    background-color: $color-dark-gray;
+    
+    @include desktop {
       height: 350px;
     }
-
+    
     img {
       height: inherit;
       width: 100%;
-
       object-fit: cover;
     }
   }
-
+  
   .resume-container {
     position: relative;
-    background-color: $dark-grey;
-
+    background-color: $color-dark-gray;
+    
     img {
       height: inherit;
       width: 100%;
-
       object-fit: cover;
     }
   }
