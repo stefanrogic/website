@@ -1,32 +1,21 @@
 import "./educationSection.scss";
 
 import ContentRevealSuper from "../contentReveal/ContentRevealSuper";
-import HeadingLine from "../headingLine/HeadingLine";
+import { HeadingContainer, Card } from "../ui";
 
 const EducationSection = () => {
   return (
     <section id="education_section">
-      <div className="heading-container">
-        <ContentRevealSuper>
-          <h1>EDUCATION & CERTIFICATION</h1>
-        </ContentRevealSuper>
-        <HeadingLine />
-      </div>
+      <HeadingContainer title="EDUCATION & CERTIFICATION" />
 
       <div className="education-content">
         <ContentRevealSuper width="100%">
-          <div className="education-card">
-            <div className="card-left">
-              <h2>Bachelors Degree, Computer and Electrical Engineering</h2>
-              <p>Academy of Vocational Studies of Western Serbia</p>
-            </div>
-
-            <div className="card-right">
-              <p>
-                <i>2019 - 2022</i>
-              </p>
-            </div>
-          </div>
+          <Card
+            title="Bachelors Degree, Computer and Electrical Engineering"
+            subtitle="Academy of Vocational Studies of Western Serbia"
+            rightContent={<p><i>2019 - 2022</i></p>}
+            variant="education"
+          />
         </ContentRevealSuper>
 
         <ContentRevealSuper>
@@ -34,12 +23,11 @@ const EducationSection = () => {
         </ContentRevealSuper>
 
         <ContentRevealSuper>
-          <div className="education-card">
-            <div className="card-left">
-              <h2>The Complete JS Course: From Zero to Expert!</h2>
-              <p>Udemy - Online Course</p>
-            </div>
-          </div>
+          <Card
+            title="The Complete JS Course: From Zero to Expert!"
+            subtitle="Udemy - Online Course"
+            variant="education"
+          />
         </ContentRevealSuper>
 
         <ContentRevealSuper>
@@ -47,12 +35,11 @@ const EducationSection = () => {
         </ContentRevealSuper>
 
         <ContentRevealSuper>
-          <div className="education-card">
-            <div className="card-left">
-              <h2>React Course</h2>
-              <p>Udemy - Online Course</p>
-            </div>
-          </div>
+          <Card
+            title="React Course"
+            subtitle="Udemy - Online Course"
+            variant="education"
+          />
         </ContentRevealSuper>
 
         <ContentRevealSuper>
@@ -60,12 +47,11 @@ const EducationSection = () => {
         </ContentRevealSuper>
 
         <ContentRevealSuper>
-          <div className="education-card">
-            <div className="card-left">
-              <h2>Design Systems for Websites using Figma</h2>
-              <p>Domestika - Online Course</p>
-            </div>
-          </div>
+          <Card
+            title="Design Systems for Websites using Figma"
+            subtitle="Domestika - Online Course"
+            variant="education"
+          />
         </ContentRevealSuper>
       </div>
     </section>

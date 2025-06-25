@@ -20,6 +20,18 @@ section {
     background-color: $color-dark-gray;
   }
 
+  .experience-content,
+  .languages-content {
+    @include flex-column;
+    gap: $spacing-xl;
+    
+    .line-seperator {
+      width: 50px;
+      height: 1px;
+      background-color: $color-white;
+    }
+  }
+
   .img-container {
     height: 55vw;
     background-color: $color-dark-gray;

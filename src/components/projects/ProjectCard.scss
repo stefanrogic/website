@@ -1,4 +1,8 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
 .project-card {
+  width: 100%;
   padding: 8px 0;
   
   &.featured {
@@ -16,15 +20,14 @@
     }
     
     .project-info {
-      flex: 1;
       text-decoration: none;
       color: inherit;
       
       &:hover {
         text-decoration: none !important;
         
-        .project-left h2 {
-          color: #ff2e63;
+        .ui-card .card-left h2 {
+          color: $color-primary;
         }
       }
     }
@@ -48,6 +51,20 @@
       display: flex;
       gap: 12px;
       flex-shrink: 0;
+    }
+    
+    .project-link {
+      text-decoration: none;
+      color: inherit;
+      
+      &:hover {
+        text-decoration: none !important;
+        color: $color-primary;
+      }
+    }
+    
+    .ui-card .card-left h2 {
+      transition: color $transition-normal;
     }
   }
 } 

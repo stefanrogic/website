@@ -5,7 +5,7 @@ import SkillsSection from "../../components/skillsSection/SkillsSection";
 import EducationSection from "../../components/educationSection/EducationSection";
 import AboutSection from "../../components/aboutSection/AboutSection";
 import ContentRevealSuper from "../../components/contentReveal/ContentRevealSuper";
-import HeadingLine from "../../components/headingLine/HeadingLine";
+import { HeadingContainer, Card } from "../../components/ui";
 
 import { motion } from "framer-motion";
 
@@ -26,28 +26,17 @@ const AboutPage = ({ scrollTo }) => {
         <SkillsSection relevant={false} />
         <EducationSection />
 
-        <section id="education_section">
-          <div className="heading-container row-reverse">
-            <ContentRevealSuper>
-              <h1>EXPERIENCE</h1>
-            </ContentRevealSuper>
-            <HeadingLine />
-          </div>
+        <section id="experience_section">
+          <HeadingContainer title="EXPERIENCE" variant="row-reverse" />
 
-          <div className="education-content">
+          <div className="experience-content">
             <ContentRevealSuper width="100%">
-              <div className="education-card">
-                <div className="card-left">
-                  <h2>Freelance</h2>
-                  <p>Technical Support, Computer Service & Graphical Design</p>
-                </div>
-
-                <div className="card-right">
-                  <p>
-                    <i>2018 - Currently</i>
-                  </p>
-                </div>
-              </div>
+              <Card
+                title="Freelance"
+                subtitle="Technical Support, Computer Service & Graphical Design"
+                rightContent={<p><i>2018 - Currently</i></p>}
+                variant="education"
+              />
             </ContentRevealSuper>
 
             <ContentRevealSuper>
@@ -55,18 +44,12 @@ const AboutPage = ({ scrollTo }) => {
             </ContentRevealSuper>
 
             <ContentRevealSuper width="100%">
-              <div className="education-card">
-                <div className="card-left">
-                  <h2>System Administrator</h2>
-                  <p>Medical School Užice</p>
-                </div>
-
-                <div className="card-right">
-                  <p>
-                    <i>June - November 2024</i>
-                  </p>
-                </div>
-              </div>
+              <Card
+                title="System Administrator"
+                subtitle="Medical School Užice"
+                rightContent={<p><i>June - September 2024</i></p>}
+                variant="education"
+              />
             </ContentRevealSuper>
 
             <ContentRevealSuper>
@@ -74,18 +57,12 @@ const AboutPage = ({ scrollTo }) => {
             </ContentRevealSuper>
 
             <ContentRevealSuper width="100%">
-              <div className="education-card">
-                <div className="card-left">
-                  <h2>Web Developer Intern</h2>
-                  <p>Regional Innovation Startup Center Užice</p>
-                </div>
-
-                <div className="card-right">
-                  <p>
-                    <i>June - August 2022</i>
-                  </p>
-                </div>
-              </div>
+              <Card
+                title="Web Developer Intern"
+                subtitle="Regional Innovation Startup Center Užice"
+                rightContent={<p><i>June - August 2022</i></p>}
+                variant="education"
+              />
             </ContentRevealSuper>
 
             <ContentRevealSuper>
@@ -93,65 +70,51 @@ const AboutPage = ({ scrollTo }) => {
             </ContentRevealSuper>
 
             <ContentRevealSuper width="100%">
-              <div className="education-card">
-                <div className="card-left">
-                  <h2>Salesman</h2>
-                  <p>WinWin</p>
-                </div>
-
-                <div className="card-right">
-                  <p>
-                    <i>2016 - 2019</i>
-                  </p>
-                </div>
-              </div>
+              <Card
+                title="Salesman"
+                subtitle="WinWin"
+                rightContent={<p><i>2016 - 2019</i></p>}
+                variant="education"
+              />
             </ContentRevealSuper>
           </div>
         </section>
 
-        <section id="education_section">
-          <div className="heading-container">
-            <ContentRevealSuper>
-              <h1>LANGUAGES</h1>
-            </ContentRevealSuper>
-            <HeadingLine />
-          </div>
+        <section id="languages_section">
+          <HeadingContainer title="LANGUAGES" />
 
-          <div className="education-content">
-            <div className="education-card">
-              <ContentRevealSuper>
-                <div className="card-left">
-                  <h2>English</h2>
-                  <p>C2</p>
-                </div>
-              </ContentRevealSuper>
-            </div>
+          <div className="languages-content">
+            <ContentRevealSuper>
+              <Card
+                title="English"
+                subtitle="C2"
+                variant="education"
+              />
+            </ContentRevealSuper>
 
             <ContentRevealSuper>
               <motion.div className="line-seperator"></motion.div>
             </ContentRevealSuper>
 
-            <div className="education-card">
-              <ContentRevealSuper>
-                <div className="card-left">
-                  <h2>German</h2>
-                  <p>A1</p>
-                </div>
-              </ContentRevealSuper>
-            </div>
+            <ContentRevealSuper>
+              <Card
+                title="German"
+                subtitle="A1"
+                variant="education"
+              />
+            </ContentRevealSuper>
 
             <ContentRevealSuper>
               <motion.div className="line-seperator"></motion.div>
             </ContentRevealSuper>
 
-            <div className="education-card">
-              <ContentRevealSuper>
-                <div className="card-left">
-                  <h2>Serbian</h2>
-                  <p>Native</p>
-                </div>
-              </ContentRevealSuper>
-            </div>
+            <ContentRevealSuper>
+              <Card
+                title="Serbian"
+                subtitle="Native"
+                variant="education"
+              />
+            </ContentRevealSuper>
           </div>
         </section>
         {/* 

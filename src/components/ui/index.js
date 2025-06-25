@@ -4,4 +4,5 @@ export { default as Section } from './Section';
 export { default as Loading } from './Loading';
 export { default as ErrorBoundary } from './ErrorBoundary';
 export { default as HeadingContainer } from './HeadingContainer';
-export { default as ProjectActionButton } from './ProjectActionButton'; 
+export { default as ProjectActionButton } from './ProjectActionButton';
+export { default as Card } from './Card'; 

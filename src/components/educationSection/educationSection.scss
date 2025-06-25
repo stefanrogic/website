@@ -10,51 +10,6 @@ section {
     @include flex-column;
     gap: $spacing-xl;
     
-    .education-card {
-      @include flex-column;
-      text-align: start;
-      
-      @include desktop {
-        flex-direction: row;
-        justify-content: space-between;
-        text-align: auto;
-      }
-      
-      .card-left {
-        @include flex-column;
-        align-items: flex-start;
-        gap: $spacing-sm;
-        max-width: 500px;
-        
-        h2 {
-          font-size: $font-size-xl;
-          line-height: 30px !important;
-        }
-        
-        p {
-          line-height: 16px !important;
-          padding: 2px 0;
-        }
-      }
-      
-      .card-right {
-        margin-top: $spacing-xl;
-        
-        @include desktop {
-          margin-top: 0;
-          justify-content: end;
-        }
-        
-        p {
-          text-align: start;
-          
-          @include desktop {
-            text-align: end;
-          }
-        }
-      }
-    }
-    
     .line-seperator {
       width: 50px;
       height: 1px;
