@@ -9,14 +9,14 @@ const Navbar = () => {
     <header id="navbar">
       <div className="header-top">
         <NavLink to={ROUTES.HOME}>
-          <img src="/icons/signature.svg" alt="web-developer" />
+          <img src="/icons/signature.svg" alt="signature" />
         </NavLink>
 
         <NavLink to={ROUTES.HOME}>
           <div className="img-container">
             <motion.img 
-              src="/icons/web-developer.svg" 
-              alt="web-developer" 
+              src="/icons/title.svg" 
+              alt="title" 
               initial={{ opacity: 0 }} 
               animate={{ opacity: 1 }} 
               transition={{ duration: 1 }} 

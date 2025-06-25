@@ -20,23 +20,25 @@ const Card = ({
         {subtitle && <p>{subtitle}</p>}
         {children}
       </div>
-      
-      {rightContent && (
-        <div className="card-right">
-          {rightContent}
-        </div>
-      )}
-      
-      {actions && (
-        <div className="card-actions">
-          {actions}
+      {(rightContent || actions) && (
+        <div className="card-right-block">
+          {rightContent && (
+            <div className="card-right">
+              {rightContent}
+            </div>
+          )}
+          {actions && (
+            <div className="card-actions">
+              {actions}
+            </div>
+          )}
         </div>
       )}
     </div>
   );
 
   return (
-    <ContentRevealSuper>
+    <ContentRevealSuper width="100%">
       {cardContent}
     </ContentRevealSuper>
   );

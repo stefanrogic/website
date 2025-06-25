@@ -6,19 +6,6 @@
   padding: 8px 0;
   
   &.featured {
-    .project-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-      
-      @media (max-width: 768px) {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 16px;
-      }
-    }
-    
     .project-info {
       text-decoration: none;
       color: inherit;
