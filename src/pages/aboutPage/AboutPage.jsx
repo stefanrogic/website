@@ -34,7 +34,7 @@ const AboutPage = ({ scrollTo }) => {
               <Card
                 title="Freelance"
                 subtitle="Technical Support, Computer Service & Graphical Design"
-                rightContent={<p><i>2018 - Currently</i></p>}
+                rightContent={<p><i>2015 - Currently</i></p>}
                 variant="education"
               />
             </ContentRevealSuper>
