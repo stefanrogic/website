@@ -47,7 +47,7 @@ const AboutPage = ({ scrollTo }) => {
               <Card
                 title="System Administrator"
                 subtitle="Medical School Užice"
-                rightContent={<p><i>October 2023 - September 2024</i></p>}
+                rightContent={<p><i>juner 2023 - September 2023</i></p>}
                 variant="education"
               />
             </ContentRevealSuper>
